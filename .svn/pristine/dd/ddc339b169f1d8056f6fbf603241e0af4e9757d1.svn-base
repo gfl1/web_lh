@@ -1,0 +1,140 @@
+<template>
+  <div class="treeForm">
+    <split-pane split="vertical" :min-percent='20' :default-percent='30'>
+      <template slot="paneL">
+        <el-row>
+          <el-col :span="48">
+            <p>权限</p>
+            <el-tree
+              :data="tree_data"
+              show-checkbox
+              node-key="id"
+              @node-click="fn"
+              :expand-on-click-node="false"
+              ref="tree1"
+            >
+                  <span class="custom-tree-node" slot-scope="{ node, data }">
+                    <span>{{ node.label }}</span>
+                    <span>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => append(node,data)"
+                      >
+                        添加
+                      </el-button>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => remove(node, data)"
+                      >
+                        删除
+                      </el-button>
+                    </span>
+                  </span>
+            </el-tree>
+          </el-col>
+        </el-row>
+      </template>
+      <template slot="paneR">
+        <em-form :props_data="form_data" ref="form"></em-form>
+      </template>
+    </split-pane>
+  </div>
+</template>
+
+<script>
+  import {db_form_data, db_tree_data} from './data/db'
+  import splitPane from 'vue-splitpane'
+  import emForm from './components/emForm/emForm'
+
+
+  export default {
+    name: "treeForm",
+    data() {
+      return {
+        id: 100,
+        tree_data: JSON.parse(JSON.stringify(db_tree_data)),
+        form_data: JSON.parse(JSON.stringify(db_form_data))
+      }
+    },
+    props: ["props_data"],
+    components: {
+      splitPane,
+      emForm
+    },
+    methods: {
+      init() {
+        let _this = this;
+        let _permissions = this.$store.getters["user/permissions"];
+        console.log(_permissions);
+        console.log(this.props_data);
+        if (_permissions.length > 0) {
+          _permissions.forEach(function (_obj) {
+            _obj.label = _obj.resourceName;
+            _obj.children = [];
+            _this.$refs.tree1.append(_obj, _obj.parentId);
+
+          });
+        }
+      },
+      append(node, data) {
+        const newChild = {id: this.id++, label: 'test', children: []};
+        console.log({
+          n: node,
+          d: data
+        });
+        if (!data.children) {
+          this.$set(data, 'children', []);
+        }
+        data.children.push(newChild);
+      },
+      remove(node, data) {
+        const parent = node.parent;
+        const children = parent.data.children || parent.data;
+        const index = children.findIndex(d => d.id === data.id);
+        children.splice(index, 1);
+      },
+      fn(...obj) {
+        console.log(obj[0]);
+
+        // console.log(JSON.stringify(_item.Validate));
+        let _form_data = [];
+
+        for(let k in obj[0]){
+          if(k!=="children"){
+            let _item = {
+              id: "",
+              inputType: "text",
+              label: '',
+              valueKey: "",
+              value: "",
+              Validate: [
+                {required: true, message: '请输字段', trigger: 'change'},
+              ]
+            };
+            _item.id="select_1"+k;
+            _item.label=k;
+            _item.valueKey=k;
+            _item.value=obj[0][k];
+            _form_data.push(_item);
+          }
+
+        }
+
+        this.$refs.form.rulesFn(JSON.parse(JSON.stringify(_form_data)));
+
+      }
+    },
+    created() {
+
+    },
+    mounted() {
+      this.init();
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "treeForm";
+</style>

@@ -1,0 +1,18 @@
+
+
+
+$('#alpha').slider({
+    mode: 'h',
+    tipFormatter: function(value){
+        return value + '%';
+    },
+    onChange:function (newValue, oldValue) {
+        console.log(newValue);
+        globeAlphaFn(newValue/100);
+    }
+});
+
+
+function entitiesClear() {
+    viewer.entities.removeAll();
+}

@@ -1,0 +1,153 @@
+@import "../../styles/index/variable";
+$r:32;
+.window{
+  background-color: transparent;
+}
+/*nav*/
+.panel.window.#{em-nav-window}.panel-htop {
+  background:url("../../assets/image/footer.png") no-repeat;
+  border: none;
+  left: 50%;
+  transform: translateX(-44.2%);
+  z-index: 1607 !important;
+  height: 100px;
+  background-size:100%;
+  padding: 3/$r+rem 20/$r+rem 0 20/$r+rem;
+}
+
+
+.panel.window.#{em-nav-window}.panel-htop /deep/ {
+  .el-menu,.panel-body {
+    background-color: transparent;
+    border:none;
+    display: contents;//鼠标十字箭头
+  }
+}
+
+
+/*title*/
+.panel.window.#{em-title-window}.panel-htop {
+  background: url("../../assets/image/title.gif") no-repeat center;
+  background-size: 100% 100%;
+  border:none;
+}
+.panel.window.#{em-title-window}.panel-htop /deep/{
+  .panel-body {
+    background: transparent;
+  }
+}
+@media screen and (max-width:1024px) {
+  .panel.window.em-nav-window.panel-htop {
+    background: none;
+  }
+}
+@media screen and (min-width:1025px) and (max-width:1280px) {
+  .panel.window.em-nav-window.panel-htop {
+    background: none;
+  }
+}
+
+
+
+/*warn-button*/
+.panel.window.#{em-warn-window}.panel-htop {
+  background:transparent;
+  border:none;
+}
+
+/*risk-window风险等级*/
+.panel.window.#{em-risk-window}.panel-htop {
+  background:transparent;
+  border:none;
+  text-align: right;
+}
+
+.panel.window.#{em-risk-window}.panel-htop /deep/{
+  .panel-body {
+    background: transparent;
+    padding-top: 10px;
+  }
+}
+
+/*menu-window*/
+.panel.window.#{em-menu-window}.panel-htop{
+  background: transparent;
+  border:none;
+  padding:0;
+}
+.panel.window.#{em-menu-window}.panel-htop /deep/{
+  .menu,.el-menu,.panel-body{
+     background: transparent;
+   }
+  .el-menu{
+    border-right: 0;
+  }
+  .panel-header{
+    border-bottom: none;
+    margin-bottom: 5/$r+rem;
+    padding: 6/$r+rem !important;
+  }
+
+}
+
+@media screen and (min-width:1281px) and (max-width:1440px) {
+  .panel.window.#{em-menu-window}.panel-htop{
+    height: 430px;
+  }
+}
+@media screen and (min-width:1921px) {
+  .panel.window.#{em-menu-window}.panel-htop{
+    height: 460px;
+  }
+}
+
+
+/*bottom-window*/
+.panel.window.#{em-bottom-window}.panel-htop.easyui-fluid {
+  background: rgba(20, 31, 55, 0.8);
+  border-left: 6px solid $border-color-base;
+  border-right: 6px solid $border-color-base;
+  border-top: 1px solid #d8bb37;
+  border-bottom: 1px solid #d8bb37;
+  border-radius: unset;
+}
+
+/*toolList*/
+.panel.window.#{em-tool-window}.panel-htop {
+ background: transparent;
+ border:none;
+}
+@media screen and (min-width:1025px) and (max-width:1440px) {
+  .panel.window.em-tool-window.panel-htop {
+    top: 83% !important;
+  }
+}
+
+
+/*table-window*/
+.window-shadow{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+.panel.window.#{em-table-window}.panel-htop{
+  background: $background-table-base;
+  border: 18px solid transparent;
+  -webkit-border-image: url("../../../src/assets/image/table_border.png") 20 26 20 26 round;
+  -moz-border-image: url("../../../src/assets/image/table_border.png") 20 26 20 26 round;
+  border-image: url("../../../src/assets/image/table_border.png") 20 26 20 26 round;
+  width: 800px;
+  resize: both;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  overflow: visible;//table-dialog遮罩
+
+}
+
+/*slider*/
+.panel.window.#{em-slider-window}.panel-htop{
+  border: none;
+  background: transparent;
+}
+

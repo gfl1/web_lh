@@ -1,0 +1,99 @@
+<template>
+  <div class="emForm">
+    <el-container>
+      <el-main>
+        <el-form label-position="left" :model="ruleForm" status-icon :rules="rules" :ref="id" label-width="100px">
+          <template v-for="item in form_items">
+            <el-col :span="24" v-if="item.inputType=='text'">
+              <el-form-item :label="item.label" :prop="item.valueKey">
+                <el-input :ref="item.id" v-model="ruleForm[item.valueKey]"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="24" v-else-if="item.inputType=='select'">
+              <el-form-item :label="item.label" :prop="item.valueKey">
+                <el-select :ref="item.id" v-model="ruleForm[item.valueKey]">
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+          </template>
+        </el-form>
+      </el-main>
+      <el-footer>
+        <el-button type="primary" @click="submitForm(id)">提交</el-button>
+        <el-button type="primary" @click="resetForm(id)">重置</el-button>
+      </el-footer>
+    </el-container>
+  </div>
+</template>
+
+<script>
+  import {db_form_items} from "./data/db"
+
+  export default {
+    data() {
+
+      return {
+        id: "ruleForm",
+        ruleForm: {},
+        rules: {},
+        form_items: JSON.parse(JSON.stringify(db_form_items))
+      };
+    },
+    props: {
+      props_data: Object
+    },
+    methods: {
+      init() {
+
+      },
+      setForm(_obj) {
+        for (let _key in _obj) {
+          this.ruleForm[_key] = _obj[_key];
+        }
+      },
+      getForm() {
+        return this.ruleForm;
+      },
+      rulesFn(form_items) {
+        let _ruleForm={};
+        let _rules={};
+        this.form_items =JSON.parse(JSON.stringify(form_items)) ;
+        this.form_items.forEach(function (_obj) {
+          _ruleForm[_obj.valueKey]=_obj.value;
+          _rules[_obj.valueKey] = _obj.Validate;
+        });
+        this.ruleForm=_ruleForm;
+        this.rules=_rules;
+        console.log(form_items);
+      },
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+            console.log(this.ruleForm);
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+    },
+    created() {
+      this.rulesFn(this.form_items);
+      this.bus.$on(this.id, obj => {
+        this.control(obj)
+      });
+    },
+    mounted() {
+      this.init();
+    }
+  }
+</script>
+<style lang="scss" scoped>
+  @import "emForm";
+</style>

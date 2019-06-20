@@ -1,0 +1,13 @@
+.el-button{
+  padding:5px;
+  background: transparent;
+  &:hover,&:focus{
+    color: $color-base;
+    background: transparent;
+    border-color: $border-color-base;//tree
+  }
+}
+.el-button + .el-button{
+  margin-left: 5px;
+}
+

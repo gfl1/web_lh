@@ -1,0 +1,37 @@
+export const db_form_data = {
+  "id": {
+    type:"text",
+    label:"id"
+  },
+  "resourceName": {
+    type:"text",
+    label:"id"
+  },
+  "resourceCode": {
+    type:"text",
+    label:"id"
+  },
+  "parentId": {
+    type:"text",
+    label:"id"
+  },
+  "resourceType": {
+    type:"text",
+    label:"id"
+  },
+  "resourceUrl": {
+    type:"text",
+    label:"id"
+  },
+  "description": {
+    type:"text",
+    label:"id"
+  },
+  "dataStatus": {
+    type:"text",
+    label:"id"
+  }
+};
+export const db_tree_data = [
+
+];

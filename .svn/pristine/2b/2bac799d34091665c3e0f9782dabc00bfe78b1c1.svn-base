@@ -1,0 +1,512 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.timespinner.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.timespinner.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/93</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/50</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/93</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+function <span class="fstat-no" title="function not covered" >_1(_2){</span>
+var _3=<span class="cstat-no" title="statement not covered" >$.data(_2,"timespinner").options;</span>
+<span class="cstat-no" title="statement not covered" >$(_2).addClass("timespinner-f").spinner(_3);</span>
+var _4=<span class="cstat-no" title="statement not covered" >_3.formatter.call(_2,_3.parser.call(_2,_3.value));</span>
+<span class="cstat-no" title="statement not covered" >$(_2).timespinner("initValue",_4);</span>
+};
+function <span class="fstat-no" title="function not covered" >_5(e){</span>
+var _6=<span class="cstat-no" title="statement not covered" >e.data.target;</span>
+var _7=<span class="cstat-no" title="statement not covered" >$.data(_6,"timespinner").options;</span>
+var _8=<span class="cstat-no" title="statement not covered" >$(_6).timespinner("getSelectionStart");</span>
+<span class="cstat-no" title="statement not covered" >for(var i=0;i&lt;_7.selections.length;i++){</span>
+var _9=<span class="cstat-no" title="statement not covered" >_7.selections[i];</span>
+<span class="cstat-no" title="statement not covered" >if(_8&gt;=_9[0]&amp;&amp;_8&lt;=_9[1]){</span>
+<span class="cstat-no" title="statement not covered" >_a(_6,i);</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+}
+};
+function <span class="fstat-no" title="function not covered" >_a(_b,_c){</span>
+var _d=<span class="cstat-no" title="statement not covered" >$.data(_b,"timespinner").options;</span>
+<span class="cstat-no" title="statement not covered" >if(_c!=undefined){</span>
+<span class="cstat-no" title="statement not covered" >_d.highlight=_c;</span>
+}
+var _e=<span class="cstat-no" title="statement not covered" >_d.selections[_d.highlight];</span>
+<span class="cstat-no" title="statement not covered" >if(_e){</span>
+var tb=<span class="cstat-no" title="statement not covered" >$(_b).timespinner("textbox");</span>
+<span class="cstat-no" title="statement not covered" >$(_b).timespinner("setSelectionRange",{start:_e[0],end:_e[1]});</span>
+<span class="cstat-no" title="statement not covered" >tb.focus();</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_f(_10,_11){</span>
+var _12=<span class="cstat-no" title="statement not covered" >$.data(_10,"timespinner").options;</span>
+var _11=<span class="cstat-no" title="statement not covered" >_12.parser.call(_10,_11);</span>
+var _13=<span class="cstat-no" title="statement not covered" >_12.formatter.call(_10,_11);</span>
+<span class="cstat-no" title="statement not covered" >$(_10).spinner("setValue",_13);</span>
+};
+function <span class="fstat-no" title="function not covered" >_14(_15,_16){</span>
+var _17=<span class="cstat-no" title="statement not covered" >$.data(_15,"timespinner").options;</span>
+var s=<span class="cstat-no" title="statement not covered" >$(_15).timespinner("getValue");</span>
+var _18=<span class="cstat-no" title="statement not covered" >_17.selections[_17.highlight];</span>
+var s1=<span class="cstat-no" title="statement not covered" >s.substring(0,_18[0]);</span>
+var s2=<span class="cstat-no" title="statement not covered" >s.substring(_18[0],_18[1]);</span>
+var s3=<span class="cstat-no" title="statement not covered" >s.substring(_18[1]);</span>
+var v=<span class="cstat-no" title="statement not covered" >s1+((parseInt(s2,10)||0)+_17.increment*(_16?-1:1))+s3;</span>
+<span class="cstat-no" title="statement not covered" >$(_15).timespinner("setValue",v);</span>
+<span class="cstat-no" title="statement not covered" >_a(_15);</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.timespinner=<span class="fstat-no" title="function not covered" >function(</span>_19,_1a){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _19=="string"){</span>
+var _1b=<span class="cstat-no" title="statement not covered" >$.fn.timespinner.methods[_19];</span>
+<span class="cstat-no" title="statement not covered" >if(_1b){</span>
+<span class="cstat-no" title="statement not covered" >return _1b(this,_1a);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return this.spinner(_19,_1a);</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >_19=_19||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _1c=<span class="cstat-no" title="statement not covered" >$.data(this,"timespinner");</span>
+<span class="cstat-no" title="statement not covered" >if(_1c){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_1c.options,_19);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >$.data(this,"timespinner",{options:$.extend({},$.fn.timespinner.defaults,$.fn.timespinner.parseOptions(this),_19)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_1(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.timespinner.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _1d=<span class="cstat-no" title="statement not covered" >jq.data("spinner")?jq.spinner("options"):{};</span>
+<span class="cstat-no" title="statement not covered" >return $.extend($.data(jq[0],"timespinner").options,{width:_1d.width,value:_1d.value,originalValue:_1d.originalValue,disabled:_1d.disabled,readonly:_1d.readonly});</span>
+},setValue:<span class="fstat-no" title="function not covered" >function(</span>jq,_1e){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_f(this,_1e);</span>
+});
+},getHours:<span class="fstat-no" title="function not covered" >function(</span>jq){
+var _1f=<span class="cstat-no" title="statement not covered" >$.data(jq[0],"timespinner").options;</span>
+var vv=<span class="cstat-no" title="statement not covered" >jq.timespinner("getValue").split(_1f.separator);</span>
+<span class="cstat-no" title="statement not covered" >return parseInt(vv[0],10);</span>
+},getMinutes:<span class="fstat-no" title="function not covered" >function(</span>jq){
+var _20=<span class="cstat-no" title="statement not covered" >$.data(jq[0],"timespinner").options;</span>
+var vv=<span class="cstat-no" title="statement not covered" >jq.timespinner("getValue").split(_20.separator);</span>
+<span class="cstat-no" title="statement not covered" >return parseInt(vv[1],10);</span>
+},getSeconds:<span class="fstat-no" title="function not covered" >function(</span>jq){
+var _21=<span class="cstat-no" title="statement not covered" >$.data(jq[0],"timespinner").options;</span>
+var vv=<span class="cstat-no" title="statement not covered" >jq.timespinner("getValue").split(_21.separator);</span>
+<span class="cstat-no" title="statement not covered" >return parseInt(vv[2],10)||0;</span>
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.timespinner.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_22){</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.fn.spinner.parseOptions(_22),$.parser.parseOptions(_22,["separator",{showSeconds:"boolean",highlight:"number"}]));</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.timespinner.defaults=$.extend({},$.fn.spinner.defaults,{inputEvents:$.extend({},$.fn.spinner.defaults.inputEvents,{click:<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+<span class="cstat-no" title="statement not covered" >_5.call(this,e);</span>
+},blur:<span class="fstat-no" title="function not covered" >function(</span>e){
+var t=<span class="cstat-no" title="statement not covered" >$(e.data.target);</span>
+<span class="cstat-no" title="statement not covered" >t.timespinner("setValue",t.timespinner("getText"));</span>
+},keydown:<span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >if(e.keyCode==13){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(e.data.target);</span>
+<span class="cstat-no" title="statement not covered" >t.timespinner("setValue",t.timespinner("getText"));</span>
+}
+}}),formatter:<span class="fstat-no" title="function not covered" >function(</span>_23){
+<span class="cstat-no" title="statement not covered" >if(!_23){</span>
+<span class="cstat-no" title="statement not covered" >return "";</span>
+}
+var _24=<span class="cstat-no" title="statement not covered" >$(this).timespinner("options");</span>
+var tt=<span class="cstat-no" title="statement not covered" >[_25(_23.getHours()),_25(_23.getMinutes())];</span>
+<span class="cstat-no" title="statement not covered" >if(_24.showSeconds){</span>
+<span class="cstat-no" title="statement not covered" >tt.push(_25(_23.getSeconds()));</span>
+}
+<span class="cstat-no" title="statement not covered" >return tt.join(_24.separator);</span>
+function <span class="fstat-no" title="function not covered" >_25(_26){</span>
+<span class="cstat-no" title="statement not covered" >return (_26&lt;10?"0":"")+_26;</span>
+};
+},parser:<span class="fstat-no" title="function not covered" >function(</span>s){
+var _27=<span class="cstat-no" title="statement not covered" >$(this).timespinner("options");</span>
+var _28=<span class="cstat-no" title="statement not covered" >_29(s);</span>
+<span class="cstat-no" title="statement not covered" >if(_28){</span>
+var min=<span class="cstat-no" title="statement not covered" >_29(_27.min);</span>
+var max=<span class="cstat-no" title="statement not covered" >_29(_27.max);</span>
+<span class="cstat-no" title="statement not covered" >if(min&amp;&amp;min&gt;_28){</span>
+<span class="cstat-no" title="statement not covered" >_28=min;</span>
+}
+<span class="cstat-no" title="statement not covered" >if(max&amp;&amp;max&lt;_28){</span>
+<span class="cstat-no" title="statement not covered" >_28=max;</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >return _28;</span>
+function <span class="fstat-no" title="function not covered" >_29(s){</span>
+<span class="cstat-no" title="statement not covered" >if(!s){</span>
+<span class="cstat-no" title="statement not covered" >return null;</span>
+}
+var tt=<span class="cstat-no" title="statement not covered" >s.split(_27.separator);</span>
+<span class="cstat-no" title="statement not covered" >return new Date(1900,0,0,parseInt(tt[0],10)||0,parseInt(tt[1],10)||0,parseInt(tt[2],10)||0);</span>
+};
+},selections:[[0,2],[3,5],[6,8]],separator:":",showSeconds:false,highlight:0,spin:<span class="fstat-no" title="function not covered" >function(</span>_2a){
+<span class="cstat-no" title="statement not covered" >_14(this,_2a);</span>
+}});
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

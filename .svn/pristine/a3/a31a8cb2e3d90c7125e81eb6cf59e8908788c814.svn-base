@@ -1,0 +1,108 @@
+<template>
+  <div class="emForm">
+    <el-container>
+      <el-main>
+        <el-form label-position="left" :model="ruleForm" status-icon :rules="rules" :ref="id" label-width="80px">
+          <template v-for="item in form_items">
+            <el-col :span="24" v-if="item.inputType=='text'">
+              <el-form-item :label="item.label" :prop="item.valueKey">
+                <el-input v-model="ruleForm[item.valueKey]"></el-input>
+              </el-form-item>
+            </el-col>
+            <el-col :span="24" v-else-if="item.inputType=='select'">
+              <el-form-item :label="item.label" :prop="item.valueKey">
+                <el-select v-model="ruleForm[item.valueKey]">
+                  <el-option label="区域一" value="shanghai"></el-option>
+                  <el-option label="区域二" value="beijing"></el-option>
+                </el-select>
+              </el-form-item>
+            </el-col>
+          </template>
+
+
+        </el-form>
+      </el-main>
+      <el-footer>
+        <el-button type="primary" @click="submitForm(id)">提交</el-button>
+        <el-button type="primary" @click="resetForm(id)">重置</el-button>
+      </el-footer>
+    </el-container>
+  </div>
+</template>
+
+<script>
+  import {db_form_items} from "./data/db"
+
+  export default {
+    data() {
+
+      return {
+        id: "ruleForm",
+        ruleForm: {},
+        rules: {
+          name: [
+            {required: true, message: '请输入活动', trigger: 'blur'},
+            {min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur'}
+          ],
+          region: [
+            {required: true, message: '请选择活动区域', trigger: 'change'}
+          ],
+          date: [
+            {type: 'date', required: true, message: '请选择日期', trigger: 'change'}
+          ],
+          type: [
+            {type: 'array', required: true, message: '请至少选择一个活动性质', trigger: 'change'}
+          ],
+          resource: [
+            {required: true, message: '请选择活动资源', trigger: 'change'}
+          ],
+          desc: [
+            {required: true, message: '请填写活动形式', trigger: 'blur'}
+          ]
+        },
+        form_items: JSON.parse(JSON.stringify(db_form_items))
+      };
+    },
+    props: {
+      props_data: Object
+    },
+    methods: {
+      init() {
+
+      },
+      rulesFn() {
+        let _this=this;
+        console.log(this.form_items);
+        this.form_items.forEach(function (_obj) {
+          _this.rules[_obj.valueKey] = _obj.Validate;
+        })
+      },
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+            console.log(this.ruleForm);
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+    },
+    created() {
+      this.rulesFn();
+      this.bus.$on(this.id, obj => {
+        this.control(obj)
+      });
+    },
+    mounted() {
+      this.init();
+    }
+  }
+</script>
+<style lang="scss" scoped>
+  @import "emForm";
+</style>

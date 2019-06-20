@@ -1,0 +1,57 @@
+<template>
+  <div class="em_selectUrl">
+    <el-select v-model="value" placeholder="请选择">
+      <el-option
+        v-for="item in options"
+        :key="item.value"
+        :label="item.label"
+        :value="item.value">
+      </el-option>
+    </el-select>
+  </div>
+</template>
+
+<script>
+  import {selectUrl} from "@/api/table_operate";
+  export default {
+    props: {
+      operation:{
+        type:Object
+      }
+    },
+    mounted(){
+       console.log(this.operation.optionUrl);
+       this.setOption()
+    },
+    data(){
+      return{
+        arr:[],
+        options:[],
+        value: ''
+      }
+    },
+    methods:{
+      setOption(){
+        console.log(1);
+        selectUrl({
+           url:this.operation.optionUrl
+        }).then(res=>{
+           res.data.forEach((val)=>{
+             let obj;
+             if(val.id&&val.enumCvalue){
+               obj={value:val.id,label:val.enumCvalue};
+             }
+             if(val.id&&val.fullName){
+                obj={value:val.id,label:val.fullName};
+             }
+
+             this.arr.push(obj);
+             this.options=this.arr;
+
+           });
+        });
+
+      }
+    }
+  };
+</script>

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for views/test/test.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">views/test</a> test.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="test"&gt;
+    &lt;div style="width: 200px;height:120px;background: #fff3f3;color:#ff0000"&gt;
+      {{name}}
+      {{$store.getters["user/token"]}}
+&nbsp;
+    &lt;/div&gt;
+    &lt;el-button type="text" @click="fn()"&gt;点击打开 Dialog&lt;/el-button&gt;
+    &lt;el-button type="primary" @click="get()"&gt;同步数据&lt;/el-button&gt;
+    &lt;el-button type="primary" @click="no_get()"&gt;异步数据&lt;/el-button&gt;
+    &lt;el-button type="primary" @click="login"&gt;登录&lt;/el-button&gt;
+    &lt;el-button type="primary" @click="data_fn"&gt;data&lt;/el-button&gt;
+    &lt;!--&lt;router-view name="ui"&gt;&lt;/router-view&gt;--&gt;
+&nbsp;
+    &lt;!--&lt;e_charts&gt;&lt;/e_charts&gt;--&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+<span class="cstat-no" title="statement not covered" >  import {fetchCircle, test} from "@/api/layout"</span>
+<span class="cstat-no" title="statement not covered" >  import {loginByUsername} from "@/api/login"</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  import e_charts from "./components/e_charts/e_charts"</span>
+&nbsp;
+  export default {
+<span class="fstat-no" title="function not covered" >    data() {</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        dialogVisible: false,
+        name: '测试组件'
+      }
+    },
+    components:{
+      e_charts
+    },
+    props: ['data'],
+    methods: {
+<span class="fstat-no" title="function not covered" >      init() {</span>
+<span class="cstat-no" title="statement not covered" >        console.log((typeof this.data));</span>
+<span class="cstat-no" title="statement not covered" >        if ((typeof this.data) != "undefined") {</span>
+<span class="cstat-no" title="statement not covered" >          this.name = this.data.name;</span>
+        }
+      },
+<span class="fstat-no" title="function not covered" >      fn() {</span>
+<span class="cstat-no" title="statement not covered" >        this.$store.commit("win/dialog_open", {</span>
+          obj: {
+            id: "m1"
+          }
+        });
+      },
+<span class="fstat-no" title="function not covered" >      data_fn() {</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        test().then((res) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          console.log(res);</span>
+        });
+      },
+<span class="fstat-no" title="function not covered" >      login() {</span>
+        // this.$store.commit("user/set_token", "sdf");
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.$store.dispatch("user/LoginByUsername", {</span></span>
+          username: "admin",
+          password: "123456"
+        }).then((response) =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >          if (response.statusCode === 200) {</span>
+            // this.$router.push("/home");
+          }
+        });
+      },
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >      no_get() {//异步</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        let _dara = fetchCircle().then((response) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >          console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >          this.name = name;</span>
+        });
+<span class="cstat-no" title="statement not covered" >        console.log(_dara);</span>
+<span class="cstat-no" title="statement not covered" >        console.log("123123");</span>
+      },
+<span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >      async get() {//同步</span></span></span>
+<span class="cstat-no" title="statement not covered" >        let _dara = await fetchCircle().then((response) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >          console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >          return response.data;</span>
+        });
+<span class="cstat-no" title="statement not covered" >        this.name = _dara.mgs;</span>
+<span class="cstat-no" title="statement not covered" >        console.log(_dara);</span>
+<span class="cstat-no" title="statement not covered" >        console.log("123123");</span>
+      }
+    },
+<span class="fstat-no" title="function not covered" >    created() {</span>
+<span class="cstat-no" title="statement not covered" >      this.init();</span>
+    },
+<span class="fstat-no" title="function not covered" >    mounted() {</span>
+&nbsp;
+    }
+  };
+&lt;/script&gt;
+&lt;style lang="scss" scoped&gt;
+  @import "test";
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

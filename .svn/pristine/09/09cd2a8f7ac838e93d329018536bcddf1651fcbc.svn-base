@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.numberbox.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.numberbox.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/119</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/23</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/118</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+function <span class="fstat-no" title="function not covered" >_1(_2){</span>
+var _3=<span class="cstat-no" title="statement not covered" >$.data(_2,"numberbox");</span>
+var _4=<span class="cstat-no" title="statement not covered" >_3.options;</span>
+<span class="cstat-no" title="statement not covered" >$(_2).addClass("numberbox-f").textbox(_4);</span>
+<span class="cstat-no" title="statement not covered" >$(_2).textbox("textbox").css({imeMode:"disabled"});</span>
+<span class="cstat-no" title="statement not covered" >$(_2).attr("numberboxName",$(_2).attr("textboxName"));</span>
+<span class="cstat-no" title="statement not covered" >_3.numberbox=$(_2).next();</span>
+<span class="cstat-no" title="statement not covered" >_3.numberbox.addClass("numberbox");</span>
+var _5=<span class="cstat-no" title="statement not covered" >_4.parser.call(_2,_4.value);</span>
+var _6=<span class="cstat-no" title="statement not covered" >_4.formatter.call(_2,_5);</span>
+<span class="cstat-no" title="statement not covered" >$(_2).numberbox("initValue",_5).numberbox("setText",_6);</span>
+};
+function <span class="fstat-no" title="function not covered" >_7(_8,_9){</span>
+var _a=<span class="cstat-no" title="statement not covered" >$.data(_8,"numberbox");</span>
+var _b=<span class="cstat-no" title="statement not covered" >_a.options;</span>
+<span class="cstat-no" title="statement not covered" >_b.value=parseFloat(_9);</span>
+var _9=<span class="cstat-no" title="statement not covered" >_b.parser.call(_8,_9);</span>
+var _c=<span class="cstat-no" title="statement not covered" >_b.formatter.call(_8,_9);</span>
+<span class="cstat-no" title="statement not covered" >_b.value=_9;</span>
+<span class="cstat-no" title="statement not covered" >$(_8).textbox("setText",_c).textbox("setValue",_9);</span>
+<span class="cstat-no" title="statement not covered" >_c=_b.formatter.call(_8,$(_8).textbox("getValue"));</span>
+<span class="cstat-no" title="statement not covered" >$(_8).textbox("setText",_c);</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.numberbox=<span class="fstat-no" title="function not covered" >function(</span>_d,_e){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _d=="string"){</span>
+var _f=<span class="cstat-no" title="statement not covered" >$.fn.numberbox.methods[_d];</span>
+<span class="cstat-no" title="statement not covered" >if(_f){</span>
+<span class="cstat-no" title="statement not covered" >return _f(this,_e);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return this.textbox(_d,_e);</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >_d=_d||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _10=<span class="cstat-no" title="statement not covered" >$.data(this,"numberbox");</span>
+<span class="cstat-no" title="statement not covered" >if(_10){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_10.options,_d);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_10=$.data(this,"numberbox",{options:$.extend({},$.fn.numberbox.defaults,$.fn.numberbox.parseOptions(this),_d)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_1(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.numberbox.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _11=<span class="cstat-no" title="statement not covered" >jq.data("textbox")?jq.textbox("options"):{};</span>
+<span class="cstat-no" title="statement not covered" >return $.extend($.data(jq[0],"numberbox").options,{width:_11.width,originalValue:_11.originalValue,disabled:_11.disabled,readonly:_11.readonly});</span>
+},cloneFrom:<span class="fstat-no" title="function not covered" >function(</span>jq,_12){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).textbox("cloneFrom",_12);</span>
+<span class="cstat-no" title="statement not covered" >$.data(this,"numberbox",{options:$.extend(true,{},$(_12).numberbox("options"))});</span>
+<span class="cstat-no" title="statement not covered" >$(this).addClass("numberbox-f");</span>
+});
+},fix:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _13=<span class="cstat-no" title="statement not covered" >$(this).numberbox("options");</span>
+<span class="cstat-no" title="statement not covered" >_13.value=null;</span>
+var _14=<span class="cstat-no" title="statement not covered" >_13.parser.call(this,$(this).numberbox("getText"));</span>
+<span class="cstat-no" title="statement not covered" >$(this).numberbox("setValue",_14);</span>
+});
+},setValue:<span class="fstat-no" title="function not covered" >function(</span>jq,_15){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_7(this,_15);</span>
+});
+},clear:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).textbox("clear");</span>
+<span class="cstat-no" title="statement not covered" >$(this).numberbox("options").value="";</span>
+});
+},reset:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).textbox("reset");</span>
+<span class="cstat-no" title="statement not covered" >$(this).numberbox("setValue",$(this).numberbox("getValue"));</span>
+});
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.numberbox.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_16){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_16);</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.fn.textbox.parseOptions(_16),$.parser.parseOptions(_16,["decimalSeparator","groupSeparator","suffix",{min:"number",max:"number",precision:"number"}]),{prefix:(t.attr("prefix")?t.attr("prefix"):undefined)});</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.numberbox.defaults=$.extend({},$.fn.textbox.defaults,{inputEvents:{keypress:<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+var _17=<span class="cstat-no" title="statement not covered" >e.data.target;</span>
+var _18=<span class="cstat-no" title="statement not covered" >$(_17).numberbox("options");</span>
+<span class="cstat-no" title="statement not covered" >return _18.filter.call(_17,e);</span>
+},blur:<span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >$(e.data.target).numberbox("fix");</span>
+},keydown:<span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >if(e.keyCode==13){</span>
+<span class="cstat-no" title="statement not covered" >$(e.data.target).numberbox("fix");</span>
+}
+}},min:null,max:null,precision:0,decimalSeparator:".",groupSeparator:"",prefix:"",suffix:"",filter:<span class="fstat-no" title="function not covered" >function(</span>e){
+var _19=<span class="cstat-no" title="statement not covered" >$(this).numberbox("options");</span>
+var s=<span class="cstat-no" title="statement not covered" >$(this).numberbox("getText");</span>
+<span class="cstat-no" title="statement not covered" >if(e.metaKey||e.ctrlKey){</span>
+<span class="cstat-no" title="statement not covered" >return true;</span>
+}
+<span class="cstat-no" title="statement not covered" >if($.inArray(String(e.which),["46","8","13","0"])&gt;=0){</span>
+<span class="cstat-no" title="statement not covered" >return true;</span>
+}
+var tmp=<span class="cstat-no" title="statement not covered" >$("&lt;span&gt;&lt;/span&gt;");</span>
+<span class="cstat-no" title="statement not covered" >tmp.html(String.fromCharCode(e.which));</span>
+var c=<span class="cstat-no" title="statement not covered" >tmp.text();</span>
+<span class="cstat-no" title="statement not covered" >tmp.remove();</span>
+<span class="cstat-no" title="statement not covered" >if(!c){</span>
+<span class="cstat-no" title="statement not covered" >return true;</span>
+}
+<span class="cstat-no" title="statement not covered" >if(c=="-"||c==_19.decimalSeparator){</span>
+<span class="cstat-no" title="statement not covered" >return (s.indexOf(c)==-1)?true:false;</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(c==_19.groupSeparator){</span>
+<span class="cstat-no" title="statement not covered" >return true;</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if("0123456789".indexOf(c)&gt;=0){</span>
+<span class="cstat-no" title="statement not covered" >return true;</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return false;</span>
+}
+}
+}
+},formatter:<span class="fstat-no" title="function not covered" >function(</span>_1a){
+<span class="cstat-no" title="statement not covered" >if(!_1a){</span>
+<span class="cstat-no" title="statement not covered" >return _1a;</span>
+}
+<span class="cstat-no" title="statement not covered" >_1a=_1a+"";</span>
+var _1b=<span class="cstat-no" title="statement not covered" >$(this).numberbox("options");</span>
+var s1=<span class="cstat-no" title="statement not covered" >_1a,s2=<span class="cstat-no" title="statement not covered" >"";</span></span>
+var _1c=<span class="cstat-no" title="statement not covered" >_1a.indexOf(".");</span>
+<span class="cstat-no" title="statement not covered" >if(_1c&gt;=0){</span>
+<span class="cstat-no" title="statement not covered" >s1=_1a.substring(0,_1c);</span>
+<span class="cstat-no" title="statement not covered" >s2=_1a.substring(_1c+1,_1a.length);</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_1b.groupSeparator){</span>
+var p=<span class="cstat-no" title="statement not covered" >/(\d+)(\d{3})/;</span>
+<span class="cstat-no" title="statement not covered" >while(p.test(s1)){</span>
+<span class="cstat-no" title="statement not covered" >s1=s1.replace(p,"$1"+_1b.groupSeparator+"$2");</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >if(s2){</span>
+<span class="cstat-no" title="statement not covered" >return _1b.prefix+s1+_1b.decimalSeparator+s2+_1b.suffix;</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return _1b.prefix+s1+_1b.suffix;</span>
+}
+},parser:<span class="fstat-no" title="function not covered" >function(</span>s){
+<span class="cstat-no" title="statement not covered" >s=s+"";</span>
+var _1d=<span class="cstat-no" title="statement not covered" >$(this).numberbox("options");</span>
+<span class="cstat-no" title="statement not covered" >if(_1d.prefix){</span>
+<span class="cstat-no" title="statement not covered" >s=$.trim(s.replace(new RegExp("\\"+$.trim(_1d.prefix),"g"),""));</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_1d.suffix){</span>
+<span class="cstat-no" title="statement not covered" >s=$.trim(s.replace(new RegExp("\\"+$.trim(_1d.suffix),"g"),""));</span>
+}
+<span class="cstat-no" title="statement not covered" >if(parseFloat(s)!=_1d.value){</span>
+<span class="cstat-no" title="statement not covered" >if(_1d.groupSeparator){</span>
+<span class="cstat-no" title="statement not covered" >s=$.trim(s.replace(new RegExp("\\"+_1d.groupSeparator,"g"),""));</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_1d.decimalSeparator){</span>
+<span class="cstat-no" title="statement not covered" >s=$.trim(s.replace(new RegExp("\\"+_1d.decimalSeparator,"g"),"."));</span>
+}
+<span class="cstat-no" title="statement not covered" >s=s.replace(/\s/g,"");</span>
+}
+var val=<span class="cstat-no" title="statement not covered" >parseFloat(s).toFixed(_1d.precision);</span>
+<span class="cstat-no" title="statement not covered" >if(isNaN(val)){</span>
+<span class="cstat-no" title="statement not covered" >val="";</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(typeof (_1d.min)=="number"&amp;&amp;val&lt;_1d.min){</span>
+<span class="cstat-no" title="statement not covered" >val=_1d.min.toFixed(_1d.precision);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(typeof (_1d.max)=="number"&amp;&amp;val&gt;_1d.max){</span>
+<span class="cstat-no" title="statement not covered" >val=_1d.max.toFixed(_1d.precision);</span>
+}
+}
+}
+<span class="cstat-no" title="statement not covered" >return val;</span>
+}});
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

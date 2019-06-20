@@ -1,0 +1,61 @@
+<template>
+  <div class="em_tool">
+    <win :id="win.id" :data="win">
+      <div class="nav">
+      <input type="checkbox" class="nav__cb" id="menu-cb">
+      <div class="nav__content">
+        <ul class="nav__items">
+          <li v-for="item in tool" class="nav__item">
+           <!-- <span class="nav__item-text" prefix-icon="el-icon-users">{{item}}</span>-->
+            <el-tooltip class="item"  placement="top-start">
+              <div slot="content">{{item.value}}</div>
+              <el-button :icon="item.icon"  class="nav__item-text"></el-button>
+            </el-tooltip>
+          </li>
+        </ul>
+      </div>
+      <label class="nav__btn" for="menu-cb"></label>
+      </div>
+    </win>
+  </div>
+</template>
+
+<script>
+  import win from "@/components/win/win"
+  export default {
+    name: "em_bottom",
+    components: {
+      win
+    },
+    data(){
+      return {
+        win: {
+          id: "em_tool",
+          title: "",
+          top: "86%",
+          show: true,
+          width:450,
+          resizable:false,
+          class:"em-tool-window"
+        },
+        input:'',
+        tool:[{value:"监控",icon:"el-icon-monitoring"},{value:"透明",icon:"el-icon-transparent"},
+          {value:"坐标",icon:"el-icon-coordinates"},{value:"数据",icon:"el-icon-data"},
+          {value:"面积",icon:"el-icon-area"},{value:"距离",icon:"el-icon-distance"},
+          {value:"高度",icon:"el-icon-hightly"},{value:"标签",icon:"el-icon-label"}]
+      }
+    },
+    created() {
+      var bodywidth=Number(document.body.clientWidth);
+      var bodyheight=Number(document.body.clientHeight);
+      console.log(bodywidth);
+      this.win.left=bodywidth-450;
+      /*this.win.top=bodyheight-130;*/
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "em_tools";
+</style>
+

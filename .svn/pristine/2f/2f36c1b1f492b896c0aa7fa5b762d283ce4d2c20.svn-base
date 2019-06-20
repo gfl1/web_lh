@@ -1,0 +1,1262 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/src/jquery.draggable.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/src</a> jquery.draggable.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/195</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/104</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/188</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+/**
+ * draggable - EasyUI for jQuery
+ * 
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+	function <span class="fstat-no" title="function not covered" >drag(e){</span>
+		var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+		var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+		var proxy = <span class="cstat-no" title="statement not covered" >state.proxy;</span>
+		
+		var dragData = <span class="cstat-no" title="statement not covered" >e.data;</span>
+		var left = <span class="cstat-no" title="statement not covered" >dragData.startLeft + e.pageX - dragData.startX;</span>
+		var top = <span class="cstat-no" title="statement not covered" >dragData.startTop + e.pageY - dragData.startY;</span>
+		
+<span class="cstat-no" title="statement not covered" >		if (proxy){</span>
+<span class="cstat-no" title="statement not covered" >			if (proxy.parent()[0] == document.body){</span>
+<span class="cstat-no" title="statement not covered" >				if (opts.deltaX != null &amp;&amp; opts.deltaX != undefined){</span>
+<span class="cstat-no" title="statement not covered" >					left = e.pageX + opts.deltaX;</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					left = e.pageX - e.data.offsetWidth;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				if (opts.deltaY != null &amp;&amp; opts.deltaY != undefined){</span>
+<span class="cstat-no" title="statement not covered" >					top = e.pageY + opts.deltaY;</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					top = e.pageY - e.data.offsetHeight;</span>
+				}
+			} else {
+<span class="cstat-no" title="statement not covered" >				if (opts.deltaX != null &amp;&amp; opts.deltaX != undefined){</span>
+<span class="cstat-no" title="statement not covered" >					left += e.data.offsetWidth + opts.deltaX;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				if (opts.deltaY != null &amp;&amp; opts.deltaY != undefined){</span>
+<span class="cstat-no" title="statement not covered" >					top += e.data.offsetHeight + opts.deltaY;</span>
+				}
+			}
+		}
+		
+<span class="cstat-no" title="statement not covered" >		if (e.data.parent != document.body) {</span>
+<span class="cstat-no" title="statement not covered" >			left += $(e.data.parent).scrollLeft();</span>
+<span class="cstat-no" title="statement not covered" >			top += $(e.data.parent).scrollTop();</span>
+		}
+		
+<span class="cstat-no" title="statement not covered" >		if (opts.axis == 'h') {</span>
+<span class="cstat-no" title="statement not covered" >			dragData.left = left;</span>
+		} else <span class="cstat-no" title="statement not covered" >if (opts.axis == 'v') {</span>
+<span class="cstat-no" title="statement not covered" >			dragData.top = top;</span>
+		} else {
+<span class="cstat-no" title="statement not covered" >			dragData.left = left;</span>
+<span class="cstat-no" title="statement not covered" >			dragData.top = top;</span>
+		}
+	}
+	
+	function <span class="fstat-no" title="function not covered" >applyDrag(e){</span>
+		var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+		var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+		var proxy = <span class="cstat-no" title="statement not covered" >state.proxy;</span>
+<span class="cstat-no" title="statement not covered" >		if (!proxy){</span>
+<span class="cstat-no" title="statement not covered" >			proxy = $(e.data.target);</span>
+		}
+<span class="cstat-no" title="statement not covered" >		proxy.css({</span>
+			left:e.data.left,
+			top:e.data.top
+		});
+<span class="cstat-no" title="statement not covered" >		$('body').css('cursor', opts.cursor);</span>
+	}
+	
+	function <span class="fstat-no" title="function not covered" >doDown(e){</span>
+<span class="cstat-no" title="statement not covered" >		if (!$.fn.draggable.isDragging){<span class="cstat-no" title="statement not covered" >return false;}</span></span>
+		
+		var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+		var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+&nbsp;
+		var droppables = <span class="cstat-no" title="statement not covered" >$('.droppable:visible').filter(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >			return e.data.target != this;</span>
+		}).filter(<span class="fstat-no" title="function not covered" >function()</span>{
+			var accept = <span class="cstat-no" title="statement not covered" >$.data(this, 'droppable').options.accept;</span>
+<span class="cstat-no" title="statement not covered" >			if (accept){</span>
+<span class="cstat-no" title="statement not covered" >				return $(accept).filter(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >					return this == e.data.target;</span>
+				}).length &gt; 0;
+			} else {
+<span class="cstat-no" title="statement not covered" >				return true;</span>
+			}
+		});
+<span class="cstat-no" title="statement not covered" >		state.droppables = droppables;</span>
+		
+		var proxy = <span class="cstat-no" title="statement not covered" >state.proxy;</span>
+<span class="cstat-no" title="statement not covered" >		if (!proxy){</span>
+<span class="cstat-no" title="statement not covered" >			if (opts.proxy){</span>
+<span class="cstat-no" title="statement not covered" >				if (opts.proxy == 'clone'){</span>
+<span class="cstat-no" title="statement not covered" >					proxy = $(e.data.target).clone().insertAfter(e.data.target);</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					proxy = opts.proxy.call(e.data.target, e.data.target);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				state.proxy = proxy;</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				proxy = $(e.data.target);</span>
+			}
+		}
+		
+<span class="cstat-no" title="statement not covered" >		proxy.css('position', 'absolute');</span>
+<span class="cstat-no" title="statement not covered" >		drag(e);</span>
+<span class="cstat-no" title="statement not covered" >		applyDrag(e);</span>
+		
+<span class="cstat-no" title="statement not covered" >		opts.onStartDrag.call(e.data.target, e);</span>
+<span class="cstat-no" title="statement not covered" >		return false;</span>
+	}
+	
+	function <span class="fstat-no" title="function not covered" >doMove(e){</span>
+<span class="cstat-no" title="statement not covered" >		if (!$.fn.draggable.isDragging){<span class="cstat-no" title="statement not covered" >return false;}</span></span>
+		
+		var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+<span class="cstat-no" title="statement not covered" >		drag(e);</span>
+<span class="cstat-no" title="statement not covered" >		if (state.options.onDrag.call(e.data.target, e) != false){</span>
+<span class="cstat-no" title="statement not covered" >			applyDrag(e);</span>
+		}
+		
+		var source = <span class="cstat-no" title="statement not covered" >e.data.target;</span>
+<span class="cstat-no" title="statement not covered" >		state.droppables.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+			var dropObj = <span class="cstat-no" title="statement not covered" >$(this);</span>
+<span class="cstat-no" title="statement not covered" >			if (dropObj.droppable('options').disabled){<span class="cstat-no" title="statement not covered" >return;}</span></span>
+			
+			var p2 = <span class="cstat-no" title="statement not covered" >dropObj.offset();</span>
+<span class="cstat-no" title="statement not covered" >			if (e.pageX &gt; p2.left &amp;&amp; e.pageX &lt; p2.left + dropObj.outerWidth()</span>
+					&amp;&amp; e.pageY &gt; p2.top &amp;&amp; e.pageY &lt; p2.top + dropObj.outerHeight()){
+<span class="cstat-no" title="statement not covered" >				if (!this.entered){</span>
+<span class="cstat-no" title="statement not covered" >					$(this).trigger('_dragenter', [source]);</span>
+<span class="cstat-no" title="statement not covered" >					this.entered = true;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				$(this).trigger('_dragover', [source]);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				if (this.entered){</span>
+<span class="cstat-no" title="statement not covered" >					$(this).trigger('_dragleave', [source]);</span>
+<span class="cstat-no" title="statement not covered" >					this.entered = false;</span>
+				}
+			}
+		});
+		
+<span class="cstat-no" title="statement not covered" >		return false;</span>
+	}
+	
+	function <span class="fstat-no" title="function not covered" >doUp(e){</span>
+<span class="cstat-no" title="statement not covered" >		if (!$.fn.draggable.isDragging){</span>
+<span class="cstat-no" title="statement not covered" >			clearDragging();</span>
+<span class="cstat-no" title="statement not covered" >			return false;</span>
+		}
+		
+<span class="cstat-no" title="statement not covered" >		doMove(e);</span>
+		
+		var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+		var proxy = <span class="cstat-no" title="statement not covered" >state.proxy;</span>
+		var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+<span class="cstat-no" title="statement not covered" >		opts.onEndDrag.call(e.data.target, e);</span>
+<span class="cstat-no" title="statement not covered" >		if (opts.revert){</span>
+<span class="cstat-no" title="statement not covered" >			if (checkDrop() == true){</span>
+<span class="cstat-no" title="statement not covered" >				$(e.data.target).css({</span>
+					position:e.data.startPosition,
+					left:e.data.startLeft,
+					top:e.data.startTop
+				});
+			} else {
+<span class="cstat-no" title="statement not covered" >				if (proxy){</span>
+					var left, top;
+<span class="cstat-no" title="statement not covered" >					if (proxy.parent()[0] == document.body){</span>
+<span class="cstat-no" title="statement not covered" >						left = e.data.startX - e.data.offsetWidth;</span>
+<span class="cstat-no" title="statement not covered" >						top = e.data.startY - e.data.offsetHeight;</span>
+					} else {
+<span class="cstat-no" title="statement not covered" >						left = e.data.startLeft;</span>
+<span class="cstat-no" title="statement not covered" >						top = e.data.startTop;</span>
+					}
+<span class="cstat-no" title="statement not covered" >					proxy.animate({</span>
+						left: left,
+						top: top
+					}, <span class="fstat-no" title="function not covered" >function()</span>{
+<span class="cstat-no" title="statement not covered" >						removeProxy();</span>
+					});
+				} else {
+<span class="cstat-no" title="statement not covered" >					$(e.data.target).animate({</span>
+						left:e.data.startLeft,
+						top:e.data.startTop
+					}, <span class="fstat-no" title="function not covered" >function()</span>{
+<span class="cstat-no" title="statement not covered" >						$(e.data.target).css('position', e.data.startPosition);</span>
+					});
+				}
+			}
+		} else {
+<span class="cstat-no" title="statement not covered" >			$(e.data.target).css({</span>
+				position:'absolute',
+				left:e.data.left,
+				top:e.data.top
+			});
+<span class="cstat-no" title="statement not covered" >			checkDrop();</span>
+		}
+		
+<span class="cstat-no" title="statement not covered" >		opts.onStopDrag.call(e.data.target, e);</span>
+		
+<span class="cstat-no" title="statement not covered" >		clearDragging();</span>
+		
+		function <span class="fstat-no" title="function not covered" >removeProxy(){</span>
+<span class="cstat-no" title="statement not covered" >			if (proxy){</span>
+<span class="cstat-no" title="statement not covered" >				proxy.remove();</span>
+			}
+<span class="cstat-no" title="statement not covered" >			state.proxy = null;</span>
+		}
+		
+		function <span class="fstat-no" title="function not covered" >checkDrop(){</span>
+			var dropped = <span class="cstat-no" title="statement not covered" >false;</span>
+<span class="cstat-no" title="statement not covered" >			state.droppables.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+				var dropObj = <span class="cstat-no" title="statement not covered" >$(this);</span>
+<span class="cstat-no" title="statement not covered" >				if (dropObj.droppable('options').disabled){<span class="cstat-no" title="statement not covered" >return;}</span></span>
+				
+				var p2 = <span class="cstat-no" title="statement not covered" >dropObj.offset();</span>
+<span class="cstat-no" title="statement not covered" >				if (e.pageX &gt; p2.left &amp;&amp; e.pageX &lt; p2.left + dropObj.outerWidth()</span>
+						&amp;&amp; e.pageY &gt; p2.top &amp;&amp; e.pageY &lt; p2.top + dropObj.outerHeight()){
+<span class="cstat-no" title="statement not covered" >					if (opts.revert){</span>
+<span class="cstat-no" title="statement not covered" >						$(e.data.target).css({</span>
+							position:e.data.startPosition,
+							left:e.data.startLeft,
+							top:e.data.startTop
+						});
+					}
+<span class="cstat-no" title="statement not covered" >					$(this).triggerHandler('_drop', [e.data.target]);</span>
+<span class="cstat-no" title="statement not covered" >					removeProxy();</span>
+<span class="cstat-no" title="statement not covered" >					dropped = true;</span>
+<span class="cstat-no" title="statement not covered" >					this.entered = false;</span>
+<span class="cstat-no" title="statement not covered" >					return false;</span>
+				}
+			});
+<span class="cstat-no" title="statement not covered" >			if (!dropped &amp;&amp; !opts.revert){</span>
+<span class="cstat-no" title="statement not covered" >				removeProxy();</span>
+			}
+<span class="cstat-no" title="statement not covered" >			return dropped;</span>
+		}
+		
+<span class="cstat-no" title="statement not covered" >		return false;</span>
+	}
+	
+	function <span class="fstat-no" title="function not covered" >clearDragging(){</span>
+<span class="cstat-no" title="statement not covered" >		if ($.fn.draggable.timer){</span>
+<span class="cstat-no" title="statement not covered" >			clearTimeout($.fn.draggable.timer);</span>
+<span class="cstat-no" title="statement not covered" >			$.fn.draggable.timer = undefined;</span>
+		}
+<span class="cstat-no" title="statement not covered" >		$(document).unbind('.draggable');</span>
+<span class="cstat-no" title="statement not covered" >		$.fn.draggable.isDragging = false;</span>
+<span class="cstat-no" title="statement not covered" >		setTimeout(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >			$('body').css('cursor','');</span>
+		},100);
+	}
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.draggable = <span class="fstat-no" title="function not covered" >function(</span>options, param){</span>
+<span class="cstat-no" title="statement not covered" >		if (typeof options == 'string'){</span>
+<span class="cstat-no" title="statement not covered" >			return $.fn.draggable.methods[options](this, param);</span>
+		}
+		
+<span class="cstat-no" title="statement not covered" >		return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+			var opts;
+			var state = <span class="cstat-no" title="statement not covered" >$.data(this, 'draggable');</span>
+<span class="cstat-no" title="statement not covered" >			if (state) {</span>
+<span class="cstat-no" title="statement not covered" >				state.handle.unbind('.draggable');</span>
+<span class="cstat-no" title="statement not covered" >				opts = $.extend(state.options, options);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				opts = $.extend({}, $.fn.draggable.defaults, $.fn.draggable.parseOptions(this), options || {});</span>
+			}
+			var handle = <span class="cstat-no" title="statement not covered" >opts.handle ? (typeof opts.handle=='string' ? $(opts.handle, this) : opts.handle) : $(this);</span>
+			
+<span class="cstat-no" title="statement not covered" >			$.data(this, 'draggable', {</span>
+				options: opts,
+				handle: handle
+			});
+			
+<span class="cstat-no" title="statement not covered" >			if (opts.disabled) {</span>
+<span class="cstat-no" title="statement not covered" >				$(this).css('cursor', '');</span>
+<span class="cstat-no" title="statement not covered" >				return;</span>
+			}
+			
+<span class="cstat-no" title="statement not covered" >			handle.unbind('.draggable').bind('mousemove.draggable', {target:this}, <span class="fstat-no" title="function not covered" >function(</span>e){</span>
+<span class="cstat-no" title="statement not covered" >				if ($.fn.draggable.isDragging){<span class="cstat-no" title="statement not covered" >return}</span></span>
+				var opts = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable').options;</span>
+<span class="cstat-no" title="statement not covered" >				if (checkArea(e)){</span>
+<span class="cstat-no" title="statement not covered" >					$(this).css('cursor', opts.cursor);</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					$(this).css('cursor', '');</span>
+				}
+			}).bind('mouseleave.draggable', {target:this}, <span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >				$(this).css('cursor', '');</span>
+			}).bind('mousedown.draggable', {target:this}, <span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >				if (checkArea(e) == false) <span class="cstat-no" title="statement not covered" >r</span>eturn;</span>
+<span class="cstat-no" title="statement not covered" >				$(this).css('cursor', '');</span>
+&nbsp;
+				var position = <span class="cstat-no" title="statement not covered" >$(e.data.target).position();</span>
+				var offset = <span class="cstat-no" title="statement not covered" >$(e.data.target).offset();</span>
+				var data = <span class="cstat-no" title="statement not covered" >{</span>
+					startPosition: $(e.data.target).css('position'),
+					startLeft: position.left,
+					startTop: position.top,
+					left: position.left,
+					top: position.top,
+					startX: e.pageX,
+					startY: e.pageY,
+					width: $(e.data.target).outerWidth(),
+					height: $(e.data.target).outerHeight(),
+					offsetWidth: (e.pageX - offset.left),
+					offsetHeight: (e.pageY - offset.top),
+					target: e.data.target,
+					parent: $(e.data.target).parent()[0]
+				};
+				
+<span class="cstat-no" title="statement not covered" >				$.extend(e.data, data);</span>
+				var opts = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable').options;</span>
+<span class="cstat-no" title="statement not covered" >				if (opts.onBeforeDrag.call(e.data.target, e) == false) <span class="cstat-no" title="statement not covered" >r</span>eturn;</span>
+				
+<span class="cstat-no" title="statement not covered" >				$(document).bind('mousedown.draggable', e.data, doDown);</span>
+<span class="cstat-no" title="statement not covered" >				$(document).bind('mousemove.draggable', e.data, doMove);</span>
+<span class="cstat-no" title="statement not covered" >				$(document).bind('mouseup.draggable', e.data, doUp);</span>
+				
+<span class="cstat-no" title="statement not covered" >				$.fn.draggable.timer = setTimeout(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >					$.fn.draggable.isDragging = true;</span>
+<span class="cstat-no" title="statement not covered" >					doDown(e);</span>
+				}, opts.delay);
+<span class="cstat-no" title="statement not covered" >				return false;</span>
+			});
+			
+			// check if the handle can be dragged
+			function <span class="fstat-no" title="function not covered" >checkArea(e) {</span>
+				var state = <span class="cstat-no" title="statement not covered" >$.data(e.data.target, 'draggable');</span>
+				var handle = <span class="cstat-no" title="statement not covered" >state.handle;</span>
+				var offset = <span class="cstat-no" title="statement not covered" >$(handle).offset();</span>
+				var width = <span class="cstat-no" title="statement not covered" >$(handle).outerWidth();</span>
+				var height = <span class="cstat-no" title="statement not covered" >$(handle).outerHeight();</span>
+				var t = <span class="cstat-no" title="statement not covered" >e.pageY - offset.top;</span>
+				var r = <span class="cstat-no" title="statement not covered" >offset.left + width - e.pageX;</span>
+				var b = <span class="cstat-no" title="statement not covered" >offset.top + height - e.pageY;</span>
+				var l = <span class="cstat-no" title="statement not covered" >e.pageX - offset.left;</span>
+				
+<span class="cstat-no" title="statement not covered" >				return Math.min(t,r,b,l) &gt; state.options.edge;</span>
+			}
+			
+		});
+	};
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.draggable.methods = {</span>
+		options: <span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return $.data(jq[0], 'draggable').options;</span>
+		},
+		proxy: <span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return $.data(jq[0], 'draggable').proxy;</span>
+		},
+		enable: <span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >				$(this).draggable({disabled:false});</span>
+			});
+		},
+		disable: <span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >				$(this).draggable({disabled:true});</span>
+			});
+		}
+	};
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.draggable.parseOptions = <span class="fstat-no" title="function not covered" >function(</span>target){</span>
+		var t = <span class="cstat-no" title="statement not covered" >$(target);</span>
+<span class="cstat-no" title="statement not covered" >		return $.extend({}, </span>
+				$.parser.parseOptions(target, ['cursor','handle','axis',
+				       {'revert':'boolean','deltaX':'number','deltaY':'number','edge':'number','delay':'number'}]), {
+			disabled: (t.attr('disabled') ? true : undefined)
+		});
+	};
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.draggable.defaults = {</span>
+		proxy:null,	// 'clone' or a function that will create the proxy object, 
+					// the function has the source parameter that indicate the source object dragged.
+		revert:false,
+		cursor:'move',
+		deltaX:null,
+		deltaY:null,
+		handle: null,
+		disabled: false,
+		edge:0,
+		axis:null,	// v or h
+		delay:100,
+		
+		onBeforeDrag: <span class="fstat-no" title="function not covered" >function(</span>e){},
+		onStartDrag: <span class="fstat-no" title="function not covered" >function(</span>e){},
+		onDrag: <span class="fstat-no" title="function not covered" >function(</span>e){},
+		onEndDrag: <span class="fstat-no" title="function not covered" >function(</span>e){},
+		onStopDrag: <span class="fstat-no" title="function not covered" >function(</span>e){}
+	};
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.draggable.isDragging = false;</span>
+	
+})(jQuery);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

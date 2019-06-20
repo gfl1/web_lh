@@ -1,0 +1,101 @@
+<template>
+  <div class="treeForm">
+    <split-pane split="vertical" :min-percent='20' :default-percent='30'>
+      <template slot="paneL">
+        <el-row>
+          <el-col :span="48">
+            <p>权限</p>
+            <el-tree
+              :data="tree_data"
+               node-key="id"
+              default-expand-all
+              @node-click="fn"
+              :expand-on-click-node="false">
+                  <span class="custom-tree-node" slot-scope="{ node, data }">
+                    <span>{{ node.label }}</span>
+                    <span>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => append(node,data)"
+                      >
+                        添加
+                      </el-button>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => remove(node, data)"
+                      >
+                        删除
+                      </el-button>
+                    </span>
+                  </span>
+            </el-tree>
+          </el-col>
+        </el-row>
+      </template>
+      <template slot="paneR">
+        <em-form :props_data="form_data"></em-form>
+      </template>
+    </split-pane>
+  </div>
+</template>
+
+<script>
+  import {db_form_data, db_tree_data} from './data/db'
+  import splitPane from 'vue-splitpane'
+  import emForm from './components/emForm/emForm'
+
+
+    export default {
+    name: "treeForm",
+    data() {
+      return {
+        id: 100,
+        tree_data: JSON.parse(JSON.stringify(db_tree_data)),
+        form_data: JSON.parse(JSON.stringify(db_form_data))
+      }
+    },
+    props: ["props_data"],
+    components: {
+      splitPane,
+      emForm
+    },
+    methods: {
+      init() {
+        console.log(this.data);
+      },
+      append(node,data) {
+        const newChild = {id: this.id++, label: 'test', children: []};
+        console.log({
+          n:node,
+          d:data
+        });
+
+        if (!data.children) {
+          this.$set(data, 'children', []);
+        }
+        data.children.push(newChild);
+      },
+      remove(node, data) {
+        const parent = node.parent;
+        const children = parent.data.children || parent.data;
+        const index = children.findIndex(d => d.id === data.id);
+        children.splice(index, 1);
+      },
+      fn(...obj) {
+        console.log(obj);
+      }
+    },
+    created() {
+      this.init();
+    },
+    mounted() {
+
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "treeForm";
+</style>

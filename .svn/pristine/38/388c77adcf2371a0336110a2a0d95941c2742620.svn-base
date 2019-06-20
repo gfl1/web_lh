@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/locale/easyui-lang-cz.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/locale</a> easyui-lang-cz.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/1</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/27</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >if ($.fn.pagination){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.pagination.defaults.beforePageText = 'Strana';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.pagination.defaults.afterPageText = 'z {pages}';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.pagination.defaults.displayMsg = 'Zobrazuji záznam {from} až {to} z {total}.';</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.fn.datagrid){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.datagrid.defaults.loadMsg = 'Pracuji, čekejte prosím…';</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.fn.treegrid &amp;&amp; $.fn.datagrid){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.treegrid.defaults.loadMsg = $.fn.datagrid.defaults.loadMsg;</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.messager){</span>
+<span class="cstat-no" title="statement not covered" >	$.messager.defaults.ok = 'Ok';</span>
+<span class="cstat-no" title="statement not covered" >	$.messager.defaults.cancel = 'Zrušit';</span>
+}
+<span class="cstat-no" title="statement not covered" >$.map(['validatebox','textbox','passwordbox','filebox','searchbox',</span>
+		'combo','combobox','combogrid','combotree',
+		'datebox','datetimebox','numberbox',
+		'spinner','numberspinner','timespinner','datetimespinner'], <span class="fstat-no" title="function not covered" >function(</span>plugin){
+<span class="cstat-no" title="statement not covered" >	if ($.fn[plugin]){</span>
+<span class="cstat-no" title="statement not covered" >		$.fn[plugin].defaults.missingMessage = 'Toto pole je vyžadováno.';</span>
+	}
+});
+<span class="cstat-no" title="statement not covered" >if ($.fn.validatebox){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.validatebox.defaults.rules.email.message = 'Zadejte, prosím, platnou e-mailovou adresu.';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.validatebox.defaults.rules.url.message = 'Zadejte, prosím, platnou adresu URL.';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.validatebox.defaults.rules.length.message = 'Zadejte, prosím, hodnotu mezi {0} a {1}.';</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.fn.calendar){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.calendar.defaults.weeks = ['N','P','Ú','S','Č','P','S']; //neděle pondělí úterý středa čtvrtek pátek sobota</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.calendar.defaults.months = ['led', 'únr', 'bře', 'dub', 'kvě', 'čvn', 'čvc', 'srp', 'zář', 'říj', 'lis', 'pro']; //leden únor březen duben květen červen červenec srpen září říjen listopad prosinec</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.fn.datebox){</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.datebox.defaults.currentText = 'Dnes';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.datebox.defaults.closeText = 'Zavřít';</span>
+<span class="cstat-no" title="statement not covered" >	$.fn.datebox.defaults.okText = 'Ok';</span>
+}
+<span class="cstat-no" title="statement not covered" >if ($.fn.datetimebox &amp;&amp; $.fn.datebox){</span>
+<span class="cstat-no" title="statement not covered" >	$.extend($.fn.datetimebox.defaults,{</span>
+		currentText: $.fn.datebox.defaults.currentText,
+		closeText: $.fn.datebox.defaults.closeText,
+		okText: $.fn.datebox.defaults.okText
+	});
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

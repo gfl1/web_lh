@@ -1,0 +1,1643 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/src/jquery.propertygrid.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/src</a> jquery.propertygrid.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/303</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/144</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/300</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520
+521
+522
+523
+524
+525
+526
+527</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+/**
+ * propertygrid - EasyUI for jQuery
+ * 
+ * Dependencies:
+ * 	 datagrid
+ * 
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+	var currTarget;
+<span class="cstat-no" title="statement not covered" >	$(document).unbind('.propertygrid').bind('mousedown.propertygrid', <span class="fstat-no" title="function not covered" >function(</span>e){</span>
+		var p = <span class="cstat-no" title="statement not covered" >$(e.target).closest('div.datagrid-view,div.combo-panel');</span>
+<span class="cstat-no" title="statement not covered" >		if (p.length){<span class="cstat-no" title="statement not covered" >return;}</span></span>
+<span class="cstat-no" title="statement not covered" >		stopEditing(currTarget);</span>
+<span class="cstat-no" title="statement not covered" >		currTarget = undefined;</span>
+	});
+	
+	function <span class="fstat-no" title="function not covered" >buildGrid(target){</span>
+		var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'propertygrid');</span>
+		var opts = <span class="cstat-no" title="statement not covered" >$.data(target, 'propertygrid').options;</span>
+<span class="cstat-no" title="statement not covered" >		$(target).datagrid($.extend({}, opts, {</span>
+			cls:'propertygrid',
+			view:(opts.showGroup ? opts.groupView : opts.view),
+			onBeforeEdit:<span class="fstat-no" title="function not covered" >function(</span>index, row){
+<span class="cstat-no" title="statement not covered" >				if (opts.onBeforeEdit.call(target, index, row) == false){<span class="cstat-no" title="statement not covered" >return false;}</span></span>
+				var dg = <span class="cstat-no" title="statement not covered" >$(this);</span>
+				var row = <span class="cstat-no" title="statement not covered" >dg.datagrid('getRows')[index];</span>
+				var col = <span class="cstat-no" title="statement not covered" >dg.datagrid('getColumnOption', 'value');</span>
+<span class="cstat-no" title="statement not covered" >				col.editor = row.editor;</span>
+			},
+			onClickCell:<span class="fstat-no" title="function not covered" >function(</span>index, field, value){
+<span class="cstat-no" title="statement not covered" >				if (currTarget != this){</span>
+<span class="cstat-no" title="statement not covered" >					stopEditing(currTarget);</span>
+<span class="cstat-no" title="statement not covered" >					currTarget = this;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				if (opts.editIndex != index){</span>
+<span class="cstat-no" title="statement not covered" >					stopEditing(currTarget);</span>
+<span class="cstat-no" title="statement not covered" >					$(this).datagrid('beginEdit', index);</span>
+					var ed = <span class="cstat-no" title="statement not covered" >$(this).datagrid('getEditor', {index:index,field:field});</span>
+<span class="cstat-no" title="statement not covered" >					if (!ed){</span>
+<span class="cstat-no" title="statement not covered" >						ed = $(this).datagrid('getEditor', {index:index,field:'value'});</span>
+					}
+<span class="cstat-no" title="statement not covered" >					if (ed){</span>
+						var t = <span class="cstat-no" title="statement not covered" >$(ed.target);</span>
+						var input = <span class="cstat-no" title="statement not covered" >t.data('textbox') ? t.textbox('textbox') : t;</span>
+<span class="cstat-no" title="statement not covered" >						input.focus();</span>
+<span class="cstat-no" title="statement not covered" >						opts.editIndex = index;</span>
+					}
+				}
+<span class="cstat-no" title="statement not covered" >				opts.onClickCell.call(target, index, field, value);</span>
+			},
+			loadFilter:<span class="fstat-no" title="function not covered" >function(</span>data){
+<span class="cstat-no" title="statement not covered" >				stopEditing(this);</span>
+<span class="cstat-no" title="statement not covered" >				return opts.loadFilter.call(this, data);</span>
+			}
+		}));
+	}
+	
+	function <span class="fstat-no" title="function not covered" >stopEditing(target){</span>
+		var t = <span class="cstat-no" title="statement not covered" >$(target);</span>
+<span class="cstat-no" title="statement not covered" >		if (!t.length){<span class="cstat-no" title="statement not covered" >return}</span></span>
+		var opts = <span class="cstat-no" title="statement not covered" >$.data(target, 'propertygrid').options;</span>
+<span class="cstat-no" title="statement not covered" >		opts.finder.getTr(target, null, 'editing').each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+			var index = <span class="cstat-no" title="statement not covered" >parseInt($(this).attr('datagrid-row-index'));</span>
+<span class="cstat-no" title="statement not covered" >			if (t.datagrid('validateRow', index)){</span>
+<span class="cstat-no" title="statement not covered" >				t.datagrid('endEdit', index);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				t.datagrid('cancelEdit', index);</span>
+			}
+		});
+<span class="cstat-no" title="statement not covered" >		opts.editIndex = undefined;</span>
+	}
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.propertygrid = <span class="fstat-no" title="function not covered" >function(</span>options, param){</span>
+<span class="cstat-no" title="statement not covered" >		if (typeof options == 'string'){</span>
+			var method = <span class="cstat-no" title="statement not covered" >$.fn.propertygrid.methods[options];</span>
+<span class="cstat-no" title="statement not covered" >			if (method){</span>
+<span class="cstat-no" title="statement not covered" >				return method(this, param);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				return this.datagrid(options, param);</span>
+			}
+		}
+		
+<span class="cstat-no" title="statement not covered" >		options = options || {};</span>
+<span class="cstat-no" title="statement not covered" >		return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+			var state = <span class="cstat-no" title="statement not covered" >$.data(this, 'propertygrid');</span>
+<span class="cstat-no" title="statement not covered" >			if (state){</span>
+<span class="cstat-no" title="statement not covered" >				$.extend(state.options, options);</span>
+			} else {
+				var opts = <span class="cstat-no" title="statement not covered" >$.extend({}, $.fn.propertygrid.defaults, $.fn.propertygrid.parseOptions(this), options);</span>
+<span class="cstat-no" title="statement not covered" >				opts.frozenColumns = $.extend(true, [], opts.frozenColumns);</span>
+<span class="cstat-no" title="statement not covered" >				opts.columns = $.extend(true, [], opts.columns);</span>
+<span class="cstat-no" title="statement not covered" >				$.data(this, 'propertygrid', {</span>
+					options: opts
+				});
+			}
+<span class="cstat-no" title="statement not covered" >			buildGrid(this);</span>
+		});
+	}
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.propertygrid.methods = {</span>
+		options: <span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return $.data(jq[0], 'propertygrid').options;</span>
+		}
+	};
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.propertygrid.parseOptions = <span class="fstat-no" title="function not covered" >function(</span>target){</span>
+<span class="cstat-no" title="statement not covered" >		return $.extend({}, $.fn.datagrid.parseOptions(target), $.parser.parseOptions(target,[{showGroup:'boolean'}]));</span>
+	};
+	
+	// the group view definition
+	var groupview = <span class="cstat-no" title="statement not covered" >$.extend({}, $.fn.datagrid.defaults.view, {</span>
+		render: <span class="fstat-no" title="function not covered" >function(</span>target, container, frozen){
+			var table = <span class="cstat-no" title="statement not covered" >[];</span>
+			var groups = <span class="cstat-no" title="statement not covered" >this.groups;</span>
+<span class="cstat-no" title="statement not covered" >			for(var i=0; i&lt;groups.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >				table.push(this.renderGroup.call(this, target, i, groups[i], frozen));</span>
+			}
+<span class="cstat-no" title="statement not covered" >			$(container).html(table.join(''));</span>
+		},
+		
+		renderGroup: <span class="fstat-no" title="function not covered" >function(</span>target, groupIndex, group, frozen){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+			var fields = <span class="cstat-no" title="statement not covered" >$(target).datagrid('getColumnFields', frozen);</span>
+			var hasFrozen = <span class="cstat-no" title="statement not covered" >opts.frozenColumns &amp;&amp; opts.frozenColumns.length;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			if (frozen){</span>
+<span class="cstat-no" title="statement not covered" >				if (!(opts.rownumbers || hasFrozen)){</span>
+<span class="cstat-no" title="statement not covered" >					return '';</span>
+				}
+			}
+			
+			var table = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+			var css = <span class="cstat-no" title="statement not covered" >opts.groupStyler.call(target, group.value, group.rows);</span>
+			var cs = <span class="cstat-no" title="statement not covered" >parseCss(css, 'datagrid-group');</span>
+<span class="cstat-no" title="statement not covered" >			table.push('&lt;div group-index=' + groupIndex + ' ' + cs + '&gt;');</span>
+<span class="cstat-no" title="statement not covered" >			if ((frozen &amp;&amp; (opts.rownumbers || opts.frozenColumns.length)) ||</span>
+					(!frozen &amp;&amp; !(opts.rownumbers || opts.frozenColumns.length))){
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;span class="datagrid-group-expander"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;span class="datagrid-row-expander datagrid-row-collapse"&gt;&amp;nbsp;&lt;/span&gt;');</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;/span&gt;');</span>
+			}
+<span class="cstat-no" title="statement not covered" >			if ((frozen &amp;&amp; hasFrozen) || (!frozen)){</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;span class="datagrid-group-title"&gt;');</span>
+<span class="cstat-no" title="statement not covered" >				table.push(opts.groupFormatter.call(target, group.value, group.rows));</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;/span&gt;');</span>
+			}
+<span class="cstat-no" title="statement not covered" >			table.push('&lt;/div&gt;');</span>
+			
+<span class="cstat-no" title="statement not covered" >			table.push('&lt;table class="datagrid-btable" cellspacing="0" cellpadding="0" border="0"&gt;&lt;tbody&gt;');</span>
+			var index = <span class="cstat-no" title="statement not covered" >group.startIndex;</span>
+<span class="cstat-no" title="statement not covered" >			for(var j=0; j&lt;group.rows.length; j++) {</span>
+				var css = <span class="cstat-no" title="statement not covered" >opts.rowStyler ? opts.rowStyler.call(target, index, group.rows[j]) : '';</span>
+				var classValue = <span class="cstat-no" title="statement not covered" >'';</span>
+				var styleValue = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >				if (typeof css == 'string'){</span>
+<span class="cstat-no" title="statement not covered" >					styleValue = css;</span>
+				} else <span class="cstat-no" title="statement not covered" >if (css){</span>
+<span class="cstat-no" title="statement not covered" >					classValue = css['class'] || '';</span>
+<span class="cstat-no" title="statement not covered" >					styleValue = css['style'] || '';</span>
+				}
+				
+				var cls = <span class="cstat-no" title="statement not covered" >'class="datagrid-row ' + (index % 2 &amp;&amp; opts.striped ? 'datagrid-row-alt ' : ' ') + classValue + '"';</span>
+				var style = <span class="cstat-no" title="statement not covered" >styleValue ? 'style="' + styleValue + '"' : '';</span>
+				var rowId = <span class="cstat-no" title="statement not covered" >state.rowIdPrefix + '-' + (frozen?1:2) + '-' + index;</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;tr id="' + rowId + '" datagrid-row-index="' + index + '" ' + cls + ' ' + style + '&gt;');</span>
+<span class="cstat-no" title="statement not covered" >				table.push(this.renderRow.call(this, target, fields, frozen, index, group.rows[j]));</span>
+<span class="cstat-no" title="statement not covered" >				table.push('&lt;/tr&gt;');</span>
+<span class="cstat-no" title="statement not covered" >				index++;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			table.push('&lt;/tbody&gt;&lt;/table&gt;');</span>
+<span class="cstat-no" title="statement not covered" >			return table.join('');</span>
+&nbsp;
+			function <span class="fstat-no" title="function not covered" >parseCss(css, cls){</span>
+				var classValue = <span class="cstat-no" title="statement not covered" >'';</span>
+				var styleValue = <span class="cstat-no" title="statement not covered" >'';</span>
+<span class="cstat-no" title="statement not covered" >				if (typeof css == 'string'){</span>
+<span class="cstat-no" title="statement not covered" >					styleValue = css;</span>
+				} else <span class="cstat-no" title="statement not covered" >if (css){</span>
+<span class="cstat-no" title="statement not covered" >					classValue = css['class'] || '';</span>
+<span class="cstat-no" title="statement not covered" >					styleValue = css['style'] || '';</span>
+				}
+<span class="cstat-no" title="statement not covered" >				return 'class="' + cls + (classValue ? ' '+classValue : '') + '" ' +</span>
+						'style="' + styleValue + '"';
+			}
+		},
+		
+		bindEvents: <span class="fstat-no" title="function not covered" >function(</span>target){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+			var body = <span class="cstat-no" title="statement not covered" >dc.body1.add(dc.body2);</span>
+			var clickHandler = <span class="cstat-no" title="statement not covered" >($.data(body[0],'events')||$._data(body[0],'events')).click[0].handler;</span>
+<span class="cstat-no" title="statement not covered" >			body.unbind('click').bind('click', <span class="fstat-no" title="function not covered" >function(</span>e){</span>
+				var tt = <span class="cstat-no" title="statement not covered" >$(e.target);</span>
+				var expander = <span class="cstat-no" title="statement not covered" >tt.closest('span.datagrid-row-expander');</span>
+<span class="cstat-no" title="statement not covered" >				if (expander.length){</span>
+					var gindex = <span class="cstat-no" title="statement not covered" >expander.closest('div.datagrid-group').attr('group-index');</span>
+<span class="cstat-no" title="statement not covered" >					if (expander.hasClass('datagrid-row-collapse')){</span>
+<span class="cstat-no" title="statement not covered" >						$(target).datagrid('collapseGroup', gindex);</span>
+					} else {
+<span class="cstat-no" title="statement not covered" >						$(target).datagrid('expandGroup', gindex);</span>
+					}
+				} else {
+<span class="cstat-no" title="statement not covered" >					clickHandler(e);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				e.stopPropagation();</span>
+			});
+		},
+		
+		onBeforeRender: <span class="fstat-no" title="function not covered" >function(</span>target, rows){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+			
+<span class="cstat-no" title="statement not covered" >			initCss();</span>
+			
+			var groups = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >			for(var i=0; i&lt;rows.length; i++){</span>
+				var row = <span class="cstat-no" title="statement not covered" >rows[i];</span>
+				var group = <span class="cstat-no" title="statement not covered" >getGroup(row[opts.groupField]);</span>
+<span class="cstat-no" title="statement not covered" >				if (!group){</span>
+<span class="cstat-no" title="statement not covered" >					group = {</span>
+						value: row[opts.groupField],
+						rows: [row]
+					};
+<span class="cstat-no" title="statement not covered" >					groups.push(group);</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					group.rows.push(row);</span>
+				}
+			}
+			
+			var index = <span class="cstat-no" title="statement not covered" >0;</span>
+			var newRows = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >			for(var i=0; i&lt;groups.length; i++){</span>
+				var group = <span class="cstat-no" title="statement not covered" >groups[i];</span>
+<span class="cstat-no" title="statement not covered" >				group.startIndex = index;</span>
+<span class="cstat-no" title="statement not covered" >				index += group.rows.length;</span>
+<span class="cstat-no" title="statement not covered" >				newRows = newRows.concat(group.rows);</span>
+			}
+			
+<span class="cstat-no" title="statement not covered" >			state.data.rows = newRows;</span>
+<span class="cstat-no" title="statement not covered" >			this.groups = groups;</span>
+			
+			var that = <span class="cstat-no" title="statement not covered" >this;</span>
+<span class="cstat-no" title="statement not covered" >			setTimeout(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >				that.bindEvents(target);</span>
+			},0);
+			
+			function <span class="fstat-no" title="function not covered" >getGroup(value){</span>
+<span class="cstat-no" title="statement not covered" >				for(var i=0; i&lt;groups.length; i++){</span>
+					var group = <span class="cstat-no" title="statement not covered" >groups[i];</span>
+<span class="cstat-no" title="statement not covered" >					if (group.value == value){</span>
+<span class="cstat-no" title="statement not covered" >						return group;</span>
+					}
+				}
+<span class="cstat-no" title="statement not covered" >				return null;</span>
+			}
+			function <span class="fstat-no" title="function not covered" >initCss(){</span>
+<span class="cstat-no" title="statement not covered" >				if (!$('#datagrid-group-style').length){</span>
+<span class="cstat-no" title="statement not covered" >					$('head').append(</span>
+						'&lt;css id="datagrid-group-css"&gt;' +
+						'.datagrid-group{height:'+opts.groupHeight+'px;overflow:hidden;font-weight:bold;border-bottom:1px solid #ccc;white-space:nowrap;word-break:normal;}' +
+						'.datagrid-group-title,.datagrid-group-expander{display:inline-block;vertical-align:bottom;height:100%;line-height:'+opts.groupHeight+'px;padding:0 4px;}' +
+						'.datagrid-group-title{position:relative;}' +
+						'.datagrid-group-expander{width:'+opts.expanderWidth+'px;text-align:center;padding:0}' +
+						'.datagrid-row-expander{margin:'+Math.floor((opts.groupHeight-16)/2)+'px 0;display:inline-block;width:16px;height:16px;cursor:pointer}' +
+						'&lt;/style&gt;'
+					);
+				}
+			}
+		},
+		onAfterRender: <span class="fstat-no" title="function not covered" >function(</span>target){
+<span class="cstat-no" title="statement not covered" >			$.fn.datagrid.defaults.view.onAfterRender.call(this, target);</span>
+&nbsp;
+			var view = <span class="cstat-no" title="statement not covered" >this;</span>
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+<span class="cstat-no" title="statement not covered" >			if (!state.onResizeColumn){</span>
+<span class="cstat-no" title="statement not covered" >				state.onResizeColumn = opts.onResizeColumn;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			if (!state.onResize){</span>
+<span class="cstat-no" title="statement not covered" >				state.onResize = opts.onResize;</span>
+			}
+<span class="cstat-no" title="statement not covered" >			opts.onResizeColumn = <span class="fstat-no" title="function not covered" >function(</span>field, width){</span>
+<span class="cstat-no" title="statement not covered" >				view.resizeGroup(target);</span>
+<span class="cstat-no" title="statement not covered" >				state.onResizeColumn.call(target, field, width);</span>
+			}
+<span class="cstat-no" title="statement not covered" >			opts.onResize = <span class="fstat-no" title="function not covered" >function(</span>width, height){</span>
+<span class="cstat-no" title="statement not covered" >				view.resizeGroup(target);		</span>
+<span class="cstat-no" title="statement not covered" >				state.onResize.call($(target).datagrid('getPanel')[0], width, height);</span>
+			}
+<span class="cstat-no" title="statement not covered" >			view.resizeGroup(target);</span>
+		}
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	$.extend($.fn.datagrid.methods, {</span>
+		groups:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >			return jq.datagrid('options').view.groups;</span>
+		},
+	    expandGroup:<span class="fstat-no" title="function not covered" >function(</span>jq, groupIndex){
+<span class="cstat-no" title="statement not covered" >	        return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+	        	var opts = <span class="cstat-no" title="statement not covered" >$(this).datagrid('options');</span>
+	            var view = <span class="cstat-no" title="statement not covered" >$.data(this, 'datagrid').dc.view;</span>
+	            var group = <span class="cstat-no" title="statement not covered" >view.find(groupIndex!=undefined ? 'div.datagrid-group[group-index="'+groupIndex+'"]' : 'div.datagrid-group');</span>
+	            var expander = <span class="cstat-no" title="statement not covered" >group.find('span.datagrid-row-expander');</span>
+<span class="cstat-no" title="statement not covered" >	            if (expander.hasClass('datagrid-row-expand')){</span>
+<span class="cstat-no" title="statement not covered" >	                expander.removeClass('datagrid-row-expand').addClass('datagrid-row-collapse');</span>
+<span class="cstat-no" title="statement not covered" >	                group.next('table').show();</span>
+	            }
+<span class="cstat-no" title="statement not covered" >	            $(this).datagrid('fixRowHeight');</span>
+<span class="cstat-no" title="statement not covered" >	            if (opts.onExpandGroup){</span>
+<span class="cstat-no" title="statement not covered" >	            	opts.onExpandGroup.call(this, groupIndex);</span>
+	            }
+	        });
+	    },
+	    collapseGroup:<span class="fstat-no" title="function not covered" >function(</span>jq, groupIndex){
+<span class="cstat-no" title="statement not covered" >	        return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+	        	var opts = <span class="cstat-no" title="statement not covered" >$(this).datagrid('options');</span>
+	            var view = <span class="cstat-no" title="statement not covered" >$.data(this, 'datagrid').dc.view;</span>
+	            var group = <span class="cstat-no" title="statement not covered" >view.find(groupIndex!=undefined ? 'div.datagrid-group[group-index="'+groupIndex+'"]' : 'div.datagrid-group');</span>
+	            var expander = <span class="cstat-no" title="statement not covered" >group.find('span.datagrid-row-expander');</span>
+<span class="cstat-no" title="statement not covered" >	            if (expander.hasClass('datagrid-row-collapse')){</span>
+<span class="cstat-no" title="statement not covered" >	                expander.removeClass('datagrid-row-collapse').addClass('datagrid-row-expand');</span>
+<span class="cstat-no" title="statement not covered" >	                group.next('table').hide();</span>
+	            }
+<span class="cstat-no" title="statement not covered" >	            $(this).datagrid('fixRowHeight');</span>
+<span class="cstat-no" title="statement not covered" >	            if (opts.onCollapseGroup){</span>
+<span class="cstat-no" title="statement not covered" >	            	opts.onCollapseGroup.call(this, groupIndex);</span>
+	            }
+	        });
+	    },
+	    scrollToGroup: <span class="fstat-no" title="function not covered" >function(</span>jq, groupIndex){
+<span class="cstat-no" title="statement not covered" >	    	return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+				var state = <span class="cstat-no" title="statement not covered" >$.data(this, 'datagrid');</span>
+				var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+				var grow = <span class="cstat-no" title="statement not covered" >dc.body2.children('div.datagrid-group[group-index="'+groupIndex+'"]');</span>
+<span class="cstat-no" title="statement not covered" >				if (grow.length){</span>
+					var groupHeight = <span class="cstat-no" title="statement not covered" >grow.outerHeight();</span>
+					var headerHeight = <span class="cstat-no" title="statement not covered" >dc.view2.children('div.datagrid-header')._outerHeight();</span>
+					var frozenHeight = <span class="cstat-no" title="statement not covered" >dc.body2.outerHeight(true) - dc.body2.outerHeight();</span>
+					var top = <span class="cstat-no" title="statement not covered" >grow.position().top - headerHeight - frozenHeight;</span>
+<span class="cstat-no" title="statement not covered" >					if (top &lt; 0){</span>
+<span class="cstat-no" title="statement not covered" >						dc.body2.scrollTop(dc.body2.scrollTop() + top);</span>
+					} else <span class="cstat-no" title="statement not covered" >if (top + groupHeight &gt; dc.body2.height() - 18){</span>
+<span class="cstat-no" title="statement not covered" >						dc.body2.scrollTop(dc.body2.scrollTop() + top + groupHeight - dc.body2.height() + 18);</span>
+					}
+				}
+	    	});
+	    }
+	});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >	$.extend(groupview, {</span>
+		refreshGroupTitle: <span class="fstat-no" title="function not covered" >function(</span>target, groupIndex){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+			var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+			var group = <span class="cstat-no" title="statement not covered" >this.groups[groupIndex];</span>
+			var span = <span class="cstat-no" title="statement not covered" >dc.body1.add(dc.body2).children('div.datagrid-group[group-index=' + groupIndex + ']').find('span.datagrid-group-title');</span>
+<span class="cstat-no" title="statement not covered" >			span.html(opts.groupFormatter.call(target, group.value, group.rows));</span>
+		},
+		resizeGroup: <span class="fstat-no" title="function not covered" >function(</span>target, groupIndex){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+			var ht = <span class="cstat-no" title="statement not covered" >dc.header2.find('table');</span>
+			var fr = <span class="cstat-no" title="statement not covered" >ht.find('tr.datagrid-filter-row').hide();</span>
+			// var ww = ht.width();
+			var ww = <span class="cstat-no" title="statement not covered" >dc.body2.children('table.datagrid-btable:first').width();</span>
+<span class="cstat-no" title="statement not covered" >			if (groupIndex == undefined){</span>
+				var groupHeader = <span class="cstat-no" title="statement not covered" >dc.body2.children('div.datagrid-group');</span>
+			} else {
+				var groupHeader = <span class="cstat-no" title="statement not covered" >dc.body2.children('div.datagrid-group[group-index=' + groupIndex + ']');</span>
+			}
+<span class="cstat-no" title="statement not covered" >			groupHeader._outerWidth(ww);</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+<span class="cstat-no" title="statement not covered" >			if (opts.frozenColumns &amp;&amp; opts.frozenColumns.length){</span>
+				var width = <span class="cstat-no" title="statement not covered" >dc.view1.width() - opts.expanderWidth;</span>
+				var isRtl = <span class="cstat-no" title="statement not covered" >dc.view1.css('direction').toLowerCase()=='rtl';</span>
+<span class="cstat-no" title="statement not covered" >				groupHeader.find('.datagrid-group-title').css(isRtl?'right':'left', -width+'px');</span>
+			}
+<span class="cstat-no" title="statement not covered" >			if (fr.length){</span>
+<span class="cstat-no" title="statement not covered" >				if (opts.showFilterBar){</span>
+<span class="cstat-no" title="statement not covered" >					fr.show();</span>
+				}
+			}
+			// fr.show();
+		},
+&nbsp;
+		insertRow: <span class="fstat-no" title="function not covered" >function(</span>target, index, row){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+			var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+			var group = <span class="cstat-no" title="statement not covered" >null;</span>
+			var groupIndex;
+			
+<span class="cstat-no" title="statement not covered" >			if (!state.data.rows.length){</span>
+<span class="cstat-no" title="statement not covered" >				$(target).datagrid('loadData', [row]);</span>
+<span class="cstat-no" title="statement not covered" >				return;</span>
+			}
+			
+<span class="cstat-no" title="statement not covered" >			for(var i=0; i&lt;this.groups.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >				if (this.groups[i].value == row[opts.groupField]){</span>
+<span class="cstat-no" title="statement not covered" >					group = this.groups[i];</span>
+<span class="cstat-no" title="statement not covered" >					groupIndex = i;</span>
+<span class="cstat-no" title="statement not covered" >					break;</span>
+				}
+			}
+<span class="cstat-no" title="statement not covered" >			if (group){</span>
+<span class="cstat-no" title="statement not covered" >				if (index == undefined || index == null){</span>
+<span class="cstat-no" title="statement not covered" >					index = state.data.rows.length;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				if (index &lt; group.startIndex){</span>
+<span class="cstat-no" title="statement not covered" >					index = group.startIndex;</span>
+				} else <span class="cstat-no" title="statement not covered" >if (index &gt; group.startIndex + group.rows.length){</span>
+<span class="cstat-no" title="statement not covered" >					index = group.startIndex + group.rows.length;</span>
+				}
+<span class="cstat-no" title="statement not covered" >				$.fn.datagrid.defaults.view.insertRow.call(this, target, index, row);</span>
+				
+<span class="cstat-no" title="statement not covered" >				if (index &gt;= group.startIndex + group.rows.length){</span>
+<span class="cstat-no" title="statement not covered" >					_moveTr(index, true);</span>
+<span class="cstat-no" title="statement not covered" >					_moveTr(index, false);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				group.rows.splice(index - group.startIndex, 0, row);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				group = {</span>
+					value: row[opts.groupField],
+					rows: [row],
+					startIndex: state.data.rows.length
+				}
+<span class="cstat-no" title="statement not covered" >				groupIndex = this.groups.length;</span>
+<span class="cstat-no" title="statement not covered" >				dc.body1.append(this.renderGroup.call(this, target, groupIndex, group, true));</span>
+<span class="cstat-no" title="statement not covered" >				dc.body2.append(this.renderGroup.call(this, target, groupIndex, group, false));</span>
+<span class="cstat-no" title="statement not covered" >				this.groups.push(group);</span>
+<span class="cstat-no" title="statement not covered" >				state.data.rows.push(row);</span>
+			}
+&nbsp;
+<span class="cstat-no" title="statement not covered" >			this.setGroupIndex(target);</span>
+<span class="cstat-no" title="statement not covered" >			this.refreshGroupTitle(target, groupIndex);</span>
+<span class="cstat-no" title="statement not covered" >			this.resizeGroup(target);</span>
+			
+			function <span class="fstat-no" title="function not covered" >_moveTr(index,frozen){</span>
+				var serno = <span class="cstat-no" title="statement not covered" >frozen?1:2;</span>
+				var prevTr = <span class="cstat-no" title="statement not covered" >opts.finder.getTr(target, index-1, 'body', serno);</span>
+				var tr = <span class="cstat-no" title="statement not covered" >opts.finder.getTr(target, index, 'body', serno);</span>
+<span class="cstat-no" title="statement not covered" >				tr.insertAfter(prevTr);</span>
+			}
+		},
+		
+		updateRow: <span class="fstat-no" title="function not covered" >function(</span>target, index, row){
+			var opts = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid').options;</span>
+<span class="cstat-no" title="statement not covered" >			$.fn.datagrid.defaults.view.updateRow.call(this, target, index, row);</span>
+			var tb = <span class="cstat-no" title="statement not covered" >opts.finder.getTr(target, index, 'body', 2).closest('table.datagrid-btable');</span>
+			var groupIndex = <span class="cstat-no" title="statement not covered" >parseInt(tb.prev().attr('group-index'));</span>
+<span class="cstat-no" title="statement not covered" >			this.refreshGroupTitle(target, groupIndex);</span>
+		},
+		
+		deleteRow: <span class="fstat-no" title="function not covered" >function(</span>target, index){
+			var state = <span class="cstat-no" title="statement not covered" >$.data(target, 'datagrid');</span>
+			var opts = <span class="cstat-no" title="statement not covered" >state.options;</span>
+			var dc = <span class="cstat-no" title="statement not covered" >state.dc;</span>
+			var body = <span class="cstat-no" title="statement not covered" >dc.body1.add(dc.body2);</span>
+			
+			var tb = <span class="cstat-no" title="statement not covered" >opts.finder.getTr(target, index, 'body', 2).closest('table.datagrid-btable');</span>
+			var groupIndex = <span class="cstat-no" title="statement not covered" >parseInt(tb.prev().attr('group-index'));</span>
+			
+<span class="cstat-no" title="statement not covered" >			$.fn.datagrid.defaults.view.deleteRow.call(this, target, index);</span>
+			
+			var group = <span class="cstat-no" title="statement not covered" >this.groups[groupIndex];</span>
+<span class="cstat-no" title="statement not covered" >			if (group.rows.length &gt; 1){</span>
+<span class="cstat-no" title="statement not covered" >				group.rows.splice(index-group.startIndex, 1);</span>
+<span class="cstat-no" title="statement not covered" >				this.refreshGroupTitle(target, groupIndex);</span>
+			} else {
+<span class="cstat-no" title="statement not covered" >				body.children('div.datagrid-group[group-index='+groupIndex+']').remove();</span>
+<span class="cstat-no" title="statement not covered" >				for(var i=groupIndex+1; i&lt;this.groups.length; i++){</span>
+<span class="cstat-no" title="statement not covered" >					body.children('div.datagrid-group[group-index='+i+']').attr('group-index', i-1);</span>
+				}
+<span class="cstat-no" title="statement not covered" >				this.groups.splice(groupIndex, 1);</span>
+			}
+			
+<span class="cstat-no" title="statement not covered" >			this.setGroupIndex(target);</span>
+		},
+&nbsp;
+		setGroupIndex: <span class="fstat-no" title="function not covered" >function(</span>target){
+			var index = <span class="cstat-no" title="statement not covered" >0;</span>
+<span class="cstat-no" title="statement not covered" >			for(var i=0; i&lt;this.groups.length; i++){</span>
+				var group = <span class="cstat-no" title="statement not covered" >this.groups[i];</span>
+<span class="cstat-no" title="statement not covered" >				group.startIndex = index;</span>
+<span class="cstat-no" title="statement not covered" >				index += group.rows.length;</span>
+			}
+		}
+	});
+&nbsp;
+&nbsp;
+&nbsp;
+	// end of group view definition
+	
+<span class="cstat-no" title="statement not covered" >	$.fn.propertygrid.defaults = $.extend({}, $.fn.datagrid.defaults, {</span>
+		groupHeight:28,
+		expanderWidth:20,
+		singleSelect:true,
+		remoteSort:false,
+		fitColumns:true,
+		loadMsg:'',
+		frozenColumns:[[
+		    {field:'f',width:20,resizable:false}
+		]],
+		columns:[[
+		    {field:'name',title:'Name',width:100,sortable:true},
+		    {field:'value',title:'Value',width:100,resizable:false}
+		]],
+		
+		showGroup:false,
+		groupView:groupview,
+		groupField:'group',
+		groupStyler: <span class="fstat-no" title="function not covered" >function(</span>value,rows){<span class="cstat-no" title="statement not covered" >return ''},</span>
+		groupFormatter:<span class="fstat-no" title="function not covered" >function(</span>fvalue,rows){<span class="cstat-no" title="statement not covered" >return fvalue}</span>
+	});
+})(jQuery);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

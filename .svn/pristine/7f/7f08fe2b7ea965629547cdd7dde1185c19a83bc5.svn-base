@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for views/login/Login.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">views/login</a> Login.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/4</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/16</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="login_container" id="login_container" ref="loginPage"&gt;
+   &lt;!--&lt;video autoplay="autoplay" loop="900"&gt;
+      您的浏览器不支持 video 标签。
+      &lt;source src="../../assets/image/login_bg1.mp4" type="video/mp4"&gt;
+    &lt;/video&gt;--&gt;
+    &lt;el-col&gt;
+      &lt;div class="login_title"&gt;
+        &lt;p&gt;智慧龙华可视化管理平台&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="login_content"&gt;
+        &lt;el-row&gt;
+          &lt;el-form ref="form" :model="form" label-width="80px" class="login_form"&gt;
+            &lt;el-form-item label="用户：" class="login_label"&gt;
+              &lt;el-col :span="44"&gt;
+                &lt;el-input v-model="form.name" type="text" placeholder="请输入用户名" ref="input1" prefix-icon="el-icon-users"&gt;&lt;/el-input&gt;
+              &lt;/el-col&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item label="密码：" class="login_label"&gt;
+              &lt;el-col :span="44"&gt;
+                &lt;el-input v-model="form.pwd" type="password" placeholder="请输入密码" ref="input2" prefix-icon="el-icon-pwd"
+                          @keyup.enter="enterSearchPwd"&gt;&lt;/el-input&gt;
+              &lt;/el-col&gt;
+            &lt;/el-form-item&gt;
+            &lt;el-form-item&gt;
+              &lt;el-row class="forgetPwd"&gt;&lt;a&gt;忘记密码？&lt;/a&gt;&lt;/el-row&gt;
+              &lt;el-row&gt;
+                &lt;el-button class="reset_btn em-btn-bubbles" @click="reset"&gt;重置&lt;/el-button&gt;
+                &lt;el-button class="login_btn em-btn-bubbles" @click="loginFn"&gt;登录&lt;/el-button&gt;
+              &lt;/el-row&gt;
+            &lt;/el-form-item&gt;
+          &lt;/el-form&gt;
+        &lt;/el-row&gt;
+      &lt;/div&gt;
+    &lt;/el-col&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+  export default{
+    name: "Login",
+<span class="fstat-no" title="function not covered" >    data(){</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        form: {
+          name: '',
+          pwd: ''
+        }
+      }
+    },
+<span class="fstat-no" title="function not covered" >    created() {</span>
+<span class="cstat-no" title="statement not covered" >      var lett = this;</span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >      document.onkeydown = function(e) {</span></span>
+<span class="cstat-no" title="statement not covered" >        var key = window.event.keyCode;</span>
+<span class="cstat-no" title="statement not covered" >        if (key == 13) {</span>
+<span class="cstat-no" title="statement not covered" >          lett.enterSearchPwd();</span>
+        }
+       }
+    },
+    methods: {
+<span class="fstat-no" title="function not covered" >      reset(){</span>
+<span class="cstat-no" title="statement not covered" >        this.$refs.input1.value = ""</span>
+<span class="cstat-no" title="statement not covered" >        this.$refs.input2.value = ""</span>
+      },
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >      loginFn() {</span></span>
+<span class="cstat-no" title="statement not covered" >        let _username=this.$refs.input1.value;//获取用户名</span>
+<span class="cstat-no" title="statement not covered" >        let _password=this.$refs.input2.value;//获取密码</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >        this.$store.dispatch("user/LoginByUsername", {</span></span>
+          username: _username,
+          password: _password
+        }).then((response) =&gt; {
+<span class="cstat-no" title="statement not covered" >          console.log(response);</span>
+<span class="cstat-no" title="statement not covered" >          if (response.statusCode === 200) {</span>
+<span class="cstat-no" title="statement not covered" >            this.$router.push("/home");</span>
+          }
+          // else{
+          //   this.$router.push("/login_erro");
+          // }
+&nbsp;
+        });
+      },
+<span class="fstat-no" title="function not covered" >      enterSearchPwd(){</span>
+<span class="cstat-no" title="statement not covered" >        this.loginFn();</span>
+      }
+    }
+  }
+&lt;/script&gt;
+&lt;style  lang="scss" scoped&gt;
+  @import "_login";
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

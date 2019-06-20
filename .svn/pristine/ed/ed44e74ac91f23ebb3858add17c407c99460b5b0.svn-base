@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.filebox.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.filebox.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/62</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/62</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+var _1=<span class="cstat-no" title="statement not covered" >0;</span>
+function <span class="fstat-no" title="function not covered" >_2(_3){</span>
+var _4=<span class="cstat-no" title="statement not covered" >$.data(_3,"filebox");</span>
+var _5=<span class="cstat-no" title="statement not covered" >_4.options;</span>
+<span class="cstat-no" title="statement not covered" >_5.fileboxId="filebox_file_id_"+(++_1);</span>
+<span class="cstat-no" title="statement not covered" >$(_3).addClass("filebox-f").textbox(_5);</span>
+<span class="cstat-no" title="statement not covered" >$(_3).textbox("textbox").attr("readonly","readonly");</span>
+<span class="cstat-no" title="statement not covered" >_4.filebox=$(_3).next().addClass("filebox");</span>
+var _6=<span class="cstat-no" title="statement not covered" >_7(_3);</span>
+var _8=<span class="cstat-no" title="statement not covered" >$(_3).filebox("button");</span>
+<span class="cstat-no" title="statement not covered" >if(_8.length){</span>
+<span class="cstat-no" title="statement not covered" >$("&lt;label class=\"filebox-label\" for=\""+_5.fileboxId+"\"&gt;&lt;/label&gt;").appendTo(_8);</span>
+<span class="cstat-no" title="statement not covered" >if(_8.linkbutton("options").disabled){</span>
+<span class="cstat-no" title="statement not covered" >_6._propAttr("disabled",true);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_6._propAttr("disabled",false);</span>
+}
+}
+};
+function <span class="fstat-no" title="function not covered" >_7(_9){</span>
+var _a=<span class="cstat-no" title="statement not covered" >$.data(_9,"filebox");</span>
+var _b=<span class="cstat-no" title="statement not covered" >_a.options;</span>
+<span class="cstat-no" title="statement not covered" >_a.filebox.find(".textbox-value").remove();</span>
+<span class="cstat-no" title="statement not covered" >_b.oldValue="";</span>
+var _c=<span class="cstat-no" title="statement not covered" >$("&lt;input type=\"file\" class=\"textbox-value\"&gt;").appendTo(_a.filebox);</span>
+<span class="cstat-no" title="statement not covered" >_c.attr("id",_b.fileboxId).attr("name",$(_9).attr("textboxName")||"");</span>
+<span class="cstat-no" title="statement not covered" >_c.attr("accept",_b.accept);</span>
+<span class="cstat-no" title="statement not covered" >_c.attr("capture",_b.capture);</span>
+<span class="cstat-no" title="statement not covered" >if(_b.multiple){</span>
+<span class="cstat-no" title="statement not covered" >_c.attr("multiple","multiple");</span>
+}
+<span class="cstat-no" title="statement not covered" >_c.change(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _d=<span class="cstat-no" title="statement not covered" >this.value;</span>
+<span class="cstat-no" title="statement not covered" >if(this.files){</span>
+<span class="cstat-no" title="statement not covered" >_d=$.map(this.files,<span class="fstat-no" title="function not covered" >function(</span>_e){</span>
+<span class="cstat-no" title="statement not covered" >return _e.name;</span>
+}).join(_b.separator);
+}
+<span class="cstat-no" title="statement not covered" >$(_9).filebox("setText",_d);</span>
+<span class="cstat-no" title="statement not covered" >_b.onChange.call(_9,_d,_b.oldValue);</span>
+<span class="cstat-no" title="statement not covered" >_b.oldValue=_d;</span>
+});
+<span class="cstat-no" title="statement not covered" >return _c;</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.filebox=<span class="fstat-no" title="function not covered" >function(</span>_f,_10){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _f=="string"){</span>
+var _11=<span class="cstat-no" title="statement not covered" >$.fn.filebox.methods[_f];</span>
+<span class="cstat-no" title="statement not covered" >if(_11){</span>
+<span class="cstat-no" title="statement not covered" >return _11(this,_10);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return this.textbox(_f,_10);</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >_f=_f||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _12=<span class="cstat-no" title="statement not covered" >$.data(this,"filebox");</span>
+<span class="cstat-no" title="statement not covered" >if(_12){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_12.options,_f);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >$.data(this,"filebox",{options:$.extend({},$.fn.filebox.defaults,$.fn.filebox.parseOptions(this),_f)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_2(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.filebox.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _13=<span class="cstat-no" title="statement not covered" >jq.textbox("options");</span>
+<span class="cstat-no" title="statement not covered" >return $.extend($.data(jq[0],"filebox").options,{width:_13.width,value:_13.value,originalValue:_13.originalValue,disabled:_13.disabled,readonly:_13.readonly});</span>
+},clear:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).textbox("clear");</span>
+<span class="cstat-no" title="statement not covered" >_7(this);</span>
+});
+},reset:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).filebox("clear");</span>
+});
+},setValue:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq;</span>
+},setValues:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq;</span>
+},files:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.next().find(".textbox-value")[0].files;</span>
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.filebox.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_14){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_14);</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.fn.textbox.parseOptions(_14),$.parser.parseOptions(_14,["accept","capture","separator"]),{multiple:(t.attr("multiple")?true:undefined)});</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.filebox.defaults=$.extend({},$.fn.textbox.defaults,{buttonIcon:null,buttonText:"Choose File",buttonAlign:"right",inputEvents:{},accept:"",capture:"",separator:",",multiple:false});</span>
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

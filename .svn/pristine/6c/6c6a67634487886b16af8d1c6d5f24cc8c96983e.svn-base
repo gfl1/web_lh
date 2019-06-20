@@ -1,0 +1,98 @@
+<template>
+  <div class="treeFrom">
+    <split-pane split="vertical" :min-percent='20' :default-percent='30'>
+      <template slot="paneL">
+        <el-row>
+          <el-col :span="48">
+            <p>权限</p>
+            <el-tree
+              :data="data"
+              node-key="id"
+              default-expand-all
+              @node-click="fn"
+              :expand-on-click-node="true">
+                  <span class="custom-tree-node" slot-scope="{ node, data }">
+                    <span>{{ node.label }}</span>
+                    <span>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => append(data)"
+                      >
+                        添加
+                      </el-button>
+                      <el-button
+                        type="primary"
+                        size="mini"
+                        @click="() => remove(node, data)"
+                      >
+                        删除
+                      </el-button>
+                    </span>
+                  </span>
+            </el-tree>
+          </el-col>
+        </el-row>
+      </template>
+      <template slot="paneR">
+        <el-row>
+          <el-col :span="48">
+            <em-form></em-form>
+          </el-col>
+        </el-row>
+      </template>
+    </split-pane>
+  </div>
+</template>
+
+<script>
+  import {db_tree, db_data} from './data/db'
+  import splitPane from 'vue-splitpane'
+  import emForm from './components/emForm/emForm'
+
+  export default {
+    name: "treeFrom",
+    data() {
+      return {
+        id: 100,
+        data: JSON.parse(JSON.stringify(db_data))
+      }
+    },
+    props: ["dat"],
+    components: {
+      splitPane,
+      emForm
+    },
+    methods: {
+      init() {
+        console.log(this.data);
+      },
+      append(data) {
+        const newChild = {id: this.id++, label: 'testtest', children: []};
+        if (!data.children) {
+          this.$set(data, 'children', []);
+        }
+        data.children.push(newChild);
+      },
+      remove(node, data) {
+        const parent = node.parent;
+        const children = parent.data.children || parent.data;
+        const index = children.findIndex(d => d.id === data.id);
+        children.splice(index, 1);
+      },
+      fn(...obj) {
+        console.log(obj);
+      }
+    },
+    created() {
+      this.init();
+    },
+    mounted() {
+
+    }
+  }
+</script>
+
+<style lang="scss" scoped>
+  @import "treeFrom";
+</style>

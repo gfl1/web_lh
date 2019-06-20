@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for views/layout/layout.vue</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">views/layout</a> layout.vue
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/18</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&lt;template&gt;
+  &lt;div class="em_layout"&gt;
+    &lt;!--顶部标题--&gt;
+    &lt;em_logo_title&gt;&lt;/em_logo_title&gt;
+    &lt;!--报警器--&gt;
+    &lt;em_warn&gt;&lt;/em_warn&gt;
+    &lt;!--风险等级数据监测--&gt;
+    &lt;em_venture&gt;&lt;/em_venture&gt;
+    &lt;!--主菜单--&gt;
+    &lt;em_nav&gt;&lt;/em_nav&gt;
+    &lt;!--功能窗口--&gt;
+    &lt;template v-for="win in wins" v-if="win.show"&gt;
+      &lt;win :id="win.id" :data="win"&gt;
+        &lt;component :is="win.component" :data="win.component_data"&gt;&lt;/component&gt;
+      &lt;/win&gt;
+    &lt;/template&gt;
+    &lt;!--对话框--&gt;
+    &lt;template v-for="dialog in dialogGroup" v-if="dialog.show"&gt;
+      &lt;em_dialog :data="dialog"&gt;&lt;/em_dialog&gt;
+    &lt;/template&gt;
+    &lt;!--&lt;em_dialogs&gt;&lt;/em_dialogs&gt;--&gt;
+    &lt;!--&lt;em_chart_window&gt;&lt;/em_chart_window&gt;--&gt;
+    &lt;!--场景--&gt;
+    &lt;router-view name="scene"/&gt;
+    &lt;!--底部--&gt;
+    &lt;em_bottom&gt;&lt;/em_bottom&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+&nbsp;
+&lt;script&gt;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >  import win from "@/components/win/win"</span>
+<span class="cstat-no" title="statement not covered" >  import sole_table from "@/components/sole_table/sole_table"</span>
+<span class="cstat-no" title="statement not covered" >  import list_table from "@/components/list_table/list_table"</span>
+<span class="cstat-no" title="statement not covered" >  import echart_table from "@/components/echart_table/echart_table"</span>
+<span class="cstat-no" title="statement not covered" >  import em_dialog from "@/components/em_dialog/em_dialog"</span>
+  // import em_dialogs from "@/components/em_dialogs/em_dialogs"
+<span class="cstat-no" title="statement not covered" >  import button_group from "@/components/button_group/button_group"</span>
+<span class="cstat-no" title="statement not covered" >  import em_menu from "./components/em_menu/em_menu"</span>
+<span class="cstat-no" title="statement not covered" >  import em_nav from "./components/em_nav/em_nav"</span>
+<span class="cstat-no" title="statement not covered" >  import test from "@/views/test/test"</span>
+<span class="cstat-no" title="statement not covered" >  import em_bottom from "./components/em_bottom/em_bottom"</span>
+<span class="cstat-no" title="statement not covered" >  import em_logo_title from "./components/em_title/em_logotitle"</span>
+<span class="cstat-no" title="statement not covered" >  import em_warn from "./components/em_warn/em_warn"</span>
+<span class="cstat-no" title="statement not covered" >  import em_venture from "./components/em_venture/em_venture"</span>
+<span class="cstat-no" title="statement not covered" >  import em_chart_window from "./components/em_chart_window/em_chart_window"</span>
+  export default {
+<span class="fstat-no" title="function not covered" >    data() {</span>
+<span class="cstat-no" title="statement not covered" >      return {</span>
+        wins: [],
+        dialogGroup: []
+      }
+    },
+    components: {
+      win,
+      em_dialog,
+      button_group,
+      em_menu,
+      em_nav,
+      test,
+      em_bottom,
+      em_logo_title,
+      em_warn,
+      em_venture,
+      sole_table,
+      list_table,
+      echart_table,
+      em_chart_window,
+      // em_dialogs
+    },
+    methods: {
+<span class="fstat-no" title="function not covered" >      init() {</span>
+<span class="cstat-no" title="statement not covered" >        this.wins = this.$store.state.win.win;</span>
+<span class="cstat-no" title="statement not covered" >        this.dialogGroup = this.$store.state.win.dialog;</span>
+      },
+<span class="fstat-no" title="function not covered" >      fn() {</span>
+&nbsp;
+      }
+    },
+<span class="fstat-no" title="function not covered" >    created() {</span>
+<span class="cstat-no" title="statement not covered" >      this.init();</span>
+    },
+<span class="fstat-no" title="function not covered" >    mounted() {</span>
+&nbsp;
+    }
+&nbsp;
+  };
+&lt;/script&gt;
+&lt;style lang="scss" scoped&gt;
+  @import "layout";
+&lt;/style&gt;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

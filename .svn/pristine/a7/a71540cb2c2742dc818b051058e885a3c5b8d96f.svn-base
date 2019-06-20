@@ -1,0 +1,125 @@
+@import "../../styles/index/variable";
+$r:32;
+.window{
+  background-color: transparent;
+}
+/*nav*/
+.panel.window.#{em-nav-window}.panel-htop {
+  background:url("../../assets/image/footer.png") no-repeat;
+  border: none;
+  left: 55.8%;
+  transform: translateX(-44.2%);
+  z-index: 1607 !important;
+  height: 110px;
+  width: 50%;
+  background-size: 70% 100%;
+}
+
+
+.panel.window.#{em-nav-window}.panel-htop /deep/ {
+  .el-menu,.panel-body {
+    background-color: transparent;
+    border:none;
+    display: contents;//鼠标十字箭头
+  }
+}
+
+
+/*title*/
+.panel.window.#{em-title-window}.panel-htop {
+  background: url("../../assets/image/title.gif") no-repeat center;
+  background-size: 100% 100%;
+  border:none;
+}
+.panel.window.#{em-title-window}.panel-htop /deep/{
+  .panel-body {
+    background: transparent;
+  }
+}
+
+/*warn-button*/
+.panel.window.#{em-warn-window}.panel-htop {
+  background:transparent;
+  border:none;
+}
+
+/*risk-window风险等级*/
+.panel.window.#{em-risk-window}.panel-htop {
+  background:transparent;
+  border:none;
+  text-align: right;
+}
+
+.panel.window.#{em-risk-window}.panel-htop /deep/{
+  .panel-body {
+    background: transparent;
+    padding-top: 10px;
+  }
+}
+
+/*menu-window*/
+.panel.window.#{em-menu-window}.panel-htop{
+  background: transparent;
+  border:none;
+  padding:0;
+}
+.panel.window.#{em-menu-window}.panel-htop /deep/{
+  .menu,.el-menu,.panel-body{
+     background: transparent;
+   }
+  .el-menu{
+    border-right: 0;
+  }
+}
+
+/*bottom-window*/
+.panel.window.#{em-bottom-window}.panel-htop.easyui-fluid {
+  background: rgba(20, 31, 55, 0.8);
+  border-left: 6px solid $border-color-base;
+  border-right: 6px solid $border-color-base;
+  border-top: 1px solid #d8bb37;
+  border-bottom: 1px solid #d8bb37;
+  border-radius: unset;
+}
+
+/*toolList*/
+.panel.window.#{em-tool-window}.panel-htop {
+ background: transparent;
+ border:none;
+}
+
+
+
+/*table-window*/
+.window-shadow{
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+.panel.window.#{em-table-window}.panel-htop{
+  background:transparent;
+  border: none;
+  overflow: visible;//table-dialog遮罩
+}
+.panel.window.#{em-table-window}.panel-htop /deep/{
+  .window {
+    &.window-header{
+      background: nth($background-type2-base,2);
+    }
+    &.window-body{
+      box-shadow: 0 0 4px rgba(255,255,255,0.5);
+    }
+  }
+  .panel-body{
+    padding: 14/$r+rem !important;
+    background: nth($background-type2-base,3);
+    box-shadow: 0 0 2px rgba(255,255,255,0.5);
+  }
+}
+
+
+/*slider*/
+.panel.window.#{em-slider-window}.panel-htop{
+  border: none;
+  background: transparent;
+}

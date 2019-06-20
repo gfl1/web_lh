@@ -1,0 +1,46 @@
+$r:32;
+.el-dialog,.el-message-box{
+  background: $background-dialog-base;
+  border: 15px solid transparent;
+  -webkit-border-image: url("../../assets/image/tableDialog-border.png") 15 13 14 10 round;
+  -moz-border-image: url("../../assets/image/tableDialog-border.png") 15 13 14 10 round;
+  border-image: url("../../assets/image/tableDialog-border.png") 15 13 14 10 round;
+  width: 500px;
+  resize: both;
+  border-radius: 20px;
+  .el-message-box__title{
+   color: white;
+  }
+  .el-message-box__content,.el-message-box__headerbtn .el-message-box__close{
+    color: rgba(255,255,255,0.8);
+  }
+  .el-button{
+    background: $background-linear-base;
+    color: rgba(255,255,255,0.8);
+    border-color: darken($border-color-base,20%);
+    border-radius: 5/$r+rem;
+    width: 60/$r+rem;
+    &:hover{
+      border-color: darken($border-color-base,10%);
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .el-dialog__header{
+    border-bottom: 2px solid $border-color-base;
+  }
+  .el-dialog__title{
+    color: $color-base;
+  }
+  .el-form-item__label{
+    color: rgba(255,255,255,0.7);
+    line-height: 30px;
+  }
+  .el-dialog__headerbtn .el-dialog__close{
+    color: rgba(255,255,255,0.7);
+    font-size: 12/$r+rem;
+    &:hover{
+      color: white;
+    }
+  }
+}

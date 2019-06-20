@@ -1,0 +1,29 @@
+
+export const db_form_items = [
+  {
+    inputType: "text",
+    label: '字段1',
+    valueKey:"name3",
+    Validate:[
+      {required: true, message: '请输字段1', trigger: 'blur'},
+      {min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur'}
+    ]
+  },
+  {
+    inputType: "select",
+    label: '字段2',
+    valueKey:"name1",
+    Validate:[
+      {required: true, message: '请输字段2', trigger: 'change'},
+    ]
+  },
+  {
+    inputType: "text",
+    label: '字段3',
+    valueKey:"name2",
+    Validate:[
+      {required: true, message: '请输字段3', trigger: 'change'},
+      {min: 2, max: 5, message: '长度在 2 到 5 个字符', trigger: 'change'}
+    ]
+  }
+];

@@ -1,0 +1,40 @@
+@import "variable";
+.cesium-viewer-bottom {
+  display: none;
+}
+.cesium-viewer .cesium-viewer-fullscreenContainer{
+  top: 8px;
+  right: 8px;
+  bottom:unset;
+}
+.scene /deep/{
+  .cesium-infoBox{
+    background: $background-table-base;
+    border: 15px solid transparent;
+    -webkit-border-image: url("../../../src/assets/image/table_border.png") 27 27 24 24 round;
+    -moz-border-image: url("../../../src/assets/image/table_border.png") 27 27 24 24 round;
+    border-image: url("../../../src/assets/image/table_border.png") 27 27 24 24 round;
+    width: 800px;
+    resize: both;
+  }
+  .cesium-infoBox-title{
+    background: darken($background-table-base,10%);
+  }
+  .cesium-button:disabled{
+    background:  transparent;
+    border-color:  transparent;
+    fill:  rgba(255,255,255,0.4);
+  }
+  .cesium-button-disabled{
+    &:hover,:focus,&:active{
+      background:  transparent;
+      border-color:  transparent;
+      fill:  rgba(255,255,255,0.4);
+    }
+  }
+}
+.cesium-infoBox-defaultTable{
+  & tr{
+    background: #f0f !important;
+  }
+}

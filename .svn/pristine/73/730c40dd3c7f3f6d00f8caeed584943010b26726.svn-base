@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.spinner.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.spinner.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/78</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/40</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/78</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+function <span class="fstat-no" title="function not covered" >_1(_2){</span>
+var _3=<span class="cstat-no" title="statement not covered" >$.data(_2,"spinner");</span>
+var _4=<span class="cstat-no" title="statement not covered" >_3.options;</span>
+var _5=<span class="cstat-no" title="statement not covered" >$.extend(true,[],_4.icons);</span>
+<span class="cstat-no" title="statement not covered" >if(_4.spinAlign=="left"||_4.spinAlign=="right"){</span>
+<span class="cstat-no" title="statement not covered" >_4.spinArrow=true;</span>
+<span class="cstat-no" title="statement not covered" >_4.iconAlign=_4.spinAlign;</span>
+var _6=<span class="cstat-no" title="statement not covered" >{iconCls:"spinner-button-updown",handler:<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+var _7=<span class="cstat-no" title="statement not covered" >$(e.target).closest(".spinner-arrow-up,.spinner-arrow-down");</span>
+<span class="cstat-no" title="statement not covered" >_13(e.data.target,_7.hasClass("spinner-arrow-down"));</span>
+}};
+<span class="cstat-no" title="statement not covered" >if(_4.spinAlign=="left"){</span>
+<span class="cstat-no" title="statement not covered" >_5.unshift(_6);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_5.push(_6);</span>
+}
+}else{
+<span class="cstat-no" title="statement not covered" >_4.spinArrow=false;</span>
+<span class="cstat-no" title="statement not covered" >if(_4.spinAlign=="vertical"){</span>
+<span class="cstat-no" title="statement not covered" >if(_4.buttonAlign!="top"){</span>
+<span class="cstat-no" title="statement not covered" >_4.buttonAlign="bottom";</span>
+}
+<span class="cstat-no" title="statement not covered" >_4.clsLeft="textbox-button-bottom";</span>
+<span class="cstat-no" title="statement not covered" >_4.clsRight="textbox-button-top";</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_4.clsLeft="textbox-button-left";</span>
+<span class="cstat-no" title="statement not covered" >_4.clsRight="textbox-button-right";</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >$(_2).addClass("spinner-f").textbox($.extend({},_4,{icons:_5,doSize:false,onResize:<span class="fstat-no" title="function not covered" >function(</span>_8,_9){</span>
+<span class="cstat-no" title="statement not covered" >if(!_4.spinArrow){</span>
+var _a=<span class="cstat-no" title="statement not covered" >$(this).next();</span>
+var _b=<span class="cstat-no" title="statement not covered" >_a.find(".textbox-button:not(.spinner-button)");</span>
+<span class="cstat-no" title="statement not covered" >if(_b.length){</span>
+var _c=<span class="cstat-no" title="statement not covered" >_b.outerWidth();</span>
+var _d=<span class="cstat-no" title="statement not covered" >_b.outerHeight();</span>
+var _e=<span class="cstat-no" title="statement not covered" >_a.find(".spinner-button."+_4.clsLeft);</span>
+var _f=<span class="cstat-no" title="statement not covered" >_a.find(".spinner-button."+_4.clsRight);</span>
+<span class="cstat-no" title="statement not covered" >if(_4.buttonAlign=="right"){</span>
+<span class="cstat-no" title="statement not covered" >_f.css("marginRight",_c+"px");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_4.buttonAlign=="left"){</span>
+<span class="cstat-no" title="statement not covered" >_e.css("marginLeft",_c+"px");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_4.buttonAlign=="top"){</span>
+<span class="cstat-no" title="statement not covered" >_f.css("marginTop",_d+"px");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_e.css("marginBottom",_d+"px");</span>
+}
+}
+}
+}
+}
+<span class="cstat-no" title="statement not covered" >_4.onResize.call(this,_8,_9);</span>
+}}));
+<span class="cstat-no" title="statement not covered" >$(_2).attr("spinnerName",$(_2).attr("textboxName"));</span>
+<span class="cstat-no" title="statement not covered" >_3.spinner=$(_2).next();</span>
+<span class="cstat-no" title="statement not covered" >_3.spinner.addClass("spinner");</span>
+<span class="cstat-no" title="statement not covered" >if(_4.spinArrow){</span>
+var _10=<span class="cstat-no" title="statement not covered" >_3.spinner.find(".spinner-button-updown");</span>
+<span class="cstat-no" title="statement not covered" >_10.append("&lt;span class=\"spinner-arrow spinner-button-top\"&gt;"+"&lt;span class=\"spinner-arrow-up\"&gt;&lt;/span&gt;"+"&lt;/span&gt;"+"&lt;span class=\"spinner-arrow spinner-button-bottom\"&gt;"+"&lt;span class=\"spinner-arrow-down\"&gt;&lt;/span&gt;"+"&lt;/span&gt;");</span>
+}else{
+var _11=<span class="cstat-no" title="statement not covered" >$("&lt;a href=\"javascript:;\" class=\"textbox-button spinner-button\"&gt;&lt;/a&gt;").addClass(_4.clsLeft).appendTo(_3.spinner);</span>
+var _12=<span class="cstat-no" title="statement not covered" >$("&lt;a href=\"javascript:;\" class=\"textbox-button spinner-button\"&gt;&lt;/a&gt;").addClass(_4.clsRight).appendTo(_3.spinner);</span>
+<span class="cstat-no" title="statement not covered" >_11.linkbutton({iconCls:_4.reversed?"spinner-button-up":"spinner-button-down",onClick:<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_13(_2,!_4.reversed);</span>
+}});
+<span class="cstat-no" title="statement not covered" >_12.linkbutton({iconCls:_4.reversed?"spinner-button-down":"spinner-button-up",onClick:<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_13(_2,_4.reversed);</span>
+}});
+<span class="cstat-no" title="statement not covered" >if(_4.disabled){</span>
+<span class="cstat-no" title="statement not covered" >$(_2).spinner("disable");</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_4.readonly){</span>
+<span class="cstat-no" title="statement not covered" >$(_2).spinner("readonly");</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >$(_2).spinner("resize");</span>
+};
+function <span class="fstat-no" title="function not covered" >_13(_14,_15){</span>
+var _16=<span class="cstat-no" title="statement not covered" >$(_14).spinner("options");</span>
+<span class="cstat-no" title="statement not covered" >_16.spin.call(_14,_15);</span>
+<span class="cstat-no" title="statement not covered" >_16[_15?"onSpinDown":"onSpinUp"].call(_14);</span>
+<span class="cstat-no" title="statement not covered" >$(_14).spinner("validate");</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.spinner=<span class="fstat-no" title="function not covered" >function(</span>_17,_18){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _17=="string"){</span>
+var _19=<span class="cstat-no" title="statement not covered" >$.fn.spinner.methods[_17];</span>
+<span class="cstat-no" title="statement not covered" >if(_19){</span>
+<span class="cstat-no" title="statement not covered" >return _19(this,_18);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return this.textbox(_17,_18);</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >_17=_17||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _1a=<span class="cstat-no" title="statement not covered" >$.data(this,"spinner");</span>
+<span class="cstat-no" title="statement not covered" >if(_1a){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_1a.options,_17);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_1a=$.data(this,"spinner",{options:$.extend({},$.fn.spinner.defaults,$.fn.spinner.parseOptions(this),_17)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_1(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.spinner.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _1b=<span class="cstat-no" title="statement not covered" >jq.textbox("options");</span>
+<span class="cstat-no" title="statement not covered" >return $.extend($.data(jq[0],"spinner").options,{width:_1b.width,value:_1b.value,originalValue:_1b.originalValue,disabled:_1b.disabled,readonly:_1b.readonly});</span>
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.spinner.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_1c){</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.fn.textbox.parseOptions(_1c),$.parser.parseOptions(_1c,["min","max","spinAlign",{increment:"number",reversed:"boolean"}]));</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.spinner.defaults=$.extend({},$.fn.textbox.defaults,{min:null,max:null,increment:1,spinAlign:"right",reversed:false,spin:<span class="fstat-no" title="function not covered" >function(</span>_1d){</span>
+},onSpinUp:<span class="fstat-no" title="function not covered" >function()</span>{
+},onSpinDown:<span class="fstat-no" title="function not covered" >function()</span>{
+}});
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

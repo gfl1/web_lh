@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.checkbox.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.checkbox.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/103</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/36</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/27</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/103</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+var _1=<span class="cstat-no" title="statement not covered" >1;</span>
+function <span class="fstat-no" title="function not covered" >_2(_3){</span>
+var _4=<span class="cstat-no" title="statement not covered" >$("&lt;span class=\"checkbox inputbox\"&gt;"+"&lt;span class=\"checkbox-inner\"&gt;"+"&lt;svg xml:space=\"preserve\" focusable=\"false\" version=\"1.1\" viewBox=\"0 0 24 24\"&gt;&lt;path d=\"M4.1,12.7 9,17.6 20.3,6.3\" fill=\"none\" stroke=\"white\"&gt;&lt;/path&gt;&lt;/svg&gt;"+"&lt;/span&gt;"+"&lt;input type=\"checkbox\" class=\"checkbox-value\"&gt;"+"&lt;/span&gt;").insertAfter(_3);</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_3);</span>
+<span class="cstat-no" title="statement not covered" >t.addClass("checkbox-f").hide();</span>
+var _5=<span class="cstat-no" title="statement not covered" >t.attr("name");</span>
+<span class="cstat-no" title="statement not covered" >if(_5){</span>
+<span class="cstat-no" title="statement not covered" >t.removeAttr("name").attr("checkboxName",_5);</span>
+<span class="cstat-no" title="statement not covered" >_4.find(".checkbox-value").attr("name",_5);</span>
+}
+<span class="cstat-no" title="statement not covered" >return _4;</span>
+};
+function <span class="fstat-no" title="function not covered" >_6(_7){</span>
+var _8=<span class="cstat-no" title="statement not covered" >$.data(_7,"checkbox");</span>
+var _9=<span class="cstat-no" title="statement not covered" >_8.options;</span>
+var _a=<span class="cstat-no" title="statement not covered" >_8.checkbox;</span>
+var _b=<span class="cstat-no" title="statement not covered" >"_easyui_checkbox_"+(++_1);</span>
+<span class="cstat-no" title="statement not covered" >_a.find(".checkbox-value").attr("id",_b);</span>
+<span class="cstat-no" title="statement not covered" >if(_9.label){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _9.label=="object"){</span>
+<span class="cstat-no" title="statement not covered" >_8.label=$(_9.label);</span>
+<span class="cstat-no" title="statement not covered" >_8.label.attr("for",_b);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >$(_8.label).remove();</span>
+<span class="cstat-no" title="statement not covered" >_8.label=$("&lt;label class=\"textbox-label\"&gt;&lt;/label&gt;").html(_9.label);</span>
+<span class="cstat-no" title="statement not covered" >_8.label.css("textAlign",_9.labelAlign).attr("for",_b);</span>
+<span class="cstat-no" title="statement not covered" >if(_9.labelPosition=="after"){</span>
+<span class="cstat-no" title="statement not covered" >_8.label.insertAfter(_a);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_8.label.insertBefore(_7);</span>
+}
+<span class="cstat-no" title="statement not covered" >_8.label.removeClass("textbox-label-left textbox-label-right textbox-label-top");</span>
+<span class="cstat-no" title="statement not covered" >_8.label.addClass("textbox-label-"+_9.labelPosition);</span>
+}
+}else{
+<span class="cstat-no" title="statement not covered" >$(_8.label).remove();</span>
+}
+<span class="cstat-no" title="statement not covered" >$(_7).checkbox("setValue",_9.value);</span>
+<span class="cstat-no" title="statement not covered" >_c(_7,_9.checked);</span>
+<span class="cstat-no" title="statement not covered" >_d(_7,_9.disabled);</span>
+};
+function <span class="fstat-no" title="function not covered" >_e(_f){</span>
+var _10=<span class="cstat-no" title="statement not covered" >$.data(_f,"checkbox");</span>
+var _11=<span class="cstat-no" title="statement not covered" >_10.options;</span>
+var _12=<span class="cstat-no" title="statement not covered" >_10.checkbox;</span>
+<span class="cstat-no" title="statement not covered" >_12.unbind(".checkbox").bind("click.checkbox",<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >if(!_11.disabled){</span>
+<span class="cstat-no" title="statement not covered" >_c(_f,!_11.checked);</span>
+}
+});
+};
+function <span class="fstat-no" title="function not covered" >_13(_14){</span>
+var _15=<span class="cstat-no" title="statement not covered" >$.data(_14,"checkbox");</span>
+var _16=<span class="cstat-no" title="statement not covered" >_15.options;</span>
+var _17=<span class="cstat-no" title="statement not covered" >_15.checkbox;</span>
+<span class="cstat-no" title="statement not covered" >_17._size(_16,_17.parent());</span>
+<span class="cstat-no" title="statement not covered" >if(_16.label&amp;&amp;_16.labelPosition){</span>
+<span class="cstat-no" title="statement not covered" >if(_16.labelPosition=="top"){</span>
+<span class="cstat-no" title="statement not covered" >_15.label._size({width:_16.labelWidth},_17);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_15.label._size({width:_16.labelWidth,height:_17.outerHeight()},_17);</span>
+<span class="cstat-no" title="statement not covered" >_15.label.css("lineHeight",_17.outerHeight()+"px");</span>
+}
+}
+};
+function <span class="fstat-no" title="function not covered" >_c(_18,_19){</span>
+var _1a=<span class="cstat-no" title="statement not covered" >$.data(_18,"checkbox");</span>
+var _1b=<span class="cstat-no" title="statement not covered" >_1a.options;</span>
+var _1c=<span class="cstat-no" title="statement not covered" >_1a.checkbox;</span>
+<span class="cstat-no" title="statement not covered" >_1c.find(".checkbox-value")._propAttr("checked",_19);</span>
+var _1d=<span class="cstat-no" title="statement not covered" >_1c.find(".checkbox-inner").css("display",_19?"":"none");</span>
+<span class="cstat-no" title="statement not covered" >if(_19){</span>
+<span class="cstat-no" title="statement not covered" >_1d.addClass("checkbox-checked");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_1d.removeClass("checkbox-checked");</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_1b.checked!=_19){</span>
+<span class="cstat-no" title="statement not covered" >_1b.checked=_19;</span>
+<span class="cstat-no" title="statement not covered" >_1b.onChange.call(_18,_19);</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_d(_1e,_1f){</span>
+var _20=<span class="cstat-no" title="statement not covered" >$.data(_1e,"checkbox");</span>
+var _21=<span class="cstat-no" title="statement not covered" >_20.options;</span>
+var _22=<span class="cstat-no" title="statement not covered" >_20.checkbox;</span>
+var rv=<span class="cstat-no" title="statement not covered" >_22.find(".checkbox-value");</span>
+<span class="cstat-no" title="statement not covered" >_21.disabled=_1f;</span>
+<span class="cstat-no" title="statement not covered" >if(_1f){</span>
+<span class="cstat-no" title="statement not covered" >$(_1e).add(rv)._propAttr("disabled",true);</span>
+<span class="cstat-no" title="statement not covered" >_22.addClass("checkbox-disabled");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >$(_1e).add(rv)._propAttr("disabled",false);</span>
+<span class="cstat-no" title="statement not covered" >_22.removeClass("checkbox-disabled");</span>
+}
+};
+<span class="cstat-no" title="statement not covered" >$.fn.checkbox=<span class="fstat-no" title="function not covered" >function(</span>_23,_24){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _23=="string"){</span>
+<span class="cstat-no" title="statement not covered" >return $.fn.checkbox.methods[_23](this,_24);</span>
+}
+<span class="cstat-no" title="statement not covered" >_23=_23||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _25=<span class="cstat-no" title="statement not covered" >$.data(this,"checkbox");</span>
+<span class="cstat-no" title="statement not covered" >if(_25){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_25.options,_23);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_25=$.data(this,"checkbox",{options:$.extend({},$.fn.checkbox.defaults,$.fn.checkbox.parseOptions(this),_23),checkbox:_2(this)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_25.options.originalChecked=_25.options.checked;</span>
+<span class="cstat-no" title="statement not covered" >_6(this);</span>
+<span class="cstat-no" title="statement not covered" >_e(this);</span>
+<span class="cstat-no" title="statement not covered" >_13(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.checkbox.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _26=<span class="cstat-no" title="statement not covered" >jq.data("checkbox");</span>
+<span class="cstat-no" title="statement not covered" >return $.extend(_26.options,{value:_26.checkbox.find(".checkbox-value").val()});</span>
+},setValue:<span class="fstat-no" title="function not covered" >function(</span>jq,_27){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).val(_27);</span>
+<span class="cstat-no" title="statement not covered" >$.data(this,"checkbox").checkbox.find(".checkbox-value").val(_27);</span>
+});
+},enable:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_d(this,false);</span>
+});
+},disable:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_d(this,true);</span>
+});
+},check:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_c(this,true);</span>
+});
+},uncheck:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_c(this,false);</span>
+});
+},clear:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_c(this,false);</span>
+});
+},reset:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _28=<span class="cstat-no" title="statement not covered" >$(this).checkbox("options");</span>
+<span class="cstat-no" title="statement not covered" >_c(this,_28.originalChecked);</span>
+});
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.checkbox.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_29){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_29);</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.parser.parseOptions(_29,["label","labelPosition","labelAlign",{labelWidth:"number"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined)});</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.checkbox.defaults={width:20,height:20,value:null,disabled:false,checked:false,label:null,labelWidth:"auto",labelPosition:"before",labelAlign:"left",onChange:<span class="fstat-no" title="function not covered" >function(</span>_2a){</span>
+}};
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

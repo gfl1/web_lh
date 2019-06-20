@@ -1,0 +1,17 @@
+import { getToken,getRefreshToken,getTokenTime } from '@/utils/auth'
+
+export default {
+  user: '',
+  status: '',
+  code: '',
+  token: getToken(),
+  tokenTime: getTokenTime(),
+  refreshToken: getRefreshToken(),
+  name: '',
+  avatar: '',
+  introduction: '',
+  roles: [],
+  setting: {
+    articlePlatform: []
+  }
+}

@@ -1,0 +1,146 @@
+var polygonEntities = [];
+
+function addPolygon(Entities) {
+    /*Entities:[
+        {
+             color:"#4cf02c",//颜色
+             alpha:0.5,//透明
+             DegreesArray:[
+                   106.2918632114032, 30.023059320962865,
+                   106.29324606449137, 30.022007827132164,
+                   106.2913523065459, 30.021380200455827,
+                   106.2901463755924, 30.023047827872077]
+        }
+    ]*/
+    for (var i = 0; i < Entities.length; i++) {
+        let polygon = viewer.entities.add({
+                name: Entities[i].id + '',
+                polygon: {
+                    hierarchy: new Cesium.PolygonHierarchy(Cesium.Cartesian3.fromDegreesArray(Entities[i].DegreesArray)),
+                    material: Cesium.Color.fromCssColorString(Entities[i].color).withAlpha(Entities[i].alpha),
+                    // material: 'img/marker_2.png',
+                    classificationType: Cesium.ClassificationType.CESIUM_3D_TILE
+                },
+            label: {
+                text: 'Philadelphia',
+                font: '24px Helvetica',
+                pixelOffset: new Cesium.Cartesian2(0, -30),
+                fillColor: Cesium.Color.SKYBLUE,
+                outlineColor: Cesium.Color.BLACK,
+                outlineWidth: 1,
+                style: Cesium.LabelStyle.FILL_AND_OUTLINE
+            }
+            })
+        ;
+        polygonEntities.push(polygon);
+    }
+}
+
+function addPolygonFN() {
+    let Entities = [
+        {
+            id: 1,
+            color: "#4cf02c",//颜色
+            alpha: 0.5,//透明
+            DegreesArray:[
+                106.29282937918697,
+                30.022281908661093,
+                106.291999480957,
+                30.022879352956828,
+                106.2920136045095,
+                30.023112987439145,
+                106.29261456815746,
+                30.023051998323616,
+                106.29338972669095,
+                30.022776696423847]
+        },
+        {
+            id: 2,
+            color: "#f06e59",//颜色
+            alpha: 0.5,//透明
+            DegreesArray: [ 106.29197302854351,
+                30.023209046528144,
+                106.29265934910684,
+                30.02360085888042,
+                106.29284214830184,
+                30.02413564738979,
+                106.29254324950375,
+                30.024189993570058,
+                106.29243373537803,
+                30.02435817667486,
+                106.29237492064723,
+                30.024667137146444,
+                106.2916454417605,
+                30.024551608854356,
+                106.2916779045739,
+                30.02358918434753,
+                106.29188539050014,
+                30.023220805658674]
+        }
+    ];
+    addPolygon(Entities);
+}
+
+var polyline = viewer.entities.add({
+    polyline: {
+        positions: Cesium.Cartesian3.fromDegreesArray([
+            106.28898646222328,
+            30.025749777451562,
+            106.2897826807112,
+            30.022991481129566,
+            106.2880394470837,
+            30.020255734295507,
+            106.28999155378249,
+            30.02314206001763,
+            106.29005396817485,
+            30.022175733467922,
+            106.29144371823138,
+            30.022515625860592,
+            106.29083865072324,
+            30.02556221957544,
+            106.28666473851872,
+            30.02695784278787
+        ]),
+        width: 8,
+        material: new Cesium.PolylineOutlineMaterialProperty({
+            color: Cesium.Color.fromCssColorString('#4cf02c').withAlpha(0.8),
+            outlineWidth: 2,
+            outlineColor: Cesium.Color.BLACK
+        }),
+        clampToGround: true,
+        classificationType: Cesium.ClassificationType.CESIUM_3D_TILE
+    }
+});
+// polyline.polyline.show =false;
+ClassificationType = undefined;
+var classificationOptions = [{
+    text: 'Classify Both',
+    onselect: function () {
+        polygon.polygon.classificationType = Cesium.ClassificationType.BOTH;
+        polyline.polyline.classificationType = Cesium.ClassificationType.BOTH;
+    }
+}, {
+    text: 'Classify Terrain',
+    onselect: function () {
+        polygon.polygon.classificationType = Cesium.ClassificationType.TERRAIN;
+        polyline.polyline.classificationType = Cesium.ClassificationType.TERRAIN;
+    }
+}, {
+    text: 'Classify 3D Tiles',
+    onselect: function () {
+        polygon.polygon.classificationType = Cesium.ClassificationType.CESIUM_3D_TILE;
+        polyline.polyline.classificationType = Cesium.ClassificationType.CESIUM_3D_TILE;
+    }
+}];
+
+var materialOptions = [{
+    text: 'Red Material',
+    onselect: function () {
+        polygon.polygon.material = Cesium.Color.RED.withAlpha(0.5);
+    }
+}, {
+    text: 'Textured Material',
+    onselect: function () {
+        polygon.polygon.material = '../images/Cesium_Logo_Color.jpg';
+    }
+}];

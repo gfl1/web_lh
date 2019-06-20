@@ -1,0 +1,179 @@
+<template>
+  <div class="echart_table" style="width: 100%;height: 100%">
+    <el-row style="height: 100%">
+      <el-col :span="28" style="height: 100%" class="table-container">
+        <div class="table digital_table" style="height: 100%">
+          <el-row class="operation">
+            <template v-for="item in this.data.operation">
+              <component :is="item.type" :operation="item" :table_id="table_id" ref="child"></component>
+            </template>
+          </el-row>
+          <el-table
+            height="calc(100% - 82px)"
+            highlight-current-row
+            @current-change="handleCurrentChange"
+            ref="multipleTable"
+            tooltip-effect="dark"
+            :data="tableData"
+            @selection-change="handleSelectionChange">
+            style="width: 100%"
+            >
+            <el-table-column
+              type="index"
+              fixed="left"
+              align="center"
+            >
+            </el-table-column>
+            <el-table-column
+              align="center"
+              type="selection"
+              width="55">
+            </el-table-column>
+            <el-table-column v-for="(item,index) in label"
+                             :key="index"
+                             :prop="item.prop"
+                             :label="item.name"
+                             :min-width="item.width"
+                             align="center"
+            >
+            </el-table-column>
+          </el-table>
+          <div class="pages">
+            <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChangepage"
+              :current-page="currentPage"
+              :page-sizes="[5, 10, 15, 20]"
+              :page-size="5"
+              :pager-count="5"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="tableData.length">
+            </el-pagination>
+          </div>
+
+        </div>
+
+      </el-col>
+
+      <el-col :span="20" style="height: 100%;">
+           <ehcarts :id="echart_id" :option="option" :data="data1" :series="series"></ehcarts>
+      </el-col>
+    </el-row>
+  </div>
+</template>
+
+<script>
+  import {add, dele, modify, find, downCsvmodel,upLoad} from "@/api/table_operate"
+  import {list, table} from "@/api/list_table";
+  import ehcarts from "@/components/echarts/echarts"
+  import options from '@/echart_options/options'
+  import {fetchChart} from "@/api/chart"
+  import  {fetchPie} from "@/api/chart";
+  import em_button from "@/components/em_button/em_button"
+  import em_input from "@/components/em_input/em_input"
+  import em_dialogs from "@/components/em_dialogs/em_dialogs"
+  import complex_em_input from "@/components/complex_em_input/complex_em_input"
+  import em_date from "@/components/em_date/em_date"
+  export default {
+    name: "echart_table",
+    data() {
+      return {
+        id:"",
+        table_id:"",
+        label:[],
+        tableData: [],
+        currentRow: null,
+        multipleSelection: [],
+        input: '',
+        currentPage: 1,
+        pageSize: 5,
+        totalSize:0,
+        value: '',
+        option:{},
+        echart_id:"pie1",
+        data1:[],
+        series:[]
+
+      }
+    },
+    components:{
+      ehcarts,
+      em_button,
+      em_input,
+      em_dialogs,
+      complex_em_input,
+      em_date
+    },
+    props:["data"],
+    mounted() {
+      this.bus.$on(this.data.table.id, obj => {
+        // this.control(obj);
+        console.log(obj);
+      });
+      console.log(this.data);
+      this.label=this.data.table.label;
+      this.option=options[this.data.chart.type];
+      this.echart_id=this.data.chart.id;
+      // fetchChart({
+      //   option:this.data.chart.type,
+      //   chart_url:this.data.chart.chart_url
+      // }).then(res=>{
+      //      if(this.data.chart.type=="pie"){
+      //        this.data1=res.data[this.data.chart.type];
+      //        // console.log(this.data1)
+      // }
+      //      else{
+      //          this.series=res.data[this.data.chart.type];
+      //
+      //      }
+      //
+      // })
+       this.init()
+    },
+    methods: {
+      handleSelectionChange(val) {
+        console.log(val);
+        this.multipleSelection = val;
+        console.log(this.multipleSelection)
+      },
+      handleCurrentChange(val) {
+        this.currentRow = val;
+        console.log(this.currentRow)
+      },
+      handleCurrentChangepage(val) {
+
+        console.log(`当前页: ${val}`);
+        this.currentPage = val;
+        console.log(this.currentPage)
+      },
+      handleSizeChange(val) {
+        console.log(`每页 ${val} 条`);
+        this.pageSize = val;
+      },
+      init() {                               //表格加载数据
+
+        let obj = {
+          pageNum: this.currentPage,
+          pageSize: this.pageSize
+        };
+        find({                      //页面渲染时拿表格数据
+          url: this.data.table.table_url,
+          params: obj
+        }).then(res => {
+          console.log(res);
+          if(res.data.list){
+            this.tableData =res.data.list;
+          }
+          else{
+            this.tableData =res.data.pageData.list;
+          }
+          this.totalSize =this.totalSize;
+        });
+      },
+    }
+  }
+</script>
+
+<style scoped lang="scss">
+  @import "_echart_table";
+</style>

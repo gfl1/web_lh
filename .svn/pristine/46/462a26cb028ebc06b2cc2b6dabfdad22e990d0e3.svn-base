@@ -1,0 +1,1622 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.layout.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.layout.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/356</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/234</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/61</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/353</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357
+358
+359
+360
+361
+362
+363
+364
+365
+366
+367
+368
+369
+370
+371
+372
+373
+374
+375
+376
+377
+378
+379
+380
+381
+382
+383
+384
+385
+386
+387
+388
+389
+390
+391
+392
+393
+394
+395
+396
+397
+398
+399
+400
+401
+402
+403
+404
+405
+406
+407
+408
+409
+410
+411
+412
+413
+414
+415
+416
+417
+418
+419
+420
+421
+422
+423
+424
+425
+426
+427
+428
+429
+430
+431
+432
+433
+434
+435
+436
+437
+438
+439
+440
+441
+442
+443
+444
+445
+446
+447
+448
+449
+450
+451
+452
+453
+454
+455
+456
+457
+458
+459
+460
+461
+462
+463
+464
+465
+466
+467
+468
+469
+470
+471
+472
+473
+474
+475
+476
+477
+478
+479
+480
+481
+482
+483
+484
+485
+486
+487
+488
+489
+490
+491
+492
+493
+494
+495
+496
+497
+498
+499
+500
+501
+502
+503
+504
+505
+506
+507
+508
+509
+510
+511
+512
+513
+514
+515
+516
+517
+518
+519
+520</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+var _1=<span class="cstat-no" title="statement not covered" >false;</span>
+function <span class="fstat-no" title="function not covered" >_2(_3,_4){</span>
+var _5=<span class="cstat-no" title="statement not covered" >$.data(_3,"layout");</span>
+var _6=<span class="cstat-no" title="statement not covered" >_5.options;</span>
+var _7=<span class="cstat-no" title="statement not covered" >_5.panels;</span>
+var cc=<span class="cstat-no" title="statement not covered" >$(_3);</span>
+<span class="cstat-no" title="statement not covered" >if(_4){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_6,{width:_4.width,height:_4.height});</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_3.tagName.toLowerCase()=="body"){</span>
+<span class="cstat-no" title="statement not covered" >cc._size("fit");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >cc._size(_6);</span>
+}
+var _8=<span class="cstat-no" title="statement not covered" >{top:0,left:0,width:cc.width(),height:cc.height()};</span>
+<span class="cstat-no" title="statement not covered" >_9(_a(_7.expandNorth)?_7.expandNorth:_7.north,"n");</span>
+<span class="cstat-no" title="statement not covered" >_9(_a(_7.expandSouth)?_7.expandSouth:_7.south,"s");</span>
+<span class="cstat-no" title="statement not covered" >_b(_a(_7.expandEast)?_7.expandEast:_7.east,"e");</span>
+<span class="cstat-no" title="statement not covered" >_b(_a(_7.expandWest)?_7.expandWest:_7.west,"w");</span>
+<span class="cstat-no" title="statement not covered" >_7.center.panel("resize",_8);</span>
+function <span class="fstat-no" title="function not covered" >_9(pp,_c){</span>
+<span class="cstat-no" title="statement not covered" >if(!pp.length||!_a(pp)){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var _d=<span class="cstat-no" title="statement not covered" >pp.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >pp.panel("resize",{width:cc.width(),height:_d.height});</span>
+var _e=<span class="cstat-no" title="statement not covered" >pp.panel("panel").outerHeight();</span>
+<span class="cstat-no" title="statement not covered" >pp.panel("move",{left:0,top:(_c=="n"?0:cc.height()-_e)});</span>
+<span class="cstat-no" title="statement not covered" >_8.height-=_e;</span>
+<span class="cstat-no" title="statement not covered" >if(_c=="n"){</span>
+<span class="cstat-no" title="statement not covered" >_8.top+=_e;</span>
+<span class="cstat-no" title="statement not covered" >if(!_d.split&amp;&amp;_d.border){</span>
+<span class="cstat-no" title="statement not covered" >_8.top--;</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >if(!_d.split&amp;&amp;_d.border){</span>
+<span class="cstat-no" title="statement not covered" >_8.height++;</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_b(pp,_f){</span>
+<span class="cstat-no" title="statement not covered" >if(!pp.length||!_a(pp)){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var _10=<span class="cstat-no" title="statement not covered" >pp.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >pp.panel("resize",{width:_10.width,height:_8.height});</span>
+var _11=<span class="cstat-no" title="statement not covered" >pp.panel("panel").outerWidth();</span>
+<span class="cstat-no" title="statement not covered" >pp.panel("move",{left:(_f=="e"?cc.width()-_11:0),top:_8.top});</span>
+<span class="cstat-no" title="statement not covered" >_8.width-=_11;</span>
+<span class="cstat-no" title="statement not covered" >if(_f=="w"){</span>
+<span class="cstat-no" title="statement not covered" >_8.left+=_11;</span>
+<span class="cstat-no" title="statement not covered" >if(!_10.split&amp;&amp;_10.border){</span>
+<span class="cstat-no" title="statement not covered" >_8.left--;</span>
+}
+}
+<span class="cstat-no" title="statement not covered" >if(!_10.split&amp;&amp;_10.border){</span>
+<span class="cstat-no" title="statement not covered" >_8.width++;</span>
+}
+};
+};
+function <span class="fstat-no" title="function not covered" >_12(_13){</span>
+var cc=<span class="cstat-no" title="statement not covered" >$(_13);</span>
+<span class="cstat-no" title="statement not covered" >cc.addClass("layout");</span>
+function <span class="fstat-no" title="function not covered" >_14(el){</span>
+var _15=<span class="cstat-no" title="statement not covered" >$.fn.layout.parsePanelOptions(el);</span>
+<span class="cstat-no" title="statement not covered" >if("north,south,east,west,center".indexOf(_15.region)&gt;=0){</span>
+<span class="cstat-no" title="statement not covered" >_19(_13,_15,el);</span>
+}
+};
+var _16=<span class="cstat-no" title="statement not covered" >cc.layout("options");</span>
+var _17=<span class="cstat-no" title="statement not covered" >_16.onAdd;</span>
+<span class="cstat-no" title="statement not covered" >_16.onAdd=<span class="fstat-no" title="function not covered" >function()</span>{</span>
+};
+<span class="cstat-no" title="statement not covered" >cc.find("&gt;div,&gt;form&gt;div").each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_14(this);</span>
+});
+<span class="cstat-no" title="statement not covered" >_16.onAdd=_17;</span>
+<span class="cstat-no" title="statement not covered" >cc.append("&lt;div class=\"layout-split-proxy-h\"&gt;&lt;/div&gt;&lt;div class=\"layout-split-proxy-v\"&gt;&lt;/div&gt;");</span>
+<span class="cstat-no" title="statement not covered" >cc.bind("_resize",<span class="fstat-no" title="function not covered" >function(</span>e,_18){</span>
+<span class="cstat-no" title="statement not covered" >if($(this).hasClass("easyui-fluid")||_18){</span>
+<span class="cstat-no" title="statement not covered" >_2(_13);</span>
+}
+<span class="cstat-no" title="statement not covered" >return false;</span>
+});
+};
+function <span class="fstat-no" title="function not covered" >_19(_1a,_1b,el){</span>
+<span class="cstat-no" title="statement not covered" >_1b.region=_1b.region||"center";</span>
+var _1c=<span class="cstat-no" title="statement not covered" >$.data(_1a,"layout").panels;</span>
+var cc=<span class="cstat-no" title="statement not covered" >$(_1a);</span>
+var dir=<span class="cstat-no" title="statement not covered" >_1b.region;</span>
+<span class="cstat-no" title="statement not covered" >if(_1c[dir].length){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var pp=<span class="cstat-no" title="statement not covered" >$(el);</span>
+<span class="cstat-no" title="statement not covered" >if(!pp.length){</span>
+<span class="cstat-no" title="statement not covered" >pp=$("&lt;div&gt;&lt;/div&gt;").appendTo(cc);</span>
+}
+var _1d=<span class="cstat-no" title="statement not covered" >$.extend({},$.fn.layout.paneldefaults,{width:(pp.length?parseInt(pp[0].style.width)||pp.outerWidth():"auto"),height:(pp.length?parseInt(pp[0].style.height)||pp.outerHeight():"auto"),doSize:false,collapsible:true,onOpen:<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _1e=<span class="cstat-no" title="statement not covered" >$(this).panel("header").children("div.panel-tool");</span>
+<span class="cstat-no" title="statement not covered" >_1e.children("a.panel-tool-collapse").hide();</span>
+var _1f=<span class="cstat-no" title="statement not covered" >{north:"up",south:"down",east:"right",west:"left"};</span>
+<span class="cstat-no" title="statement not covered" >if(!_1f[dir]){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var _20=<span class="cstat-no" title="statement not covered" >"layout-button-"+_1f[dir];</span>
+var t=<span class="cstat-no" title="statement not covered" >_1e.children("a."+_20);</span>
+<span class="cstat-no" title="statement not covered" >if(!t.length){</span>
+<span class="cstat-no" title="statement not covered" >t=$("&lt;a href=\"javascript:;\"&gt;&lt;/a&gt;").addClass(_20).appendTo(_1e);</span>
+<span class="cstat-no" title="statement not covered" >t.bind("click",{dir:dir},<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+<span class="cstat-no" title="statement not covered" >_39(_1a,e.data.dir);</span>
+<span class="cstat-no" title="statement not covered" >return false;</span>
+});
+}
+<span class="cstat-no" title="statement not covered" >$(this).panel("options").collapsible?t.show():t.hide();</span>
+}},_1b,{cls:((_1b.cls||"")+" layout-panel layout-panel-"+dir),bodyCls:((_1b.bodyCls||"")+" layout-body")});
+<span class="cstat-no" title="statement not covered" >pp.panel(_1d);</span>
+<span class="cstat-no" title="statement not covered" >_1c[dir]=pp;</span>
+var _21=<span class="cstat-no" title="statement not covered" >{north:"s",south:"n",east:"w",west:"e"};</span>
+var _22=<span class="cstat-no" title="statement not covered" >pp.panel("panel");</span>
+<span class="cstat-no" title="statement not covered" >if(pp.panel("options").split){</span>
+<span class="cstat-no" title="statement not covered" >_22.addClass("layout-split-"+dir);</span>
+}
+<span class="cstat-no" title="statement not covered" >_22.resizable($.extend({},{handles:(_21[dir]||""),disabled:(!pp.panel("options").split),onStartResize:<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+<span class="cstat-no" title="statement not covered" >_1=true;</span>
+<span class="cstat-no" title="statement not covered" >if(dir=="north"||dir=="south"){</span>
+var _23=<span class="cstat-no" title="statement not covered" >$("&gt;div.layout-split-proxy-v",_1a);</span>
+}else{
+var _23=<span class="cstat-no" title="statement not covered" >$("&gt;div.layout-split-proxy-h",_1a);</span>
+}
+var top=<span class="cstat-no" title="statement not covered" >0,_24=<span class="cstat-no" title="statement not covered" >0,_25=<span class="cstat-no" title="statement not covered" >0,_26=<span class="cstat-no" title="statement not covered" >0;</span></span></span></span>
+var pos=<span class="cstat-no" title="statement not covered" >{display:"block"};</span>
+<span class="cstat-no" title="statement not covered" >if(dir=="north"){</span>
+<span class="cstat-no" title="statement not covered" >pos.top=parseInt(_22.css("top"))+_22.outerHeight()-_23.height();</span>
+<span class="cstat-no" title="statement not covered" >pos.left=parseInt(_22.css("left"));</span>
+<span class="cstat-no" title="statement not covered" >pos.width=_22.outerWidth();</span>
+<span class="cstat-no" title="statement not covered" >pos.height=_23.height();</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(dir=="south"){</span>
+<span class="cstat-no" title="statement not covered" >pos.top=parseInt(_22.css("top"));</span>
+<span class="cstat-no" title="statement not covered" >pos.left=parseInt(_22.css("left"));</span>
+<span class="cstat-no" title="statement not covered" >pos.width=_22.outerWidth();</span>
+<span class="cstat-no" title="statement not covered" >pos.height=_23.height();</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(dir=="east"){</span>
+<span class="cstat-no" title="statement not covered" >pos.top=parseInt(_22.css("top"))||0;</span>
+<span class="cstat-no" title="statement not covered" >pos.left=parseInt(_22.css("left"))||0;</span>
+<span class="cstat-no" title="statement not covered" >pos.width=_23.width();</span>
+<span class="cstat-no" title="statement not covered" >pos.height=_22.outerHeight();</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(dir=="west"){</span>
+<span class="cstat-no" title="statement not covered" >pos.top=parseInt(_22.css("top"))||0;</span>
+<span class="cstat-no" title="statement not covered" >pos.left=_22.outerWidth()-_23.width();</span>
+<span class="cstat-no" title="statement not covered" >pos.width=_23.width();</span>
+<span class="cstat-no" title="statement not covered" >pos.height=_22.outerHeight();</span>
+}
+}
+}
+}
+<span class="cstat-no" title="statement not covered" >_23.css(pos);</span>
+<span class="cstat-no" title="statement not covered" >$("&lt;div class=\"layout-mask\"&gt;&lt;/div&gt;").css({left:0,top:0,width:cc.width(),height:cc.height()}).appendTo(cc);</span>
+},onResize:<span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >if(dir=="north"||dir=="south"){</span>
+var _27=<span class="cstat-no" title="statement not covered" >_28(this);</span>
+<span class="cstat-no" title="statement not covered" >$(this).resizable("options").maxHeight=_27;</span>
+var _29=<span class="cstat-no" title="statement not covered" >$("&gt;div.layout-split-proxy-v",_1a);</span>
+var top=<span class="cstat-no" title="statement not covered" >dir=="north"?e.data.height-_29.height():$(_1a).height()-e.data.height;</span>
+<span class="cstat-no" title="statement not covered" >_29.css("top",top);</span>
+}else{
+var _2a=<span class="cstat-no" title="statement not covered" >_28(this);</span>
+<span class="cstat-no" title="statement not covered" >$(this).resizable("options").maxWidth=_2a;</span>
+var _29=<span class="cstat-no" title="statement not covered" >$("&gt;div.layout-split-proxy-h",_1a);</span>
+var _2b=<span class="cstat-no" title="statement not covered" >dir=="west"?e.data.width-_29.width():$(_1a).width()-e.data.width;</span>
+<span class="cstat-no" title="statement not covered" >_29.css("left",_2b);</span>
+}
+<span class="cstat-no" title="statement not covered" >return false;</span>
+},onStopResize:<span class="fstat-no" title="function not covered" >function(</span>e){
+<span class="cstat-no" title="statement not covered" >cc.children("div.layout-split-proxy-v,div.layout-split-proxy-h").hide();</span>
+<span class="cstat-no" title="statement not covered" >pp.panel("resize",e.data);</span>
+<span class="cstat-no" title="statement not covered" >_2(_1a);</span>
+<span class="cstat-no" title="statement not covered" >_1=false;</span>
+<span class="cstat-no" title="statement not covered" >cc.find("&gt;div.layout-mask").remove();</span>
+}},_1b));
+<span class="cstat-no" title="statement not covered" >cc.layout("options").onAdd.call(_1a,dir);</span>
+function <span class="fstat-no" title="function not covered" >_28(p){</span>
+var _2c=<span class="cstat-no" title="statement not covered" >"expand"+dir.substring(0,1).toUpperCase()+dir.substring(1);</span>
+var _2d=<span class="cstat-no" title="statement not covered" >_1c["center"];</span>
+var _2e=(<span class="cstat-no" title="statement not covered" >dir=="north"||dir=="south")?"minHeight":"minWidth";</span>
+var _2f=(<span class="cstat-no" title="statement not covered" >dir=="north"||dir=="south")?"maxHeight":"maxWidth";</span>
+var _30=(<span class="cstat-no" title="statement not covered" >dir=="north"||dir=="south")?"_outerHeight":"_outerWidth";</span>
+var _31=<span class="cstat-no" title="statement not covered" >$.parser.parseValue(_2f,_1c[dir].panel("options")[_2f],$(_1a));</span>
+var _32=<span class="cstat-no" title="statement not covered" >$.parser.parseValue(_2e,_2d.panel("options")[_2e],$(_1a));</span>
+var _33=<span class="cstat-no" title="statement not covered" >_2d.panel("panel")[_30]()-_32;</span>
+<span class="cstat-no" title="statement not covered" >if(_a(_1c[_2c])){</span>
+<span class="cstat-no" title="statement not covered" >_33+=_1c[_2c][_30]()-1;</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_33+=$(p)[_30]();</span>
+}
+<span class="cstat-no" title="statement not covered" >if(_33&gt;_31){</span>
+<span class="cstat-no" title="statement not covered" >_33=_31;</span>
+}
+<span class="cstat-no" title="statement not covered" >return _33;</span>
+};
+};
+function <span class="fstat-no" title="function not covered" >_34(_35,_36){</span>
+var _37=<span class="cstat-no" title="statement not covered" >$.data(_35,"layout").panels;</span>
+<span class="cstat-no" title="statement not covered" >if(_37[_36].length){</span>
+<span class="cstat-no" title="statement not covered" >_37[_36].panel("destroy");</span>
+<span class="cstat-no" title="statement not covered" >_37[_36]=$();</span>
+var _38=<span class="cstat-no" title="statement not covered" >"expand"+_36.substring(0,1).toUpperCase()+_36.substring(1);</span>
+<span class="cstat-no" title="statement not covered" >if(_37[_38]){</span>
+<span class="cstat-no" title="statement not covered" >_37[_38].panel("destroy");</span>
+<span class="cstat-no" title="statement not covered" >_37[_38]=undefined;</span>
+}
+<span class="cstat-no" title="statement not covered" >$(_35).layout("options").onRemove.call(_35,_36);</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_39(_3a,_3b,_3c){</span>
+<span class="cstat-no" title="statement not covered" >if(_3c==undefined){</span>
+<span class="cstat-no" title="statement not covered" >_3c="normal";</span>
+}
+var _3d=<span class="cstat-no" title="statement not covered" >$.data(_3a,"layout").panels;</span>
+var p=<span class="cstat-no" title="statement not covered" >_3d[_3b];</span>
+var _3e=<span class="cstat-no" title="statement not covered" >p.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >if(_3e.onBeforeCollapse.call(p)==false){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var _3f=<span class="cstat-no" title="statement not covered" >"expand"+_3b.substring(0,1).toUpperCase()+_3b.substring(1);</span>
+<span class="cstat-no" title="statement not covered" >if(!_3d[_3f]){</span>
+<span class="cstat-no" title="statement not covered" >_3d[_3f]=_40(_3b);</span>
+var ep=<span class="cstat-no" title="statement not covered" >_3d[_3f].panel("panel");</span>
+<span class="cstat-no" title="statement not covered" >if(!_3e.expandMode){</span>
+<span class="cstat-no" title="statement not covered" >ep.css("cursor","default");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >ep.bind("click",<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >if(_3e.expandMode=="dock"){</span>
+<span class="cstat-no" title="statement not covered" >_4f(_3a,_3b);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >p.panel("expand",false).panel("open");</span>
+var _41=<span class="cstat-no" title="statement not covered" >_42();</span>
+<span class="cstat-no" title="statement not covered" >p.panel("resize",_41.collapse);</span>
+<span class="cstat-no" title="statement not covered" >p.panel("panel").unbind(".layout").bind("mouseleave.layout",{region:_3b},<span class="fstat-no" title="function not covered" >function(</span>e){</span>
+<span class="cstat-no" title="statement not covered" >$(this).stop(true,true);</span>
+<span class="cstat-no" title="statement not covered" >if(_1==true){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+<span class="cstat-no" title="statement not covered" >if($("body&gt;div.combo-p&gt;div.combo-panel:visible").length){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+<span class="cstat-no" title="statement not covered" >_39(_3a,e.data.region);</span>
+});
+<span class="cstat-no" title="statement not covered" >p.panel("panel").animate(_41.expand,<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(_3a).layout("options").onExpand.call(_3a,_3b);</span>
+});
+}
+<span class="cstat-no" title="statement not covered" >return false;</span>
+});
+}
+}
+var _43=<span class="cstat-no" title="statement not covered" >_42();</span>
+<span class="cstat-no" title="statement not covered" >if(!_a(_3d[_3f])){</span>
+<span class="cstat-no" title="statement not covered" >_3d.center.panel("resize",_43.resizeC);</span>
+}
+<span class="cstat-no" title="statement not covered" >p.panel("panel").animate(_43.collapse,_3c,<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >p.panel("collapse",false).panel("close");</span>
+<span class="cstat-no" title="statement not covered" >_3d[_3f].panel("open").panel("resize",_43.expandP);</span>
+<span class="cstat-no" title="statement not covered" >$(this).unbind(".layout");</span>
+<span class="cstat-no" title="statement not covered" >$(_3a).layout("options").onCollapse.call(_3a,_3b);</span>
+});
+function <span class="fstat-no" title="function not covered" >_40(dir){</span>
+var _44=<span class="cstat-no" title="statement not covered" >{"east":"left","west":"right","north":"down","south":"up"};</span>
+var _45=(<span class="cstat-no" title="statement not covered" >_3e.region=="north"||_3e.region=="south");</span>
+var _46=<span class="cstat-no" title="statement not covered" >"layout-button-"+_44[dir];</span>
+var p=<span class="cstat-no" title="statement not covered" >$("&lt;div&gt;&lt;/div&gt;").appendTo(_3a);</span>
+<span class="cstat-no" title="statement not covered" >p.panel($.extend({},$.fn.layout.paneldefaults,{cls:("layout-expand layout-expand-"+dir),title:"&amp;nbsp;",titleDirection:_3e.titleDirection,iconCls:(_3e.hideCollapsedContent?null:_3e.iconCls),closed:true,minWidth:0,minHeight:0,doSize:false,region:_3e.region,collapsedSize:_3e.collapsedSize,noheader:(!_45&amp;&amp;_3e.hideExpandTool),tools:((_45&amp;&amp;_3e.hideExpandTool)?null:[{iconCls:_46,handler:<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_4f(_3a,_3b);</span>
+<span class="cstat-no" title="statement not covered" >return false;</span>
+}}]),onResize:<span class="fstat-no" title="function not covered" >function()</span>{
+var _47=<span class="cstat-no" title="statement not covered" >$(this).children(".layout-expand-title");</span>
+<span class="cstat-no" title="statement not covered" >if(_47.length){</span>
+<span class="cstat-no" title="statement not covered" >_47._outerWidth($(this).height());</span>
+var _48=<span class="cstat-no" title="statement not covered" >($(this).width()-Math.min(_47._outerWidth(),_47._outerHeight()))/2;</span>
+var top=<span class="cstat-no" title="statement not covered" >Math.max(_47._outerWidth(),_47._outerHeight());</span>
+<span class="cstat-no" title="statement not covered" >if(_47.hasClass("layout-expand-title-down")){</span>
+<span class="cstat-no" title="statement not covered" >_48+=Math.min(_47._outerWidth(),_47._outerHeight());</span>
+<span class="cstat-no" title="statement not covered" >top=0;</span>
+}
+<span class="cstat-no" title="statement not covered" >_47.css({left:(_48+"px"),top:(top+"px")});</span>
+}
+}}));
+<span class="cstat-no" title="statement not covered" >if(!_3e.hideCollapsedContent){</span>
+var _49=<span class="cstat-no" title="statement not covered" >typeof _3e.collapsedContent=="function"?_3e.collapsedContent.call(p[0],_3e.title):_3e.collapsedContent;</span>
+<span class="cstat-no" title="statement not covered" >_45?p.panel("setTitle",_49):p.html(_49);</span>
+}
+<span class="cstat-no" title="statement not covered" >p.panel("panel").hover(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).addClass("layout-expand-over");</span>
+},<span class="fstat-no" title="function not covered" >function()</span>{
+<span class="cstat-no" title="statement not covered" >$(this).removeClass("layout-expand-over");</span>
+});
+<span class="cstat-no" title="statement not covered" >return p;</span>
+};
+function <span class="fstat-no" title="function not covered" >_42(){</span>
+var cc=<span class="cstat-no" title="statement not covered" >$(_3a);</span>
+var _4a=<span class="cstat-no" title="statement not covered" >_3d.center.panel("options");</span>
+var _4b=<span class="cstat-no" title="statement not covered" >_3e.collapsedSize;</span>
+<span class="cstat-no" title="statement not covered" >if(_3b=="east"){</span>
+var _4c=<span class="cstat-no" title="statement not covered" >p.panel("panel")._outerWidth();</span>
+var _4d=<span class="cstat-no" title="statement not covered" >_4a.width+_4c-_4b;</span>
+<span class="cstat-no" title="statement not covered" >if(_3e.split||!_3e.border){</span>
+<span class="cstat-no" title="statement not covered" >_4d++;</span>
+}
+<span class="cstat-no" title="statement not covered" >return {resizeC:{width:_4d},expand:{left:cc.width()-_4c},expandP:{top:_4a.top,left:cc.width()-_4b,width:_4b,height:_4a.height},collapse:{left:cc.width(),top:_4a.top,height:_4a.height}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_3b=="west"){</span>
+var _4c=<span class="cstat-no" title="statement not covered" >p.panel("panel")._outerWidth();</span>
+var _4d=<span class="cstat-no" title="statement not covered" >_4a.width+_4c-_4b;</span>
+<span class="cstat-no" title="statement not covered" >if(_3e.split||!_3e.border){</span>
+<span class="cstat-no" title="statement not covered" >_4d++;</span>
+}
+<span class="cstat-no" title="statement not covered" >return {resizeC:{width:_4d,left:_4b-1},expand:{left:0},expandP:{left:0,top:_4a.top,width:_4b,height:_4a.height},collapse:{left:-_4c,top:_4a.top,height:_4a.height}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_3b=="north"){</span>
+var _4e=<span class="cstat-no" title="statement not covered" >p.panel("panel")._outerHeight();</span>
+var hh=<span class="cstat-no" title="statement not covered" >_4a.height;</span>
+<span class="cstat-no" title="statement not covered" >if(!_a(_3d.expandNorth)){</span>
+<span class="cstat-no" title="statement not covered" >hh+=_4e-_4b+((_3e.split||!_3e.border)?1:0);</span>
+}
+<span class="cstat-no" title="statement not covered" >_3d.east.add(_3d.west).add(_3d.expandEast).add(_3d.expandWest).panel("resize",{top:_4b-1,height:hh});</span>
+<span class="cstat-no" title="statement not covered" >return {resizeC:{top:_4b-1,height:hh},expand:{top:0},expandP:{top:0,left:0,width:cc.width(),height:_4b},collapse:{top:-_4e,width:cc.width()}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_3b=="south"){</span>
+var _4e=<span class="cstat-no" title="statement not covered" >p.panel("panel")._outerHeight();</span>
+var hh=<span class="cstat-no" title="statement not covered" >_4a.height;</span>
+<span class="cstat-no" title="statement not covered" >if(!_a(_3d.expandSouth)){</span>
+<span class="cstat-no" title="statement not covered" >hh+=_4e-_4b+((_3e.split||!_3e.border)?1:0);</span>
+}
+<span class="cstat-no" title="statement not covered" >_3d.east.add(_3d.west).add(_3d.expandEast).add(_3d.expandWest).panel("resize",{height:hh});</span>
+<span class="cstat-no" title="statement not covered" >return {resizeC:{height:hh},expand:{top:cc.height()-_4e},expandP:{top:cc.height()-_4b,left:0,width:cc.width(),height:_4b},collapse:{top:cc.height(),width:cc.width()}};</span>
+}
+}
+}
+}
+};
+};
+function <span class="fstat-no" title="function not covered" >_4f(_50,_51){</span>
+var _52=<span class="cstat-no" title="statement not covered" >$.data(_50,"layout").panels;</span>
+var p=<span class="cstat-no" title="statement not covered" >_52[_51];</span>
+var _53=<span class="cstat-no" title="statement not covered" >p.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >if(_53.onBeforeExpand.call(p)==false){</span>
+<span class="cstat-no" title="statement not covered" >return;</span>
+}
+var _54=<span class="cstat-no" title="statement not covered" >"expand"+_51.substring(0,1).toUpperCase()+_51.substring(1);</span>
+<span class="cstat-no" title="statement not covered" >if(_52[_54]){</span>
+<span class="cstat-no" title="statement not covered" >_52[_54].panel("close");</span>
+<span class="cstat-no" title="statement not covered" >p.panel("panel").stop(true,true);</span>
+<span class="cstat-no" title="statement not covered" >p.panel("expand",false).panel("open");</span>
+var _55=<span class="cstat-no" title="statement not covered" >_56();</span>
+<span class="cstat-no" title="statement not covered" >p.panel("resize",_55.collapse);</span>
+<span class="cstat-no" title="statement not covered" >p.panel("panel").animate(_55.expand,<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_2(_50);</span>
+<span class="cstat-no" title="statement not covered" >$(_50).layout("options").onExpand.call(_50,_51);</span>
+});
+}
+function <span class="fstat-no" title="function not covered" >_56(){</span>
+var cc=<span class="cstat-no" title="statement not covered" >$(_50);</span>
+var _57=<span class="cstat-no" title="statement not covered" >_52.center.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >if(_51=="east"&amp;&amp;_52.expandEast){</span>
+<span class="cstat-no" title="statement not covered" >return {collapse:{left:cc.width(),top:_57.top,height:_57.height},expand:{left:cc.width()-p.panel("panel")._outerWidth()}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_51=="west"&amp;&amp;_52.expandWest){</span>
+<span class="cstat-no" title="statement not covered" >return {collapse:{left:-p.panel("panel")._outerWidth(),top:_57.top,height:_57.height},expand:{left:0}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_51=="north"&amp;&amp;_52.expandNorth){</span>
+<span class="cstat-no" title="statement not covered" >return {collapse:{top:-p.panel("panel")._outerHeight(),width:cc.width()},expand:{top:0}};</span>
+}else{
+<span class="cstat-no" title="statement not covered" >if(_51=="south"&amp;&amp;_52.expandSouth){</span>
+<span class="cstat-no" title="statement not covered" >return {collapse:{top:cc.height(),width:cc.width()},expand:{top:cc.height()-p.panel("panel")._outerHeight()}};</span>
+}
+}
+}
+}
+};
+};
+function <span class="fstat-no" title="function not covered" >_a(pp){</span>
+<span class="cstat-no" title="statement not covered" >if(!pp){</span>
+<span class="cstat-no" title="statement not covered" >return false;</span>
+}
+<span class="cstat-no" title="statement not covered" >if(pp.length){</span>
+<span class="cstat-no" title="statement not covered" >return pp.panel("panel").is(":visible");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >return false;</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_58(_59){</span>
+var _5a=<span class="cstat-no" title="statement not covered" >$.data(_59,"layout");</span>
+var _5b=<span class="cstat-no" title="statement not covered" >_5a.options;</span>
+var _5c=<span class="cstat-no" title="statement not covered" >_5a.panels;</span>
+var _5d=<span class="cstat-no" title="statement not covered" >_5b.onCollapse;</span>
+<span class="cstat-no" title="statement not covered" >_5b.onCollapse=<span class="fstat-no" title="function not covered" >function()</span>{</span>
+};
+<span class="cstat-no" title="statement not covered" >_5e("east");</span>
+<span class="cstat-no" title="statement not covered" >_5e("west");</span>
+<span class="cstat-no" title="statement not covered" >_5e("north");</span>
+<span class="cstat-no" title="statement not covered" >_5e("south");</span>
+<span class="cstat-no" title="statement not covered" >_5b.onCollapse=_5d;</span>
+function <span class="fstat-no" title="function not covered" >_5e(_5f){</span>
+var p=<span class="cstat-no" title="statement not covered" >_5c[_5f];</span>
+<span class="cstat-no" title="statement not covered" >if(p.length&amp;&amp;p.panel("options").collapsed){</span>
+<span class="cstat-no" title="statement not covered" >_39(_59,_5f,0);</span>
+}
+};
+};
+function <span class="fstat-no" title="function not covered" >_60(_61,_62,_63){</span>
+var p=<span class="cstat-no" title="statement not covered" >$(_61).layout("panel",_62);</span>
+<span class="cstat-no" title="statement not covered" >p.panel("options").split=_63;</span>
+var cls=<span class="cstat-no" title="statement not covered" >"layout-split-"+_62;</span>
+var _64=<span class="cstat-no" title="statement not covered" >p.panel("panel").removeClass(cls);</span>
+<span class="cstat-no" title="statement not covered" >if(_63){</span>
+<span class="cstat-no" title="statement not covered" >_64.addClass(cls);</span>
+}
+<span class="cstat-no" title="statement not covered" >_64.resizable({disabled:(!_63)});</span>
+<span class="cstat-no" title="statement not covered" >_2(_61);</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.layout=<span class="fstat-no" title="function not covered" >function(</span>_65,_66){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _65=="string"){</span>
+<span class="cstat-no" title="statement not covered" >return $.fn.layout.methods[_65](this,_66);</span>
+}
+<span class="cstat-no" title="statement not covered" >_65=_65||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _67=<span class="cstat-no" title="statement not covered" >$.data(this,"layout");</span>
+<span class="cstat-no" title="statement not covered" >if(_67){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_67.options,_65);</span>
+}else{
+var _68=<span class="cstat-no" title="statement not covered" >$.extend({},$.fn.layout.defaults,$.fn.layout.parseOptions(this),_65);</span>
+<span class="cstat-no" title="statement not covered" >$.data(this,"layout",{options:_68,panels:{center:$(),north:$(),south:$(),east:$(),west:$()}});</span>
+<span class="cstat-no" title="statement not covered" >_12(this);</span>
+}
+<span class="cstat-no" title="statement not covered" >_2(this);</span>
+<span class="cstat-no" title="statement not covered" >_58(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.layout.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+<span class="cstat-no" title="statement not covered" >return $.data(jq[0],"layout").options;</span>
+},resize:<span class="fstat-no" title="function not covered" >function(</span>jq,_69){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_2(this,_69);</span>
+});
+},panel:<span class="fstat-no" title="function not covered" >function(</span>jq,_6a){
+<span class="cstat-no" title="statement not covered" >return $.data(jq[0],"layout").panels[_6a];</span>
+},collapse:<span class="fstat-no" title="function not covered" >function(</span>jq,_6b){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_39(this,_6b);</span>
+});
+},expand:<span class="fstat-no" title="function not covered" >function(</span>jq,_6c){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_4f(this,_6c);</span>
+});
+},add:<span class="fstat-no" title="function not covered" >function(</span>jq,_6d){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_19(this,_6d);</span>
+<span class="cstat-no" title="statement not covered" >_2(this);</span>
+<span class="cstat-no" title="statement not covered" >if($(this).layout("panel",_6d.region).panel("options").collapsed){</span>
+<span class="cstat-no" title="statement not covered" >_39(this,_6d.region,0);</span>
+}
+});
+},remove:<span class="fstat-no" title="function not covered" >function(</span>jq,_6e){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_34(this,_6e);</span>
+<span class="cstat-no" title="statement not covered" >_2(this);</span>
+});
+},split:<span class="fstat-no" title="function not covered" >function(</span>jq,_6f){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_60(this,_6f,true);</span>
+});
+},unsplit:<span class="fstat-no" title="function not covered" >function(</span>jq,_70){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_60(this,_70,false);</span>
+});
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.layout.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_71){</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.parser.parseOptions(_71,[{fit:"boolean"}]));</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.layout.defaults={fit:false,onExpand:<span class="fstat-no" title="function not covered" >function(</span>_72){</span>
+},onCollapse:<span class="fstat-no" title="function not covered" >function(</span>_73){
+},onAdd:<span class="fstat-no" title="function not covered" >function(</span>_74){
+},onRemove:<span class="fstat-no" title="function not covered" >function(</span>_75){
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.layout.parsePanelOptions=<span class="fstat-no" title="function not covered" >function(</span>_76){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_76);</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.fn.panel.parseOptions(_76),$.parser.parseOptions(_76,["region",{split:"boolean",collpasedSize:"number",minWidth:"number",minHeight:"number",maxWidth:"number",maxHeight:"number"}]));</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.layout.paneldefaults=$.extend({},$.fn.panel.defaults,{region:null,split:false,collapsedSize:32,expandMode:"float",hideExpandTool:false,hideCollapsedContent:true,collapsedContent:<span class="fstat-no" title="function not covered" >function(</span>_77){</span>
+var p=<span class="cstat-no" title="statement not covered" >$(this);</span>
+var _78=<span class="cstat-no" title="statement not covered" >p.panel("options");</span>
+<span class="cstat-no" title="statement not covered" >if(_78.region=="north"||_78.region=="south"){</span>
+<span class="cstat-no" title="statement not covered" >return _77;</span>
+}
+var cc=<span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >if(_78.iconCls){</span>
+<span class="cstat-no" title="statement not covered" >cc.push("&lt;div class=\"panel-icon "+_78.iconCls+"\"&gt;&lt;/div&gt;");</span>
+}
+<span class="cstat-no" title="statement not covered" >cc.push("&lt;div class=\"panel-title layout-expand-title");</span>
+<span class="cstat-no" title="statement not covered" >cc.push(" layout-expand-title-"+_78.titleDirection);</span>
+<span class="cstat-no" title="statement not covered" >cc.push(_78.iconCls?" layout-expand-with-icon":"");</span>
+<span class="cstat-no" title="statement not covered" >cc.push("\"&gt;");</span>
+<span class="cstat-no" title="statement not covered" >cc.push(_77);</span>
+<span class="cstat-no" title="statement not covered" >cc.push("&lt;/div&gt;");</span>
+<span class="cstat-no" title="statement not covered" >return cc.join("");</span>
+},minWidth:10,minHeight:10,maxWidth:10000,maxHeight:10000});
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

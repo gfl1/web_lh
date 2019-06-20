@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/locale</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> assets/jquery-easyui-1.6.7/locale
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/800</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/626</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/35</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/794</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<div class="pad1">
+<table class="coverage-summary">
+<thead>
+<tr>
+   <th data-col="file" data-fmt="html" data-html="true" class="file">File</th>
+   <th data-col="pic" data-type="number" data-fmt="html" data-html="true" class="pic"></th>
+   <th data-col="statements" data-type="number" data-fmt="pct" class="pct">Statements</th>
+   <th data-col="statements_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="branches" data-type="number" data-fmt="pct" class="pct">Branches</th>
+   <th data-col="branches_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="functions" data-type="number" data-fmt="pct" class="pct">Functions</th>
+   <th data-col="functions_raw" data-type="number" data-fmt="html" class="abs"></th>
+   <th data-col="lines" data-type="number" data-fmt="pct" class="pct">Lines</th>
+   <th data-col="lines_raw" data-type="number" data-fmt="html" class="abs"></th>
+</tr>
+</thead>
+<tbody><tr>
+	<td class="file low" data-value="easyui-lang-af.js"><a href="easyui-lang-af.js.html">easyui-lang-af.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-am.js"><a href="easyui-lang-am.js.html">easyui-lang-am.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-ar.js"><a href="easyui-lang-ar.js.html">easyui-lang-ar.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-bg.js"><a href="easyui-lang-bg.js.html">easyui-lang-bg.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-ca.js"><a href="easyui-lang-ca.js.html">easyui-lang-ca.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-cs.js"><a href="easyui-lang-cs.js.html">easyui-lang-cs.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-cz.js"><a href="easyui-lang-cz.js.html">easyui-lang-cz.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-da.js"><a href="easyui-lang-da.js.html">easyui-lang-da.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-de.js"><a href="easyui-lang-de.js.html">easyui-lang-de.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="43" class="abs low">0/43</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="33" class="abs low">0/33</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="3" class="abs low">0/3</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="42" class="abs low">0/42</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-el.js"><a href="easyui-lang-el.js.html">easyui-lang-el.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-en.js"><a href="easyui-lang-en.js.html">easyui-lang-en.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-es.js"><a href="easyui-lang-es.js.html">easyui-lang-es.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-fa.js"><a href="easyui-lang-fa.js.html">easyui-lang-fa.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-fr.js"><a href="easyui-lang-fr.js.html">easyui-lang-fr.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="42" class="abs low">0/42</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="33" class="abs low">0/33</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="3" class="abs low">0/3</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="41" class="abs low">0/41</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-it.js"><a href="easyui-lang-it.js.html">easyui-lang-it.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="44" class="abs low">0/44</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="33" class="abs low">0/33</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="3" class="abs low">0/3</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="43" class="abs low">0/43</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-jp.js"><a href="easyui-lang-jp.js.html">easyui-lang-jp.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-ko.js"><a href="easyui-lang-ko.js.html">easyui-lang-ko.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-nl.js"><a href="easyui-lang-nl.js.html">easyui-lang-nl.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="27" class="abs low">0/27</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-pl.js"><a href="easyui-lang-pl.js.html">easyui-lang-pl.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-pt_BR.js"><a href="easyui-lang-pt_BR.js.html">easyui-lang-pt_BR.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-ru.js"><a href="easyui-lang-ru.js.html">easyui-lang-ru.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-sv_SE.js"><a href="easyui-lang-sv_SE.js.html">easyui-lang-sv_SE.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-tr.js"><a href="easyui-lang-tr.js.html">easyui-lang-tr.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="40" class="abs low">0/40</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="28" class="abs low">0/28</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="2" class="abs low">0/2</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="38" class="abs low">0/38</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-ua.js"><a href="easyui-lang-ua.js.html">easyui-lang-ua.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="22" class="abs low">0/22</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="29" class="abs low">0/29</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-zh_CN.js"><a href="easyui-lang-zh_CN.js.html">easyui-lang-zh_CN.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="45" class="abs low">0/45</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="35" class="abs low">0/35</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="3" class="abs low">0/3</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="44" class="abs low">0/44</td>
+	</tr>
+
+<tr>
+	<td class="file low" data-value="easyui-lang-zh_TW.js"><a href="easyui-lang-zh_TW.js.html">easyui-lang-zh_TW.js</a></td>
+	<td data-value="0" class="pic low"><div class="chart"><div class="cover-fill" style="width: 0%;"></div><div class="cover-empty" style="width:100%;"></div></div></td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="30" class="abs low">0/30</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="24" class="abs low">0/24</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="1" class="abs low">0/1</td>
+	<td data-value="0" class="pct low">0%</td>
+	<td data-value="30" class="abs low">0/30</td>
+	</tr>
+
+</tbody>
+</table>
+</div><div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

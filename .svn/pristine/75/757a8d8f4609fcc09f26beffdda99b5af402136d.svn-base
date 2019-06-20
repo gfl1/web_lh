@@ -1,0 +1,28 @@
+$r:32;
+.el-dialog,.el-message-box{
+  //background: $background-table-base;
+  border: 15px solid transparent;
+  -webkit-border-image: url("../../assets/image/tableDialog-border.png") 27 27 24 24 round;
+  -moz-border-image: url("../../assets/image/tableDialog-border.png") 27 27 24 24 round;
+  border-image: url("../../assets/image/tableDialog-border.png") 27 27 24 24 round;
+  width: 500px;
+  resize: both;
+  .el-message-box__title{
+   color: white;
+  }
+  .el-message-box__content,.el-message-box__headerbtn .el-message-box__close{
+    color: rgba(255,255,255,0.8);
+  }
+  .el-button{
+    background: $background-linear-base;
+    color: rgba(255,255,255,0.8);
+    border-color: lighten($border-color-base,20%);
+    border-radius: 5/$r+rem;
+    width: 60/$r+rem;
+    &:hover{
+      border-color: $border-color-base;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}

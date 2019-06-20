@@ -1,0 +1,73 @@
+<template>
+    <div class="em_dialogs">
+      <el-dialog title="设置窗口" :visible.sync="dialogFormVisible">
+        <el-form :model="form">
+          <template v-for="item in this.label">
+            <el-form-item :label="item.name" :label-width="formLabelWidth">
+                  <component :is="item.type" :operation="item" ref="form_data"></component>
+            </el-form-item>
+          </template>
+        </el-form>
+        <div slot="footer" class="dialog-footer">
+          <el-button @click="cancel">取 消</el-button>
+          <el-button type="primary" @click="confirm">确 定</el-button>
+        </div>
+      </el-dialog>
+    </div>
+</template>
+
+<script>
+  import em_input from "@/components/em_input/em_input"
+  import em_select from "@/components/em_select/em_select"
+    export default {
+        props: {
+          label:{
+             type:Array
+          }
+        },
+       components:{
+         em_input,
+         em_select
+       },
+        data(){
+           return{
+             dialogFormVisible:false,
+             form: {
+             },
+             formLabelWidth: '80px'
+           }
+
+        },
+      methods:{
+          showdialog(){
+            this.dialogFormVisible = true;
+            this.label.forEach((val)=>{
+               this.form[val.params]=""
+            });
+             console.log(this.form)
+          },
+         confirm(){
+           this.dialogFormVisible = false;
+           this.label.forEach((val,i)=>{
+             if(this.$refs.form_data[i].input){
+               this.form[val.params]=this.$refs.form_data[i].input;
+             }
+             if(this.$refs.form_data[i].value){
+               this.form[val.params]=this.$refs.form_data[i].value
+             }
+           });
+           console.log(this.form);
+           this.$emit("eventFromDialog",this.form);
+         },
+         cancel(){
+           this.dialogFormVisible =false;
+         }
+
+      }
+    };
+</script>
+<style lang="scss" scoped>
+  .el-form-item__label{
+      color: white;
+   }
+</style>

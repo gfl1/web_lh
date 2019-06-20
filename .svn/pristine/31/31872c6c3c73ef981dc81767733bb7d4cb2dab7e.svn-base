@@ -1,0 +1,15 @@
+$r:32;
+.panel-body{
+  background-color: transparent;
+  overflow: hidden;
+}
+.panel-title{
+  color: $color-base;
+  font-size: 16/$r+rem;
+}
+.panel-header{
+  border-bottom: 2px solid $border-color-base;
+  background: nth($background-type2-base,3) !important;
+  box-shadow: 0 0 2px rgba(255, 255, 255,0.2);
+}
+

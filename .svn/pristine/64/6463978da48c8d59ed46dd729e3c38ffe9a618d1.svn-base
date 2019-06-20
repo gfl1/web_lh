@@ -1,0 +1,31 @@
+<template>
+    <div class="em_button">
+         <el-button :icon="operation.icon" @click="onclick(operation.fn,operation.url,table_id)" class="em-btn-simple">{{operation.operate}}</el-button>
+    </div>
+</template>
+
+<script>
+    export default {
+        props: {
+          operation:{
+            type:Object
+          },
+          table_id:{
+             type: String
+          }
+        },
+      create(){
+
+      },
+      methods:{
+           onclick(fn,url,table_id){
+             this.bus.$emit(this.operation.control_id,{fn:fn,url:url,table_id:table_id});
+             console.log(this.operation.control_id)
+           }
+
+      }
+    };
+</script>
+<style lang="scss" scoped>
+    @import "em_button";
+</style>

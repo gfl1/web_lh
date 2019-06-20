@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for assets/jquery-easyui-1.6.7/plugins/jquery.switchbutton.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">assets/jquery-easyui-1.6.7/plugins</a> jquery.switchbutton.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/129</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/33</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/129</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * EasyUI for jQuery 1.6.7
+ * 
+ * Copyright (c) 2009-2018 www.jeasyui.com. All rights reserved.
+ *
+ * Licensed under the freeware license: http://www.jeasyui.com/license_freeware.php
+ * To use it on other terms please contact us: info@jeasyui.com
+ *
+ */
+<span class="cstat-no" title="statement not covered" >(<span class="fstat-no" title="function not covered" >function(</span>$){</span>
+function <span class="fstat-no" title="function not covered" >_1(_2){</span>
+var _3=<span class="cstat-no" title="statement not covered" >$("&lt;span class=\"switchbutton\"&gt;"+"&lt;span class=\"switchbutton-inner\"&gt;"+"&lt;span class=\"switchbutton-on\"&gt;&lt;/span&gt;"+"&lt;span class=\"switchbutton-handle\"&gt;&lt;/span&gt;"+"&lt;span class=\"switchbutton-off\"&gt;&lt;/span&gt;"+"&lt;input class=\"switchbutton-value\" type=\"checkbox\"&gt;"+"&lt;/span&gt;"+"&lt;/span&gt;").insertAfter(_2);</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_2);</span>
+<span class="cstat-no" title="statement not covered" >t.addClass("switchbutton-f").hide();</span>
+var _4=<span class="cstat-no" title="statement not covered" >t.attr("name");</span>
+<span class="cstat-no" title="statement not covered" >if(_4){</span>
+<span class="cstat-no" title="statement not covered" >t.removeAttr("name").attr("switchbuttonName",_4);</span>
+<span class="cstat-no" title="statement not covered" >_3.find(".switchbutton-value").attr("name",_4);</span>
+}
+<span class="cstat-no" title="statement not covered" >_3.bind("_resize",<span class="fstat-no" title="function not covered" >function(</span>e,_5){</span>
+<span class="cstat-no" title="statement not covered" >if($(this).hasClass("easyui-fluid")||_5){</span>
+<span class="cstat-no" title="statement not covered" >_6(_2);</span>
+}
+<span class="cstat-no" title="statement not covered" >return false;</span>
+});
+<span class="cstat-no" title="statement not covered" >return _3;</span>
+};
+function <span class="fstat-no" title="function not covered" >_6(_7,_8){</span>
+var _9=<span class="cstat-no" title="statement not covered" >$.data(_7,"switchbutton");</span>
+var _a=<span class="cstat-no" title="statement not covered" >_9.options;</span>
+var _b=<span class="cstat-no" title="statement not covered" >_9.switchbutton;</span>
+<span class="cstat-no" title="statement not covered" >if(_8){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_a,_8);</span>
+}
+var _c=<span class="cstat-no" title="statement not covered" >_b.is(":visible");</span>
+<span class="cstat-no" title="statement not covered" >if(!_c){</span>
+<span class="cstat-no" title="statement not covered" >_b.appendTo("body");</span>
+}
+<span class="cstat-no" title="statement not covered" >_b._size(_a);</span>
+var w=<span class="cstat-no" title="statement not covered" >_b.width();</span>
+var h=<span class="cstat-no" title="statement not covered" >_b.height();</span>
+var w=<span class="cstat-no" title="statement not covered" >_b.outerWidth();</span>
+var h=<span class="cstat-no" title="statement not covered" >_b.outerHeight();</span>
+var _d=<span class="cstat-no" title="statement not covered" >parseInt(_a.handleWidth)||_b.height();</span>
+var _e=<span class="cstat-no" title="statement not covered" >w*2-_d;</span>
+<span class="cstat-no" title="statement not covered" >_b.find(".switchbutton-inner").css({width:_e+"px",height:h+"px",lineHeight:h+"px"});</span>
+<span class="cstat-no" title="statement not covered" >_b.find(".switchbutton-handle")._outerWidth(_d)._outerHeight(h).css({marginLeft:-_d/2+"px"});</span>
+<span class="cstat-no" title="statement not covered" >_b.find(".switchbutton-on").css({width:(w-_d/2)+"px",textIndent:(_a.reversed?"":"-")+_d/2+"px"});</span>
+<span class="cstat-no" title="statement not covered" >_b.find(".switchbutton-off").css({width:(w-_d/2)+"px",textIndent:(_a.reversed?"-":"")+_d/2+"px"});</span>
+<span class="cstat-no" title="statement not covered" >_a.marginWidth=w-_d;</span>
+<span class="cstat-no" title="statement not covered" >_f(_7,_a.checked,false);</span>
+<span class="cstat-no" title="statement not covered" >if(!_c){</span>
+<span class="cstat-no" title="statement not covered" >_b.insertAfter(_7);</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_10(_11){</span>
+var _12=<span class="cstat-no" title="statement not covered" >$.data(_11,"switchbutton");</span>
+var _13=<span class="cstat-no" title="statement not covered" >_12.options;</span>
+var _14=<span class="cstat-no" title="statement not covered" >_12.switchbutton;</span>
+var _15=<span class="cstat-no" title="statement not covered" >_14.find(".switchbutton-inner");</span>
+var on=<span class="cstat-no" title="statement not covered" >_15.find(".switchbutton-on").html(_13.onText);</span>
+var off=<span class="cstat-no" title="statement not covered" >_15.find(".switchbutton-off").html(_13.offText);</span>
+var _16=<span class="cstat-no" title="statement not covered" >_15.find(".switchbutton-handle").html(_13.handleText);</span>
+<span class="cstat-no" title="statement not covered" >if(_13.reversed){</span>
+<span class="cstat-no" title="statement not covered" >off.prependTo(_15);</span>
+<span class="cstat-no" title="statement not covered" >on.insertAfter(_16);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >on.prependTo(_15);</span>
+<span class="cstat-no" title="statement not covered" >off.insertAfter(_16);</span>
+}
+<span class="cstat-no" title="statement not covered" >_14.find(".switchbutton-value")._propAttr("checked",_13.checked);</span>
+<span class="cstat-no" title="statement not covered" >_14.removeClass("switchbutton-disabled").addClass(_13.disabled?"switchbutton-disabled":"");</span>
+<span class="cstat-no" title="statement not covered" >_14.removeClass("switchbutton-reversed").addClass(_13.reversed?"switchbutton-reversed":"");</span>
+<span class="cstat-no" title="statement not covered" >_f(_11,_13.checked);</span>
+<span class="cstat-no" title="statement not covered" >_17(_11,_13.readonly);</span>
+<span class="cstat-no" title="statement not covered" >$(_11).switchbutton("setValue",_13.value);</span>
+};
+function <span class="fstat-no" title="function not covered" >_f(_18,_19,_1a){</span>
+var _1b=<span class="cstat-no" title="statement not covered" >$.data(_18,"switchbutton");</span>
+var _1c=<span class="cstat-no" title="statement not covered" >_1b.options;</span>
+<span class="cstat-no" title="statement not covered" >_1c.checked=_19;</span>
+var _1d=<span class="cstat-no" title="statement not covered" >_1b.switchbutton.find(".switchbutton-inner");</span>
+var _1e=<span class="cstat-no" title="statement not covered" >_1d.find(".switchbutton-on");</span>
+var _1f=<span class="cstat-no" title="statement not covered" >_1c.reversed?(_1c.checked?_1c.marginWidth:0):(_1c.checked?0:_1c.marginWidth);</span>
+var dir=<span class="cstat-no" title="statement not covered" >_1e.css("float").toLowerCase();</span>
+var css=<span class="cstat-no" title="statement not covered" >{};</span>
+<span class="cstat-no" title="statement not covered" >css["margin-"+dir]=-_1f+"px";</span>
+<span class="cstat-no" title="statement not covered" >_1a?_1d.animate(css,200):_1d.css(css);</span>
+var _20=<span class="cstat-no" title="statement not covered" >_1d.find(".switchbutton-value");</span>
+var ck=<span class="cstat-no" title="statement not covered" >_20.is(":checked");</span>
+<span class="cstat-no" title="statement not covered" >$(_18).add(_20)._propAttr("checked",_1c.checked);</span>
+<span class="cstat-no" title="statement not covered" >if(ck!=_1c.checked){</span>
+<span class="cstat-no" title="statement not covered" >_1c.onChange.call(_18,_1c.checked);</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_21(_22,_23){</span>
+var _24=<span class="cstat-no" title="statement not covered" >$.data(_22,"switchbutton");</span>
+var _25=<span class="cstat-no" title="statement not covered" >_24.options;</span>
+var _26=<span class="cstat-no" title="statement not covered" >_24.switchbutton;</span>
+var _27=<span class="cstat-no" title="statement not covered" >_26.find(".switchbutton-value");</span>
+<span class="cstat-no" title="statement not covered" >if(_23){</span>
+<span class="cstat-no" title="statement not covered" >_25.disabled=true;</span>
+<span class="cstat-no" title="statement not covered" >$(_22).add(_27)._propAttr("disabled",true);</span>
+<span class="cstat-no" title="statement not covered" >_26.addClass("switchbutton-disabled");</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_25.disabled=false;</span>
+<span class="cstat-no" title="statement not covered" >$(_22).add(_27)._propAttr("disabled",false);</span>
+<span class="cstat-no" title="statement not covered" >_26.removeClass("switchbutton-disabled");</span>
+}
+};
+function <span class="fstat-no" title="function not covered" >_17(_28,_29){</span>
+var _2a=<span class="cstat-no" title="statement not covered" >$.data(_28,"switchbutton");</span>
+var _2b=<span class="cstat-no" title="statement not covered" >_2a.options;</span>
+<span class="cstat-no" title="statement not covered" >_2b.readonly=_29==undefined?true:_29;</span>
+<span class="cstat-no" title="statement not covered" >_2a.switchbutton.removeClass("switchbutton-readonly").addClass(_2b.readonly?"switchbutton-readonly":"");</span>
+};
+function <span class="fstat-no" title="function not covered" >_2c(_2d){</span>
+var _2e=<span class="cstat-no" title="statement not covered" >$.data(_2d,"switchbutton");</span>
+var _2f=<span class="cstat-no" title="statement not covered" >_2e.options;</span>
+<span class="cstat-no" title="statement not covered" >_2e.switchbutton.unbind(".switchbutton").bind("click.switchbutton",<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >if(!_2f.disabled&amp;&amp;!_2f.readonly){</span>
+<span class="cstat-no" title="statement not covered" >_f(_2d,_2f.checked?false:true,true);</span>
+}
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.switchbutton=<span class="fstat-no" title="function not covered" >function(</span>_30,_31){</span>
+<span class="cstat-no" title="statement not covered" >if(typeof _30=="string"){</span>
+<span class="cstat-no" title="statement not covered" >return $.fn.switchbutton.methods[_30](this,_31);</span>
+}
+<span class="cstat-no" title="statement not covered" >_30=_30||{};</span>
+<span class="cstat-no" title="statement not covered" >return this.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _32=<span class="cstat-no" title="statement not covered" >$.data(this,"switchbutton");</span>
+<span class="cstat-no" title="statement not covered" >if(_32){</span>
+<span class="cstat-no" title="statement not covered" >$.extend(_32.options,_30);</span>
+}else{
+<span class="cstat-no" title="statement not covered" >_32=$.data(this,"switchbutton",{options:$.extend({},$.fn.switchbutton.defaults,$.fn.switchbutton.parseOptions(this),_30),switchbutton:_1(this)});</span>
+}
+<span class="cstat-no" title="statement not covered" >_32.options.originalChecked=_32.options.checked;</span>
+<span class="cstat-no" title="statement not covered" >_10(this);</span>
+<span class="cstat-no" title="statement not covered" >_6(this);</span>
+<span class="cstat-no" title="statement not covered" >_2c(this);</span>
+});
+};
+<span class="cstat-no" title="statement not covered" >$.fn.switchbutton.methods={options:<span class="fstat-no" title="function not covered" >function(</span>jq){</span>
+var _33=<span class="cstat-no" title="statement not covered" >jq.data("switchbutton");</span>
+<span class="cstat-no" title="statement not covered" >return $.extend(_33.options,{value:_33.switchbutton.find(".switchbutton-value").val()});</span>
+},resize:<span class="fstat-no" title="function not covered" >function(</span>jq,_34){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_6(this,_34);</span>
+});
+},enable:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_21(this,false);</span>
+});
+},disable:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_21(this,true);</span>
+});
+},readonly:<span class="fstat-no" title="function not covered" >function(</span>jq,_35){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_17(this,_35);</span>
+});
+},check:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_f(this,true);</span>
+});
+},uncheck:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_f(this,false);</span>
+});
+},clear:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >_f(this,false);</span>
+});
+},reset:<span class="fstat-no" title="function not covered" >function(</span>jq){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+var _36=<span class="cstat-no" title="statement not covered" >$(this).switchbutton("options");</span>
+<span class="cstat-no" title="statement not covered" >_f(this,_36.originalChecked);</span>
+});
+},setValue:<span class="fstat-no" title="function not covered" >function(</span>jq,_37){
+<span class="cstat-no" title="statement not covered" >return jq.each(<span class="fstat-no" title="function not covered" >function()</span>{</span>
+<span class="cstat-no" title="statement not covered" >$(this).val(_37);</span>
+<span class="cstat-no" title="statement not covered" >$.data(this,"switchbutton").switchbutton.find(".switchbutton-value").val(_37);</span>
+});
+}};
+<span class="cstat-no" title="statement not covered" >$.fn.switchbutton.parseOptions=<span class="fstat-no" title="function not covered" >function(</span>_38){</span>
+var t=<span class="cstat-no" title="statement not covered" >$(_38);</span>
+<span class="cstat-no" title="statement not covered" >return $.extend({},$.parser.parseOptions(_38,["onText","offText","handleText",{handleWidth:"number",reversed:"boolean"}]),{value:(t.val()||undefined),checked:(t.attr("checked")?true:undefined),disabled:(t.attr("disabled")?true:undefined),readonly:(t.attr("readonly")?true:undefined)});</span>
+};
+<span class="cstat-no" title="statement not covered" >$.fn.switchbutton.defaults={handleWidth:"auto",width:60,height:30,checked:false,disabled:false,readonly:false,reversed:false,onText:"ON",offText:"OFF",handleText:"",value:"on",onChange:<span class="fstat-no" title="function not covered" >function(</span>_39){</span>
+}};
+})(jQuery);
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Mon Apr 29 2019 14:43:21 GMT+0800 (GMT+08:00)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

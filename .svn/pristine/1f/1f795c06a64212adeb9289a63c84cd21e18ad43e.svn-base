@@ -1,0 +1,360 @@
+<template>
+  <div class="sole_table table-container" style="width: 100%;height: 100%">
+    <em_dialogs ref="dialog" :label="label_input"   @eventFromDialog="recieveObj"></em_dialogs>
+    <el-dialog title="导入" :visible.sync="dialogFormVisible" :modal-append-to-body="false"  v-dialogDrag="true">
+        <el-upload
+          class="upload-demo"
+          ref="upload"
+          :action="action"
+          :on-preview="handlePreview"
+          :on-remove="handleRemove"
+          :file-list="fileList"
+          :limit="1"
+          :headers="headers"
+          name="upfile"
+          accept=".xls,.docx,.xlsx,.csv "
+          :on-error="uploadFileErro"
+          :on-success="uploadFileSuccess"
+          :auto-upload="false">
+          <el-button slot="trigger" size="small" type="primary" class="em-btn-border">选取文件</el-button>
+          <el-button style="margin-left: 10px;" size="small" type="success" @click="downloadModel"  class="em-btn-border">下载模板</el-button>
+          <el-button style="margin-left: 10px;" size="small" type="success" @click="downloadUserModel"  class="em-btn-border">用户id表</el-button>
+          <el-button style="margin-left: 10px;" size="small" type="success" @click="downloadDepartmentModel"  class="em-btn-border">部门id表</el-button>
+          <div slot="tip" class="el-upload__tip">只能上传csv文件</div>
+        </el-upload>
+      <div slot="footer" class="dialog-footer">
+        <el-button @click="dialogFormVisible = false" class="em-btn_shadow">取 消</el-button>
+        <el-button type="primary" @click="submitUpload" class="em-btn_shadow">确 定</el-button>
+      </div>
+    </el-dialog>
+    <div class="table digital_table">
+      <el-row class="operation">
+        <template v-for="item in this.data.operation">
+          <component :is="item.type" :operation="item" :table_id="table_id" ref="child"></component>
+        </template>
+      </el-row>
+      <el-table
+        v-loading="listLoading"
+        border
+        height="calc(100% - 92px)"
+        highlight-current-row
+        @current-change="handleCurrentChange"
+        ref="multipleTable"
+        tooltip-effect="dark"
+        :data="tableData"
+        style="width: 100%"
+        @selection-change="handleSelectionChange">
+        <el-table-column
+          type="index"
+          fixed="left"
+          align="center"
+        >
+        </el-table-column>
+        <el-table-column
+          align="center"
+          type="selection"
+          width="55">
+        </el-table-column>
+        <el-table-column v-for="(item,index) in label"
+                         :key="index"
+                         :prop="item.prop"
+                         :label="item.name"
+                         :min-width="item.width"
+                         align="center"
+                         :show-overflow-tooltip="true"
+        >
+        </el-table-column>
+      </el-table>
+      <div class="pages">
+        <el-pagination
+          @size-change="handleSizeChange"
+          @current-change="handleCurrentChangepage"
+          :current-page="currentPage"
+          :page-sizes="[10, 20,30,40]"
+          :page-size="10"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="totalSize">
+        </el-pagination>
+      </div>
+
+    </div>
+  </div>
+
+
+</template>
+
+<script>
+  import {add, dele, modify, find, downCsvmodel,upLoad} from "@/api/table_operate"
+  import em_button from "@/components/em_button/em_button"
+  import em_input from "@/components/em_input/em_input"
+  import em_dialogs from "@/components/em_dialogs/em_dialogs"
+  import complex_em_input from "@/components/complex_em_input/complex_em_input"
+  import em_date from "@/components/em_date/em_date"
+  import { getToken} from '@/utils/auth'
+  export default {
+    name: "sole_table",
+    components: {
+      em_button,
+      em_input,
+      complex_em_input,
+      em_date,
+      em_dialogs
+    },
+    data() {
+      return {
+        label: [],
+        table_id:"",
+        label_input:[],
+        tableData: [],
+        listLoading:false,
+        currentRow: null,
+        multipleSelection: [],
+        ids: [],
+        input: '',
+        currentPage: 1,
+        pageSize: 10,
+        totalSize: null,
+        table_list: [],
+        formLabelWidth: '120px',
+        dialogVisible: false,
+        delever_obj:"",      //主要保存add,alter请求的url,table_id
+        alter_obj:"",
+        dialogFormVisible: false,
+        formLabelWidth: '120px',
+        fileList: [],
+        action:"",
+        headers:{
+          "Authorization":getToken()
+        }
+      }
+    },
+    props: ["data"],
+    mounted() {
+      this.table_id=this.data.table.id;
+      this.label=this.data.table.label;
+      this.label_input=this.data.table.label.filter(val=>{
+          return val.add_show
+     });
+     console.log(this.label);
+      this.init(); //初始化表格数据
+
+      this.bus.$on(this.data.table.id, obj => {
+        this.control(obj);
+        console.log(obj)
+      });
+
+    },
+    methods: {
+
+      handleSelectionChange(val) {    //多选框（选中删除）
+        this.multipleSelection = val;
+        console.log(this.multipleSelection);
+
+      },
+      handleCurrentChange(val) {     //单选行 （选中修改）
+        this.currentRow = val;
+        this.alter_obj=this.currentRow;
+        console.log(this.alter_obj);
+        this.bus.$emit("alter",this.alter_obj)
+
+      },
+      handleCurrentChangepage(val) {        //当前页
+        console.log(`当前页: ${val}`);
+        this.currentPage = val;
+        // console.log(this.currentPage);
+        this.init();
+      },
+      handleSizeChange(val) {                 //每页几条
+        console.log(`每页 ${val} 条`);
+        this.pageSize = val;
+        this.init();  //重新请求表格数据
+      },
+      init() {                               //表格加载数据
+
+        let obj = {
+          pageNum: this.currentPage,
+          pageSize: this.pageSize
+        };
+        if (this.$refs.child[0].time1) {
+          let time1 = this.$refs.child[0].time1;    //时间范围查询参数
+          if (time1) {
+            obj.startTime = time1.getTime();
+
+          }
+        }
+        if (this.$refs.child[0].time2) {
+          let time2 = this.$refs.child[0].time2;
+          if (time2) {
+            obj.endTime = time2.getTime();
+          }
+        }
+        if (this.$refs.child[1].input && this.$refs.child[1].params) {
+          let input = this.$refs.child[1].input;        //input框是操作中第二个组件时
+          let params = this.$refs.child[1].params;
+          if (input && params) {
+            obj[params] = input;
+          }
+        }
+        if (this.$refs.child[0].complex_em_input_select && this.$refs.child[0].input) {   //选择参数进行查询
+          let comlex_input = this.$refs.child[0].complex_em_input_select;
+          let commo_input = this.$refs.child[0].input;
+          obj[comlex_input] = commo_input;
+        }
+        if (this.$refs.child[0].input && this.$refs.child[0].params) {                              //input框是操作中第一个组件时
+          let role_manage_input = this.$refs.child[0].input;
+          let params = this.$refs.child[0].params;
+          obj[params] = role_manage_input;
+        }
+        if (this.$refs.child[2].input && this.$refs.child[2].params) {                              //input框是操作中第三个组件时
+          let operate_input = this.$refs.child[2].input;
+          let params = this.$refs.child[2].params;
+          obj[params] = operate_input;
+        }
+        if (this.$refs.child[3].input && this.$refs.child[3].params) {                              //input框是操作中第四个组件时
+          let url_input = this.$refs.child[3].input;
+          let params = this.$refs.child[3].params;
+          obj[params] = url_input;
+        }
+
+        find({                      //页面渲染时拿表格数据
+          url: this.data.table.table_url,
+          params: obj
+        }).then(res => {
+          console.log(res);
+          this.tableData = res.data.list;
+          this.totalSize = res.data.total;
+        })
+      },
+      control(obj) {
+        this[obj.fn](obj);
+
+      },
+      add(obj) {
+        this.$refs.dialog.showdialog(obj);  //调用子组件em_dialogs的方法显示弹出框;
+        this.delever_obj=obj;
+        console.log(this.delever_obj)
+      },
+      dele(obj) {
+        this.multipleSelection.forEach(val => {
+          console.log(val);
+          this.ids.push(val.id);   //提取出需要传给后台的参数ids
+        });
+        if (this.ids.length!= 0) {
+          dele({
+            url: obj.url,
+            params: this.ids
+
+          }).then(res => {
+            console.log(res);
+            this.ids = [];
+            this.open3();
+            this.init();
+
+
+          })
+        }
+      },
+      search() {
+        this.init();
+      },
+      modify(obj) {
+        console.log(this.$refs.dialog);
+        this.$refs.dialog.showdialog(obj);  //调用子组件em_dialogs的方法显示弹出框;
+        this.delever_obj=obj;
+        console.log(this.delever_obj);
+      },
+      open3() {
+        const h = this.$createElement;
+        // this.$notify({
+        //   title: '成功',
+        //   message: h('i', {style: 'color: teal'}, '删除成功啦'),
+        //   type: 'success'
+        // });
+      },
+      handleClose(done) {
+        this.$confirm('确认关闭？')
+          .then(_ => {
+            done();
+          })
+          .catch(_ => {});
+      },
+      import(obj){
+          this.dialogFormVisible=true;
+          this.delever_obj=obj;
+          this.action=process.env.BASE_API+obj.import_url;
+          console.log(this.action);
+      },
+      downloadModel(){
+         window.location.href=process.env.BASE_API+this.delever_obj.download_url
+      },
+      downloadUserModel(){
+        window.location.href=process.env.BASE_API+this.delever_obj.download_user_url
+      },
+      downloadDepartmentModel(){
+        window.location.href=process.env.BASE_API+this.delever_obj.download_department_url
+      },
+      export(obj){
+        window.location.href=process.env.BASE_API+obj.url
+      },
+      recieveObj(val){              //把dialog表单里的数据拿到
+         console.log(this.delever_obj.url);
+         if(val.fn=="add"){
+           add({
+             url: this.delever_obj.url,
+             params:val.form,
+             id:this.delever_obj.table_id
+           }).then(res=>{
+             this.init();
+           });
+         }
+         if(val.fn=="modify"){
+           modify({
+             url: this.delever_obj.url,
+             params:val.form
+           }).then(res=>{
+             this.init();
+           });
+         }
+
+
+
+      },
+      submitUpload() {
+        this.$refs.upload.submit();
+      },
+      handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePreview(file) {
+        console.log(file);
+
+      },
+      uploadFileErro(err, file, fileList){
+         console.log(err);
+         this.$message.error('错了哦，这是一条错误消息');
+
+      },
+      uploadFileSuccess(response, file, fileList){
+        console.log(response.data.jsonmsg.ERRORMSG);
+        if(response.data.jsonmsg.ERRORMSG==""){
+          this.$message({
+            message: '恭喜你，导入成功',
+            type: 'success'
+          });
+          this.init();
+        }
+        else{
+          this.$message({
+            message:response.data.jsonmsg.ERRORMSG.slice(response.data.jsonmsg.ERRORMSG.indexOf("=")+1),
+            type: 'error'
+          });
+        }
+
+      },
+    }
+  }
+</script>
+
+<style scoped lang="scss">
+  @import "sole_table";
+</style>
